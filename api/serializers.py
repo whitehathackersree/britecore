@@ -192,3 +192,21 @@ class OrganizationSerializer(serializers.ModelSerializer):
         fields = ('id', 'admin', 'username', 'full_name', 'short_name', 'type',
          'short_description', 'website', 'logo', 'logos', 'headquarters', 'founded')
         read_only_fields=('id', 'date_created')
+
+class RiskSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Risk
+        fields = ('id', 'insurer', 'title', 'description', 'attrs', 'url', 'date_created', 'date_modified')
+        read_only_fields=('id', 'date_created')
+
+class RiskDETAILSerializer(RiskSerializer):
+    class Meta(RiskSerializer.Meta):
+        pass
+
+class RiskPOSTSerializer(RiskSerializer):
+    class Meta(RiskSerializer.Meta):
+        pass
+
+class RiskPUTSerializer(RiskSerializer):
+    class Meta(RiskSerializer.Meta):
+        pass
