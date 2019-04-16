@@ -182,7 +182,7 @@ class Risk(AppModel):
 
     @property
     def url(self):
-        return "/"+self.insurer.username+"/"+self.id+"/"
+        return "/"+self.insurer.username+"/"+str(self.id)+"/"
 
     def get_absolute_url(self):
         return self.url
@@ -190,23 +190,6 @@ class Risk(AppModel):
     def __str__(self):
         return self.title
 
-class Transaction(AppModel):
-    user = models.ForeignKey(
-        "User",
-        related_name='transactions',
-        on_delete=models.CASCADE)
-    platform = models.CharField(max_length=255, default="razorpay")
-    payment_id = models.CharField(max_length=255)
-    amount = models.DecimalField(max_digits=15, decimal_places=2)
-    status = models.CharField(max_length=255, choices=TRANSACTION_STATUS, default="CREATED")
-    method = models.CharField(max_length=255, choices=TRANSACTION_METHOD)
-    fee = models.DecimalField(max_digits=15, decimal_places=2)
-    amount_refunded = models.DecimalField(max_digits=15, decimal_places=2)
-    refund_status = models.CharField(max_length=255, choices=TRANSACTION_REFUND_STATUS, default="NULL", null=True)
-    error_code = models.CharField(max_length=255, default=None, blank=True, null=True)
-    error_description = models.TextField(default=None, blank=True, null=True)
-    notes = models.TextField(default=None, blank=True, null=True)
-    test = models.BooleanField(default=False)
 
 class TokenBlackList(AppModel):
     token = models.TextField()

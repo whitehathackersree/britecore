@@ -86,10 +86,9 @@ class PasswordResetSerializer(serializers.Serializer):
 
 
 class UserCREATESerializer(serializers.ModelSerializer):
-    otp = serializers.CharField(max_length=None, required=True, write_only=True, error_messages={"required": "OTP is required"})
     class Meta:
         model = User
-        fields = ('email', 'phone_number', 'otp', 'username', 'password', 'full_name', 'photo', 'address', 'city', 'country')
+        fields = ('email', 'phone_number', 'username', 'password', 'full_name', 'photo', 'address', 'city', 'country')
         extra_kwargs = {
             'email': {"error_messages":{
                 "required": "email is required",
@@ -103,12 +102,6 @@ class UserCREATESerializer(serializers.ModelSerializer):
                 "invalid": "phone no. is invalid",
                 }
             },
-            'otp': {"error_messages":{
-                "required": "OTP is required",
-                "blank": "OTP is required",
-                "invalid": "OTP is invalid",
-                }
-            },
             'password': {"error_messages":{
                 "required": "password is required",
                 "blank": "password is required",
@@ -116,11 +109,6 @@ class UserCREATESerializer(serializers.ModelSerializer):
                 }
             }
         }
-
-    def validate_otp(self, value):
-        if len(value) != OTP_LENGTH :
-            raise serializers.ValidationError("OTP is invalid.")
-        return value
 
     def validate_username(self, value):
         if len(value)!=0 and len(value)<USERNAME_MIN_LENGTH:
@@ -136,10 +124,7 @@ class UserCREATESerializer(serializers.ModelSerializer):
 
     @transaction.atomic
     def create(self, validated_data):
-        otp = validated_data.pop("otp")
         phone_number = validated_data["phone_number"]
-        q = OTP.objects.filter(phone_number=phone_number)
-        #check_otp(otp, phone_number)
 
         user = super(UserCREATESerializer, self).create(validated_data)
         user.set_password(validated_data['password'])

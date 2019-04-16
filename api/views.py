@@ -175,9 +175,9 @@ class UserViewSet(BaseActionsModelViewSet):
     serializer_class = UserSerializer
     permission_classes = (UserViewPermission,)
     pagination_class = CustomPagination
-    filter_fields = ('id', 'username', 'phone_number', 'email', 'city', 'address', 'is_dummy', 'date_created')
-    search_fields =  ('id', 'username', 'phone_number', 'email', 'city', 'address', 'is_dummy',  'date_created')
-    ordering_fields = ('id', 'username', 'phone_number', 'email', 'city', 'address', 'is_dummy',  'date_created')
+    filter_fields = ('id', 'username', 'phone_number', 'email', 'city', 'address', 'date_created')
+    search_fields =  ('id', 'username', 'phone_number', 'email', 'city', 'address',  'date_created')
+    ordering_fields = ('id', 'username', 'phone_number', 'email', 'city', 'address',  'date_created')
     pagination_class.page_size = 5
     action_serializers = {
         'list': UserSerializer,
