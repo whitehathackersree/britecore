@@ -207,3 +207,17 @@ class OrganizationViewSet(BaseActionsModelViewSet):
         'retrieve': OrganizationSerializer,
     }
     lookup_field='username'
+
+class RiskViewSet(BaseActionsModelViewSet):
+    queryset = Risk.objects.all()
+    serializer_class = RiskSerializer
+    permission_classes = (permissions.AllowAny,)
+    pagination_class = CustomPagination
+    pagination_class.page_size = 5
+    action_serializers = {
+        'list': RiskLISTSerializer,
+        'retrieve': RiskDETAILSerializer,
+        'create': RiskPOSTSerializer,
+        'update': RiskPUTSerializer,
+        'partial_update': RiskPUTSerializer
+    }

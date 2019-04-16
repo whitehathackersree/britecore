@@ -50,23 +50,7 @@ class User(AppModel,AbstractUser):
     middle_name = models.CharField(max_length=255,blank=True, null=True, default=None)
     last_name = models.CharField(max_length=255,blank=True, null=True, default=None)
     gender = models.CharField(max_length=255, choices=GENDER, default=GENDER_MALE)
-    father = models.ForeignKey(
-		'self',
-		related_name='fchildren',
-		on_delete = models.SET_NULL,
-        blank=True,
-        null=True)
-    mother = models.ForeignKey(
-		'self',
-		related_name='mchildren',
-		on_delete = models.SET_NULL,
-        blank=True,
-        null=True)
     photo = ImageField(upload_to=get_profile_photo_upload_path,default=get_default_profile_photo)
-    date_of_birth = models.DateField(default=None, blank=True, null=True)
-    place_of_birth = models.CharField(max_length=255,default=None, blank=True, null=True)
-    date_of_death = models.DateField(default=None, blank=True, null=True)
-    place_of_death = models.CharField(max_length=255,default=None, blank=True, null=True)
     phone_regex = RegexValidator(regex=r'^([16789]\d{9}|AnonymousUser)$', message="Mobile No. is invalid.")
     phone_number = models.CharField(validators=[phone_regex], max_length=15, unique=True)
     address = models.TextField(default=None, blank=True, null=True)
@@ -86,9 +70,8 @@ class User(AppModel,AbstractUser):
         null=True,
         on_delete=models.CASCADE)
     email_confirmed = models.BooleanField(default=False)
-    is_dummy = models.BooleanField(default=False)
 
-    USERNAME_FIELD = 'phone_number'
+    USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = []
     objects = UserManager()
 

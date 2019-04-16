@@ -199,6 +199,10 @@ class RiskSerializer(serializers.ModelSerializer):
         fields = ('id', 'insurer', 'title', 'description', 'attrs', 'url', 'date_created', 'date_modified')
         read_only_fields=('id', 'date_created')
 
+class RiskLISTSerializer(RiskSerializer):
+    class Meta(RiskSerializer.Meta):
+        pass
+
 class RiskDETAILSerializer(RiskSerializer):
     class Meta(RiskSerializer.Meta):
         pass

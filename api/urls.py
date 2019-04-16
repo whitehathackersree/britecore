@@ -7,6 +7,7 @@ from .jwt_utils import CustomJWTSerializer
 router = DefaultRouter()
 router.register('user', UserViewSet, base_name='users')
 router.register('organization', OrganizationViewSet, base_name='organizations')
+router.register('risk', RiskViewSet, base_name='risks')
 
 urlpatterns = router.urls
 
