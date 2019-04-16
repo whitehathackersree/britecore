@@ -1,0 +1,43 @@
+@font-face {
+    font-family: 'p';
+        src:url('357C3A_0_0-d4fa967f.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'p';
+        src:url('357C3A_8_0-727c16fb.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'p';
+        src:url('357C3A_A_0-ad89c8a7.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'p';
+        src:url('357C3A_6_0-758df763.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'l';
+        src:url('l1.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'l';
+        src:url('l2.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'l';
+        src:url('l3.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}

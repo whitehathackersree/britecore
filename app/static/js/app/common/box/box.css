@@ -1,0 +1,58 @@
+.box{
+  border: 2px solid #f1f1f1;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 3px;
+  background: #fff;
+}
+.box h2{
+  width: 100%;
+  font-size: 1.7rem;
+  font-weight: 400;
+  color: #444;
+  margin: 0;
+  margin-bottom: .5rem;
+}
+.box p{
+  margin: 0 0 .8rem;
+  line-height: 1.45rem;
+  font-size: 1rem;
+  color: #676767;
+}
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .box{
+    padding: 1rem;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}
+
+@media screen and (min-width: 1024px) {
+
+}
+
+@media screen and (max-width: 1040px) {
+
+}

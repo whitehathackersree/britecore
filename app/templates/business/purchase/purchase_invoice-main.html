@@ -1,0 +1,45 @@
+{% extends 'dashboard/dashboard-base_.html' %}
+{% load static compress %}
+{% block title %}
+  {{block.super}}
+  | {{business.title}}
+{% endblock %}
+{% block css %}
+  {{block.super}}
+  {% compress css %}
+
+  {% endcompress %}
+{% endblock %}
+{% block content %}
+  {{block.super}}
+  <style>
+  table, th, td{
+    border: 1px solid #000;
+    border-collapse: collapse;
+    padding: .5em;
+  }
+  .amt{
+    text-align: right;
+  }
+  </style>
+  <p><a href="{% url 'purchase_invoice_create' pk=business.id %}">Purchase Invoice Create</a></p>
+  <table>
+  <tr><th>Purchase Invoices</th></tr>
+  <tr>
+    <th>No.</th>
+    <th>Seller</th>
+    <th>Taxable Amount</th>
+    <th>Tax</th>
+    <th>Total Amount</th>
+  </tr>
+  {% for pi in purchaseinvoice_list %}
+  <tr>
+    <td><a href="{% url 'purchase_invoice' pk=pi.business.id sid=pi.id %}">{{forloop.counter}}</a></td>
+    <td>{{pi.seller}}</td>
+    <td class='amt'>{{pi.taxable_amount|floatformat:2}}</td>
+    <td class='amt'>{{pi.total_tax|floatformat:2}}</td>
+    <td class='amt'>{{pi.total_amount|floatformat:2}}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

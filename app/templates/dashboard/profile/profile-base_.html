@@ -1,0 +1,28 @@
+{% extends 'dashboard/dashboard-base_.html' %}
+{% load static compress %}
+{% block title %}{{u.full_name_}} | {{block.super}}{% endblock %}
+{% block css %}
+  {{block.super}}
+  {% compress css %}
+    <link rel="stylesheet" href="{% static 'css/profile/profile-main.css'%}">
+    <link rel="stylesheet" href="{% static 'css/profile/profile-left-pane.css'%}">
+    <link rel="stylesheet" href="{% static 'css/aurora-tabbed-nav.css'%}">
+  {% endcompress %}
+{% endblock %}
+{% block content %}
+  {{block.super}}
+  <div class="p-main">
+    <div class="main-container">
+      <div class="flex-row">
+        <div class="profile-left-pane">
+          {% include './profile-left-pane.html'%}
+        </div>
+        <div class="profile-right-pane">
+          {% block right-pane %}
+            {% include '../../includes/aurora-tabbed-nav.html' with tabs=tabs tab_url=tab_url %}
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

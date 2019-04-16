@@ -1,0 +1,44 @@
+{% load app_tags %}
+<div class="dashboard-main-nav-holder">
+  <div class='dashboard-main-nav is-'>
+    <a class='logo-hld' href="/"><img  src="/static/favicons/apple-icon-60x60.png"></a>
+    <span class="n-small-menu" ng-init="$ctrl.small_menu=false" ng-click="$ctrl.small_menu = !$ctrl.small_menu" ng-class="$ctrl.small_menu?'active':''">
+      <i class='flaticon-menu'></i>
+    </span>
+    <div class="n-items-container">
+      <a class='n-item is-active' href="/">Bids</a>
+      <a class='n-item' href="/winners/">Winners</a>
+      <a class='n-item' href="/bidders/">Bidders</a>
+      <a class='n-item' href="/coins/">Coins</a>
+      <a class='n-item' href="/how-it-works/">How It Works</a>
+      <a class='n-item' href="/help/">Help</a>
+      <span class='search-bar'>
+        <input spellcheck="false" placeholder="Search by Item, Category, Bidder, etc">
+        <i class='flaticon-magnifying-glass'></i>
+      </span>
+      {% if user.is_authenticated %}
+      <span class='requests'>
+        <i class='flaticon-interface-1'></i>
+        <span class='request-count badge'>12</span>
+      </span>
+      <span class='requests'>
+        <i class='flaticon-write'></i>
+        <span class='request-count badge'>12</span>
+      </span>
+      <span class='notif'>
+        <i class='flaticon-ring'></i>
+      </span>
+      <span class='profbar'>
+          {% include "../../includes/aurora-flyout.html" with class="for-dashboard-nav has-first-child-special" trigger_type="image" trigger_image=user.photo options='dashboard-nav-profile'|get_flyout_options:user badge="7" %}
+      </span>
+      {% else %}
+      <span  class='n-log-reg'>
+        <a href="{% url 'login' %}?next={{ request.path|urlencode }}">Login</a>
+      </span>
+      <span  class='n-log-reg'>
+        <a href="{% url 'signup' %}">Sign Up</a>
+      </span>
+      {% endif %}
+    </div>
+  </div>
+</div>

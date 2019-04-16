@@ -1,0 +1,26 @@
+.modal-transaction-failed{
+  text-align: center;
+}
+.modal-transaction-failed .heading{
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 1em;
+  font-size: 1.2em;
+}
+.modal-transaction-failed .pic{
+  background: #ed4f32;
+  padding: 1em;
+}
+.modal-transaction-failed img{
+  height: 80px;
+  width: auto;
+}
+
+.modal-transaction-failed .data{
+  padding: 1em 1em 3em 1em;
+  font-size: .9em;
+  text-align: left;
+}
+.modal-transaction-failed .data p{
+  margin-bottom: 1em;
+}

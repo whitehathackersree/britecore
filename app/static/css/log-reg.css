@@ -1,0 +1,172 @@
+.log-reg{
+  font-family: 'l';
+}
+.log-reg a{
+  color: #0069ff;
+  font-weight: 500;
+  text-decoration: underline;
+}
+.log-reg-container{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.log-reg-container > div{
+  position: relative;
+  min-height: 100vh;
+}
+.log-reg-show{
+  flex-basis: 30%;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: center;
+  background-color: #f3f7f8;
+  background: linear-gradient(rgba(0,105,255,0.5),rgba(0,105,255,0.5)),
+  url(https://app.in/static/app/images/pic-crowd-2x.jpg) center/450% no-repeat;
+}
+.log-reg-show .just-logo{
+  padding: 3em;
+}
+.log-reg-show .just-base{
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+  right: 25px;
+  color: #fff;
+  font-size: 16px;
+  text-align: left;
+}
+.log-reg-pane{
+  position: relative;
+  flex-grow: 1;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+.log-reg-notifications{
+  position: absolute;
+  top: 1em;
+}
+.log-reg-notif{
+  padding: 10px 16px;
+  border-radius: 3px;
+  margin: 10px;
+}
+.log-reg-notif.error{
+  color: #e6525a;
+  background-color: rgba(230,82,90,0.15);
+}
+.log-reg-notif.success{
+  color: #468847;
+  background-color: #dff0d8;
+}
+.log-reg-notif.warning{
+  color: #c09853;
+  background-color: #fcf8e3;
+}
+.log-reg-notif.info{
+  color: #3a87ad;
+  background-color: #d9edf7;
+}
+.log-reg-form{
+  text-align: center;
+  background: #fff;
+  border-radius: 3px;
+  width: 350px;
+}
+.log-reg-form legend{
+  color: #444;
+  font-size: 35px;
+  margin: 0 auto 45px;
+  line-height: 38px;
+}
+.log-reg-form input, .ex-link{
+  width: 100%;
+  color:#404040;
+  background-color: #fff;
+  box-sizing : border-box;
+  display: block;
+  border: 1px solid rgba(0,0,0,0.15);
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 3px;
+  font-size: 18px;
+}
+.log-reg-form input:focus{
+  outline: #0069ff solid 0.22px;
+  box-shadow: 0 0 3pt 2pt white;
+}
+.log-reg-form input[type='submit'],.ex-link{
+  text-align: center;
+  width: 70%;
+  color: #fff!important;
+  background: #0069ff;
+  border: 0;
+  font-size: 17px;
+  padding: 15px;
+  border-radius: 3px;
+  font-weight: 600;
+  text-decoration: none!important;
+}
+.log-reg-form input[type='submit'].is_loading{
+  opacity: .5;
+}
+.log-reg-form input::-webkit-input-placeholder {
+	color: #888;
+  font-family: 'l';
+}
+.log-reg-blue{
+  color: #444;
+  font-size: 17px;
+}
+.log-reg-blue a{
+  text-decoration: none;
+}
+.log-reg-foot{
+  color: #444;
+  text-align: center;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .log-reg-show{
+    display: none;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-height: 1200px) {
+  .log-reg-show{
+    background: linear-gradient(rgba(0,105,255,0.5),rgba(0,105,255,0.5)),
+    url(https://app.in/static/app/images/pic-crowd-2x.jpg) top/cover no-repeat;
+  }
+}

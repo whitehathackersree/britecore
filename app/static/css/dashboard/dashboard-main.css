@@ -1,0 +1,18 @@
+.d-main{
+  font-family: 'l';
+}
+.d-main .user-wlcme-title{
+  font-size: 1.7rem;
+  font-weight: 400;
+  color: #444;
+  margin: 1em 0;
+}
+.d-main .left-pane{
+  width: 66%;
+  padding-right: 1em;
+  margin-bottom: 200px;
+}
+.d-main .right-pane{
+  flex-grow: 1;
+  padding: 0 1em;
+}

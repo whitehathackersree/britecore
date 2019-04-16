@@ -1,0 +1,49 @@
+{% extends 'dashboard/dashboard-base_.html' %}
+{% load static compress %}
+{% block title %}
+  {{block.super}}
+  | {{business.title}}
+{% endblock %}
+{% block css %}
+  {{block.super}}
+  {% compress css %}
+
+  {% endcompress %}
+{% endblock %}
+{% block content %}
+  {{block.super}}
+
+<style>
+table, th, td{
+  border: 1px solid #000;
+  border-collapse: collapse;
+  padding: .5em;
+}
+.amt{
+  text-align: right;
+}
+</style>
+<p><a href="{% url 'item_create' pk=business.id %}">Item Create</a></p>
+<table>
+  <tr><th>Items</th></tr>
+  <tr>
+    <th>No.</th>
+    <th>EAN</th>
+    <th>variant_code</th>
+    <th>variant</th>
+    <th>quantity</th>
+    <th>units</th>
+  </tr>
+  {% for item in items %}
+  <tr>
+    <td><a href="">{{forloop.counter}}</a></td>
+    <td>{{item.ean.code}}</td>
+    <td>{{item.variant_code}}</td>
+    <td>{{item.variant}}</td>
+    <td>{{item.quantity}}</td>
+    <td>{{item.units}}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock %}

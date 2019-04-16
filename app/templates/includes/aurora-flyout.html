@@ -1,0 +1,40 @@
+{% load app_tags %}
+<div class='aurora-flyout {{class}}'>
+  <span class='aurora-flyout-trigger'>
+    {% if trigger_type == "image" %}
+      <img src="/media/{{trigger_image}}" alt="">
+    {% elif trigger_type == "icon" %}
+      <span class='{{trigger_icon}}'></span>
+    {% else %}
+      <span class='flaticon-three-1'></span>
+    {% endif %}
+  </span>
+  {% if options %}
+  <div class='aurora-flyout-container '>
+    <ul class='aurora-flyout-ul'>
+      {% for i in options %}
+        <li>{{i.0}}<a href="{{i.1}}"></a></li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+  {% if badge %}
+    <span class=' aurora-flyout-badge'>{{badge}}</span>
+  {% endif %}
+</div>
+
+{% comment %}
+  <div class='aurora-flyout  has-first-child-special no-triangle for-dashboard-nav'>
+    <span class='aurora-flyout-trigger is-active  '>
+      <img src='/static/app/images/user.png'>
+    </span>
+    <div class='aurora-flyout-container '>
+      <ul class='aurora-flyout-ul'>
+        <li onclick='alert()'><img src='/static/app/images/user.png'> user00512{{user.id}}</li>
+        <li>Settings</li>
+        <li>Logout</li>
+      </ul>
+    </div>
+    <span class='aurora-flyout-badge'>{{badge}}</span>
+  </div>
+{% endcomment %}

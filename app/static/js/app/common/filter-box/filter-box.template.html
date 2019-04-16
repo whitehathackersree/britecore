@@ -1,0 +1,19 @@
+<div class="filter-box">
+  <div class="filter-box-head">
+    <span class="filter-box-title">{{filter.name}}</span>
+    <span class="filter-box-clear" >{{filter.clear}}</span>
+  </div>
+  <div class="filter-box-items">
+    <div ng-repeat="(key, value) in filter.items">
+      <div ng-if="filter.type == 'checkbox'">
+        <label>
+          <input type="checkbox" checked class="checkbox" name="{{filter.model}}" ng-model="item" value="Bike">
+          <span>{{key}}</span>
+        </label>
+      </div>
+      <div ng-if="filter.type == 'input'">
+        <input type="text" class="tag-input">
+      </div>
+    </div>
+  </div>
+</div>

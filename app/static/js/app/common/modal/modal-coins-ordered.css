@@ -1,0 +1,21 @@
+.modal-coins-ordered{
+  background: #fff;
+  padding: 1em;
+  font-weight: 400!important;
+  text-align: center;
+}
+.modal-coins-ordered img{
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1em;
+}
+.modal-coins-ordered .data{
+
+}
+.modal-coins-ordered p{
+  margin-bottom: 1em;
+}
+.modal-coins-ordered a{
+  color: #0069ff;
+  text-decoration: underline;
+}

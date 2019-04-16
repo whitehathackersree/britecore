@@ -1,0 +1,45 @@
+<div class="buzzers-control">
+  <div class="buzzers-control-show-head">
+
+  </div>
+  <div class="buzzers-control-container">
+    <div class="buzzers-control-holder">
+      <div class="transactions-ctrl-tbl-ctrl">
+        Search: <input class="search" ng-model="search" enter-key-press="query()"/>
+        Filter: <input class="search" placeholder="Mobile Number" ng-model="user__phone_number" enter-key-press="query()"/>
+        <input class="search" placeholder="Bid Id" ng-model="bid__id" enter-key-press="query()"/>
+        <input type="checkbox" ng-model="active" ng-change="query()"/> active
+        <input type="checkbox" ng-model="user__is_dummy" ng-change="query()"/> Degraded
+        <span>Count: {{page_data.count}}</span>
+        <span>Pages: {{page_data.total_pages}}</span>
+      </div>
+      <table class="table-two">
+        <thead>
+          <tr>
+            <td width="15px" ng-click="sort_order('id')">id</td>
+            <td ng-click="sort_order('date_created')">Date</td>
+            <td width="10ch" ng-click="sort_order('user__username')">user</td>
+            <td width="10ch" ng-click="sort_order('user__phone_number')">Phone Number</td>
+            <td ng-click="sort_order('bid__id')">Bid</td>
+            <td ng-click="sort_order('coins')">Coins</td>
+            <td width="10ch">Used Coins</td>
+            <td width="10ch">status</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="bz in buzzers  | orderBy:$ctrl.orderProp:$ctrl.reverse">
+            <td>{{bz.id}}</td>
+            <td>{{bz.date_created}}</td>
+            <td>{{bz.username}}</td>
+            <td>{{bz.phone_number}}</td>
+            <td class="amount">{{bz.bid}}</td>
+            <td title="total">{{bz.coins}}</td>
+            <td class="method">{{bz.used_coins}}</td>
+            <td>{{bz.status}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <pagination url=pagination_url() total-pages=page_data.total_pages current-page=current_page></pagination>
+</div>

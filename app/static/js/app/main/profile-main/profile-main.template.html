@@ -1,0 +1,115 @@
+<div ng-show="show" class="profile-main">
+  <div class="profile-main-show-head">
+
+  </div>
+  <div class="profile-main-container">
+    <div class="profile-main-holder">
+      <div>
+        <div class="pfm-profile-data-holder">
+          <div class="pfm-profile-pic">
+            <img src="{{user.profile_photos['100x100']}}" alt="">
+          </div>
+          <div class="pfm-profile-user">
+            <span class="username">{{user.username}}</span>
+            <div ng-if="user.coins" class="shows coins">
+              <img src="/static/svg/coins_layer.svg" alt="">
+              <span>{{user.coins}}</span>
+            </div>
+            <div class="shows">
+              <img src="/static/svg/box.svg" alt="">
+              <span><b>{{user.products_won.length}}</b> products won</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="right-pane">
+        <div ng-if="user.is_authenticated" class="pfm-profile-show-holder" >
+          <div class="pfm-profile-show">
+            <img src="/static/svg/security.svg" alt="">
+            <div>
+              <span class="title">Profile and Security</span>
+              <p class="sub-title">Edit username, mobile, and login </p>
+            </div>
+            <a ng-href="{{'/ac/'+user.username+'/profile-and-security/'}}" class="absolute-link"></a>
+          </div>
+          <div class="pfm-profile-show">
+            <img src="/static/svg/tap.svg" alt="">
+            <div>
+              <span class="title">Buzzers</span>
+              <p class="sub-title">create a bid buzzer and save time in bidding.</p>
+            </div>
+            <a ng-href="{{'/ac/'+user.username+'/buzzers/'}}" class="absolute-link"></a>
+          </div>
+          <div class="pfm-profile-show">
+            <img src="/static/svg/cart.svg" alt="">
+            <div>
+              <span class="title">Your Cart</span>
+              <p class="sub-title">View Products won and not claimed</p>
+            </div>
+            <span class="abs">{{user.cart_count}}</span>
+            <a ng-href="{{'/ac/'+user.username+'/cart/'}}" class="absolute-link"></a>
+          </div>
+          <div class="pfm-profile-show">
+            <img src="/static/svg/claimed.svg" alt="">
+            <div>
+              <span class="title">Claimed</span>
+              <p class="sub-title">Products acquired, track orders</p>
+            </div>
+            <span class="abs">{{user.products_claimed_count}}</span>
+            <a ng-href="{{'/ac/'+user.username+'/claimed/'}}" class="absolute-link"></a>
+          </div>
+          <div class="pfm-profile-show">
+            <img src="/static/svg/money.svg" alt="">
+            <div>
+              <span class="title">Transactions</span>
+              <p class="sub-title">Payments history, </p>
+            </div>
+            <a ng-href="{{'/ac/'+user.username+'/transactions/'}}" class="absolute-link"></a>
+          </div>
+          <div class="pfm-profile-show">
+            <img src="/static/svg/coins_layer.svg" alt="">
+            <div>
+              <span class="title">Coin Transactions</span>
+              <p class="sub-title">Coins usage history</p>
+            </div>
+            <a ng-href="{{'/ac/'+user.username+'/coins-usage/'}}" class="absolute-link"></a>
+          </div>
+          <div class="pfm-profile-show">
+            <img src="/static/svg/transaction.svg" alt="">
+            <div>
+              <span class="title">Referrals</span>
+              <p class="sub-title">Refer and earn rewards</p>
+            </div>
+            <a ng-href="{{'/ac/'+user.username+'/referrals/'}}" class="absolute-link"></a>
+          </div>
+        </div>
+        <div ng-if="user.products_won.length > 0" class="pfm-products-won-container">
+          <div class="wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th style="width: 50%">Item</th>
+                  <th>Price</th>
+                    <th>Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="p in user.products_won">
+                  <td><a href="{{p.won_data_link}}">{{p.item_title}}</a></td>
+                  <td><strike class="amount">{{p.mrp | currency: '₹ ' : 2}}</strike><br><b class="amount">{{p.sale_amount | currency: '₹ ' : 2}}</b></td>
+                  <td>{{p.date | date: "dd'' MMM-yyyy"}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div ng-if="user.products_won.length < 1 && !user.is_authenticated" class="profile-coins-usage-empty-cr">
+          <empty-cr
+          image=emptyCr.image
+          description=emptyCr.description>
+          </empty-cr>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

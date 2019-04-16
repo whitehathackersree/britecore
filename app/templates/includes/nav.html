@@ -1,0 +1,49 @@
+{% load compress %}
+<nav class="{{addClass}} navbar ">
+  <div class='nav-container'>
+    <a class='logo navbar-item  {% if active_tab == '' %} is-active{% endif %}'  href="">
+      <span></span>
+    </a>
+    <span class='hiring'>
+      <a class='-item {% if active_tab == 'events' %} is-active{% endif %}' href="/about">WE ARE HIRING</a>
+    </span>
+    <span class="navbar-right">
+      <a class='navbar-item {% if active_tab == 'events' %} is-active{% endif %}' href="">Hire</a>
+    </span>
+    <span>
+      <a class='navbar-item {% if active_tab == 'events' %} is-active{% endif %}' href="">Work</a>
+    </span>
+    <span>
+      <a class='navbar-item {% if active_tab == 'events' %} is-active{% endif %}' href="">Knowledge Hub</a>
+    </span>
+    <span>
+      <a class='navbar-item {% if active_tab == 'events' %} is-active{% endif %}' href="">Tools</a>
+    </span>
+    <span>
+      <a class='navbar-item {% if active_tab == 'events' %} is-active{% endif %}' href="">Support</a>
+    </span>
+    <span>
+      <a class='navbar-item  is-login-btn {% if active_tab == 'schedule' %} is-active{% endif %}' href="{% url 'login'%}"><span>Login</span></a>
+    </span>
+    <span>
+      <a class='navbar-item  is-join-btn  {% if active_tab == 'schedule' %} is-active{% endif %}' href="{% url 'signup'%}"><span>Join</span></a>
+    </span>
+    <span class='flycon'>
+    <div class='navbar-item' id="flyout-container"><i class='flaticon-menu'></i>
+      <div class='flyout'>
+        <a href="" class='flyout-item'>Paheli</a>
+        <a href="" class='flyout-item'>Sponsors</a>
+        <a href="" class='flyout-item'>Batch 2014-18</a>
+        <a href="" class='flyout-item'>Contact Us</a>
+        {%if request.session.email %}
+          <a href="" class='flyout-item'>Logout</a>
+        {% else %}
+          <a href="" class='flyout-item'>Login</a>
+        {% endif %}
+      </div>
+    </div>
+    </span>
+  </div>
+</nav>
+<div class='nalerts'>
+</div>

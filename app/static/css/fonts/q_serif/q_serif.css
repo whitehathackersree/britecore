@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'q_serif';
+        src:url('-3-fonts.q-icons.q-icons.woff2-26-9afc20a49e3ef2cf.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'q_serif';
+        src:url('-3-fonts.q_serif.q_serif_regular.woff2-26-7ace3bc4cbe404d9.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'q_serif';
+        src:url('-3-fonts.q_serif.q_serif_regular_italic.woff2-26-9d81ab3229809d01.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'q_serif';
+        src:url('-3-fonts.q_serif.q_serif_semibold.woff2-26-b55bf39d9018ace9.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'q_serif';
+        src:url('-3-fonts.q_serif.q_serif_semibold_italic.woff2-26-4c39f22524232bf2.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+}

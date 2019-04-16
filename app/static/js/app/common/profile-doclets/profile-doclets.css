@@ -1,0 +1,28 @@
+.profile-coins-usage{
+  padding: 1em 0;
+}
+.profile-coins-usage-container{
+
+}
+.profile-coins-usage .spinner{
+  display: -webkit-inline-flex;
+  display: -ms-inline-flex;
+  display: inline-flex;
+}
+.profile-coins-usage .spinner .item{
+  width: 8px;
+  height: 8px;
+}
+.profile-coins-usage .spinner-holder{
+  display: none;
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 40vh;
+}
+.profile-coins-usage .spinner-holder.is-active{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+}

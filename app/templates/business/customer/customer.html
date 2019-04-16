@@ -1,0 +1,55 @@
+{% extends 'dashboard/dashboard-base_.html' %}
+{% load static compress %}
+{% block title %}
+  {{block.super}}
+  | {{business.title}}
+{% endblock %}
+{% block css %}
+  {{block.super}}
+  {% compress css %}
+
+  {% endcompress %}
+{% endblock %}
+{% block content %}
+  {{block.super}}
+
+<style>
+  table, .item td, th{
+    border: 1px solid #000;
+    border-collapse: collapse;
+    padding: .5em;
+  }
+  tr td:nth-child(9),
+  tr td:nth-child(8),
+  tr td:nth-child(6),
+  tr td:nth-child(5){
+    text-align: right;
+  }
+  .amt{
+    text-align: right;
+  }
+</style>
+  <p><a href="{% url 'customer_delete' pk=business.id sid=client.id %}">Delete Customer</a></p>
+<table>
+  <tr>
+    <td>
+      <table>
+        <tr>
+          <td>{{client.name}}</td>
+        </tr>
+        <tr>
+          <td>{{client.address}}</td>
+        </tr>
+        <tr>
+          <td> GSTIN/UIN: {{client.gstin}}</td>
+        </tr>
+        <tr>
+          <td>State: {{client.state}}, Code: {{client.state.gst_code}}</td>
+        </tr>
+        <tr>
+          <td>Contact: {% for ph in client.phone_numbers.all %}{{ph}}{% if not forloop.last %}, {% endif %}{% endfor %}</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+{% endblock %}

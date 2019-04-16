@@ -1,0 +1,94 @@
+[
+  {
+    "title": "Company",
+    "subs": [
+      {
+        "name": "About",
+        "link": "/company/about/"
+      },
+      {
+        "name": "Blog",
+        "link": "/help/"
+      },
+      {
+        "name": "Careers",
+        "link": "/company/careers/"
+      },
+      {
+        "name": "Referral Program",
+        "link": "/company/referral-program/"
+      },
+      {
+        "name": "Events",
+        "link": "/company/events/"
+      },
+      {
+        "name": "Press",
+        "link": "/company/press/"
+      },
+      {
+        "name": "Legal & Security",
+        "link": "/company/legal-and-security/"
+      }
+    ]
+  },
+  {
+    "title": "Website",
+    "subs": [
+      {
+        "name": "Auctions",
+        "link": "/"
+      },
+      {
+        "name": "Coins",
+        "link": "/coins/"
+      },
+      {
+        "name": "Reviews",
+        "link": "/winners-gallery/"
+      }
+    ]
+  },
+  {
+    "title": "Help",
+    "subs": [
+      {
+        "name": "How It Works",
+        "link": "/help/how-it-works/"
+      },
+      {
+        "name": "Tips & Tricks",
+        "link": "/help/tips-and-tricks/"
+      },
+      {
+        "name": "Promotions",
+        "link": "/help/promotions/"
+      },
+      {
+        "name": "Payments",
+        "link": "/help/payments/"
+      },
+      {
+        "name": "Orders & Shipping",
+        "link": "/help/orders-and-shipping/"
+      }
+    ]
+  },
+  {
+    "title": "Support",
+    "subs": [
+      {
+        "name": "Contact Support",
+        "link": "/company/support/"
+      },
+      {
+        "name": "FAQ",
+        "link": "/help/faq/"
+      },
+      {
+        "name": "Delivery Status",
+        "link": "/help/orders-and-shipping/"
+      }
+    ]
+  }
+]

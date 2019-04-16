@@ -1,0 +1,56 @@
+<div class="edit-bid">
+  <header>Update Bid - {{bid.id}}</header>
+  <div class="edit-bid-container">
+    <p><b>{{bid.item.title}}</b></p>
+    <table>
+      <tr>
+        <td>MRP</td>
+        <td>{{bid.item.mrp}}</td>
+      </tr>
+      <tr>
+        <td>Sale Rate</td>
+        <td>{{bid.item.sale_rate}}</td>
+      </tr>
+      <tr>
+        <td>Start Amount:</td>
+        <td><input ng-model="bid.start_amount" type="text"></td>
+      </tr>
+      <tr>
+        <td>Disallow Amount:</td>
+        <td><input ng-model="bid.disallow_amount" type="text"></td>
+      </tr>
+      <tr>
+        <td>Start DateTime:</td>
+        <td><input ng-model="bid.start_date_time" type="datetime-local"></td>
+      </tr>
+      <tr>
+        <td>Duration:</td>
+        <td><input ng-model="bid.duration" type="text"></td>
+      </tr>
+      <tr>
+        <td>Is Active:</td>
+        <td><input ng-model="bid.is_active" type="checkbox" checked></td>
+      </tr>
+      <tr>
+        <td>Allow Buzzers:</td>
+        <td><input ng-model="bid.allow_buzzers" type="checkbox" checked></td>
+      </tr>
+      <tr ng-show="bid.allow_buzzers">
+        <td>Minimum buzzer coins:</td>
+        <td><input ng-model="bid.minimum_buzzer_coins" type="text"></td>
+      </tr>
+      <tr ng-show="bid.allow_buzzers">
+        <td>d_coins:</td>
+        <td><input ng-model="bid.d_coins" type="text"></td>
+      </tr>
+      <tr>
+        <td><span class="button-one red" ng-click="btn_active && bidDelete()">
+          DELETE
+        </span></td>
+        <td><span class="button-one" ng-click="btn_active && bidUpdate()">
+          Update Bid
+        </span></td>
+      </tr>
+    </table>
+  </div>
+</div>

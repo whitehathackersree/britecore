@@ -1,0 +1,42 @@
+<div ng-show="show" class="profile-transactions">
+  <div class="profile-transactions-container">
+    <div ng-if="payments.length > 0">
+      <table class="table-one">
+        <thead>
+          <tr>
+            <th>Event</th>
+            <th>Amount</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="p in payments" ng-switch="p.notes.type">
+            <td>
+              <img ng-switch-when="coins_pack" src="/static/svg/coins_layer_bw.svg" alt="">
+              <img ng-switch-when="claim" src="/static/svg/won.svg" alt="">
+              <span ng-switch="p.notes?p.notes.type:''">
+                <span class="show claimed" ng-switch-when="claim">
+                  product claimed <a ng-href="/auction/{{p.notes?p.notes.id:''}}/">/auction/{{p.notes?p.notes.id:''}}/</a>
+                </span>
+                <span ng-switch-when="coins_pack">
+                  bought coins pack_#{{p.notes?p.notes.id:''}}
+                </span>
+              </span>
+            </td>
+            <td class="num">{{p.amount | currency: '₹ ': 2}}</td>
+            <td><date-offset time={{p.date}}></date-offset></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="small-note">Please note: Only last 20 payment transactions are shown here. To obtain full transaction history, please write to us: observer@bidbuzz.in</div>
+
+    </div>
+    <div ng-if="payments.length  < 1" class="profile-coins-usage-empty-cr">
+      <empty-cr
+      image=emptyCr.image
+      heading=emptyCr.heading
+      description=emptyCr.description>
+      </empty-cr>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,210 @@
+{% extends '_base_.html' %}
+{% load static compress %}
+{% block css %}
+{% compress css %}
+<link rel="stylesheet" href="{% static 'css/index.css'%}">
+{% endcompress %}
+{% endblock %}
+{% block content %}
+<body class='index'>
+  <div class='mod-1'>
+	{% include "includes/nav.html" with active_tab='home' addClass="start is-color-white" %}
+	<div class='show1 grid'>
+		<div class="show-text">
+			<div>
+				<h1>Find & Hire Freelancers</h1>
+        <h3>Browse 3 Million+ Experts</h3>
+				<h4>Pair, collaborate, and get work done flexibly and securely by Experts.</h4>
+        <div class="show_search">
+          <input placeholder="What kind of work do you need done?" type="text">
+          <input type="button" value="Get Started">
+        </div>
+			</div>
+		</div>
+		<div>
+		<form method="post" action="{% url 'signup'%}" >
+			<div class='signup-holder'>
+				<h2>Sign up and be a <br>Freelancer</h2>
+  				{% csrf_token %}
+					<!--input spellcheck="false" placeholder="Email Address"/>
+					<input spellcheck="false" placeholder="Password" type="password"/-->
+					{% for field in form.visible_fields %}
+			 			{{ field.errors }}
+			 			{{ field }}
+			 			{{ field.help_text }}
+		 			{% endfor %}
+					<input class='btn' type='submit' value="Create Account" />
+			</div>
+		</form>
+		</div>
+	</div>
+	<div class='short_features'>
+	  <img src="https://app.in/static/app/images/featureswhite.png" />
+	</div>
+</div>
+<section class='bui-section'>
+	<h2 class='ui-title'>
+		Modern and Elegant
+	</h2>
+	<div class='rule-stout'></div>
+	<div class='bui-grid'>
+		<div class='bui-box'>
+			<img class='bui-svg' src="https://www.gitbook.com/public/images/d434abb3414f3685926b2b4fe973beee.svg" >
+			<h3 class='bui-box-title'>In the Cloud</h3>
+			<p class='bui-box-cont'>
+          We take pride in providing an all-in-one secure cloud to easily store your
+					legal documents in a data-oriented way.
+			</p>
+			<div class='bui-box-xlink'>
+				Learn more about storing
+			</div>
+		</div>
+		<div class='bui-box'>
+			<img class='bui-svg' src="https://www.gitbook.com/public/images/fec606cd7045b58944064ec25deb43d5.svg" >
+			<h3 class='bui-box-title'>On-site Verification</h3>
+			<p class='bui-box-cont'>
+          app periodically checks the authenticity of its users data through various
+					 sources; both on-site and online.
+			</p>
+			<div class='bui-box-xlink'>
+				Learn more about verifying
+			</div>
+		</div>
+		<div class='bui-box'>
+			<img class='bui-svg' src="https://www.gitbook.com/public/images/97369760e5347ff443031a7bfed02025.svg" >
+			<h3 class='bui-box-title'>Share with Companies</h3>
+			<p class='bui-box-cont'>
+          Keep your apps under control and share them in a snap with companies and
+					individuals to prove your authenticity.
+			</p>
+			<div class='bui-box-xlink'>
+				Learn more about sharing
+			</div>
+		</div>
+	</div>
+</section>
+<section class='cui-section'>
+	<h2 class='ui-title'>
+		Simple Insights
+	</h2>
+	<div class='rule-stout'></div>
+	<p class='ui-subtitle'>
+		app makes it easy for you to keep data across your documents
+		consistent and acts as a source for verification.
+	</br>Various organisations rely on app to verify the authenticity of its Students/Employees/Clients.
+	</p>
+	<div class='cui-grid'>
+		<div class='cui-org-container'>
+			<nav>
+				<ul class='cui-tabs'>
+					<li class='is-active' data-insights="documents">
+						<a href="#Documents-insights">Documents</a>
+					</li>
+					<li data-insights="universities">
+						<a href="#Universities-insights">Universities</a>
+					</li>
+					<li data-insights="interviews">
+						<a href="#Interviews-insights">Interviews</a>
+					</li>
+					<li data-insights="companies">
+						<a href="#Companies-insights">Companies</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<div class='cui-org-insights'>
+			<div id="documents-insights" class='cui-tabs-pane'>
+				<div class='cui-tab-container'>
+					<div class="cui-tab-con">
+						<img class='cui-svg' src="https://app.in/static/app/svg/seamless/doc-redundancy.svg" >
+						<h3 class='cui-tab-con-title'>Redundancy Control</h3>
+						<p>{% lorem 10 w random %} </p>
+					</div>
+				</div>
+				<div class='cui-tab-container'>
+					<div class='cui-tab-con'>
+						<img class='cui-svg' src="https://app.in/static/app/svg/seamless/docs-easier.svg" >
+						<h3 class='cui-tab-con-title'>Easier Applications</h3>
+						<p>{% lorem 10 w random %} </p>
+					</div>
+				</div>
+				<div class='cui-tab-container'>
+					<div class='cui-tab-con'>
+						<img class='cui-svg' src="https://app.in/static/app/svg/seamless/docs-versioning.svg" >
+						<h3 class='cui-tab-con-title'>Versioning System</h3>
+						<p>{% lorem 10 w random %} </p>
+					</div>
+				</div>
+				<div class='cui-tab-container'>
+					<div class='cui-tab-con'>
+						<img class='cui-svg' src="https://app.in/static/app/svg/seamless/docs-flow.svg" >
+						<h3 class='cui-tab-con-title'>Flow Control</h3>
+						<p>{% lorem 10 w random %} </p>
+					</div>
+				</div>
+				<div class='cui-tab-container'>
+					<div class='cui-tab-con'>
+						<img class='cui-svg' src="https://app.in/static/app/svg/seamless/docs-digital.svg" >
+						<h3 class='cui-tab-con-title'>Digital Signature</h3>
+						<p>{% lorem 10 w random %} </p>
+					</div>
+				</div>
+			</div>
+			<div id="universities-insights" class='cui-tabs-pane'>
+				<div class='cui-tab-container'>
+					<div class="cui-tab-con">
+						<img class='cui-svg' src="https://www.gitbook.com/public/images/eb18a9d7f0f5dd81d3e36b847a737d7e.svg" >
+						<h3 class='cui-tab-con-title'>2222222222 Control</h3>
+						<p>{% lorem 10 w random %} </p>
+					</div>
+				</div>
+			</div>
+			<div id="interviews-insights" class='cui-tabs-pane tab-interviews'>
+				<div class='cui-tab-container'>
+					<div class="cui-tab-con">
+						<img class='cui-svg' src="https://www.gitbook.com/public/images/eb18a9d7f0f5dd81d3e36b847a737d7e.svg" >
+						<h3 class='cui-tab-con-title'>333333333 Control</h3>
+						<p>{% lorem 10 w random %} </p>
+					</div>
+				</div>
+			</div>
+			<div id="companies-insights" class='cui-tabs-pane tab-docs'>
+				<div class='cui-tab-container'>
+					<div class="cui-tab-con">
+						<img class='cui-svg' src="https://www.gitbook.com/public/images/eb18a9d7f0f5dd81d3e36b847a737d7e.svg" >
+						<h3 class='cui-tab-con-title'>444444444 Control</h3>
+						<p>{% lorem 10 w random %} </p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<div class='info-container' style="display:none;">
+	<div class='left-cont'></div>
+	<div class='right-cont'></div>
+</div>
+
+<section class='dui-section' style='display:none;'>
+	<div class='dui-grid'>
+		<div class='img-hold'>
+			<img src="/static/app/images/resultdc.jpg" >
+		</div>
+		<div class='dui-txt-hold'></div>
+	</div>
+</section>
+<div class='sect-grey'>
+	<div>
+		<h1 class='ctt'>50+ Companies are using app</h1>
+		<div class="comp-slider-container">
+			<div class='comp-slider'>
+			</div>
+		</div>
+	</div>
+</div>
+<section class='asksignup-section'>
+	<div>Already trusted by over 10,000 users and 50+ Companies</div>
+	<a class='signup' href="">Sign up for app</a>
+</section>
+</body>
+{% endblock %}

@@ -1,0 +1,40 @@
+<div class="profile-profile-and-security">
+  <div class="ppac profile-profile-and-security-container">
+    <div class="box">
+      <div class="ppac-update">
+        <div class="pic-holder">
+          <div class="pic">
+            <img ng-src="{{user.profile_photos['200x200']}}" alt="">
+            <a class="change-pic-btn" onclick="document.getElementById('user_profile_pic').click();">
+              Edit Photo
+            </a>
+            <input style="display:none" type="file" id="user_profile_pic" file-model="userPicFile" onchange="angular.element(this).scope().picUpdateNeeded()">
+          </div>
+        </div>
+        <div class="data">
+          <div class="input" ng-class="user.username?'is-active':''">
+            <input type="text" placeholder="Username" ng-model=user.username>
+            <span>Username</span>
+          </div>
+          <div class="input" ng-class="user.email?'is-active':''">
+            <input type="text" placeholder="Email Address" ng-disabled="user.email_confirmed" ng-model=user.email >
+            <span ng-class="user.email_confirmed?'':'error'">Email Address {{user.email_confirmed?'':'(Not confirmed)'}}</span>
+          </div>
+        </div>
+        <div class="data">
+          <div class="input" ng-class="user.phone_number?'is-active':''">
+            <input type="text" placeholder="Mobile Number" disabled ng-model=user.phone_number>
+            <span>Mobile Number</span>
+          </div>
+          <div class="input" ng-class="user.address?'is-active':''">
+            <input type="text" placeholder="Delivery Address" ng-model=user.address>
+            <span>Delivery Address</span>
+          </div>
+        </div>
+        <div class="data">
+          <button class="update-btn" ng-class="changed()?'changed':''" ng-disabled="!changed()" ng-click="update()">Update Profile</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="bid-v-box"  ng-class="{'not-started' : !bid.started, 'placing-bid' : bid.placing_bid, 'current-user': bid.top_bid_data?(bid.top_bid_data.user.username===user.username):false, 'is-won' : bid.is_won}">
+  <div class="bid-v-box-container">
+    <div class="bid-v-box-holder">
+      <div class="bid-v-box-pic-holder">
+        <img ng-src="{{bid.item.primary_images['200x200']}}" alt="">
+        <a ng-href="{{bid.url}}" class="absolute-link"></a>
+      </div>
+      <h4 class="bid-v-box-name" ng-attr-title="{{bid.item.title}}"><a ng-href="{{bid.url}}">{{bid.item.title}}</a></h4>
+      <div class="bid-v-box-price">{{bid.item.sale_rate | currency: '₹': 2}}</div>
+      <div  class="bid-v-box-data-holder">
+        <div class="bid-v-box-bid-notif" ng-class="bid.notif?'active':''" ng-style="bidPlacedStyle"></div>
+        <div ng-hide="bid.started" class="bid-v-box-starting">
+          <div>Starts {{bid.start_date_time | date: 'dd MMM'}}</div>
+          <div>{{bid.start_date_time | date: 'hh:mm a'}}</div>
+        </div>
+        <div ng-show="bid.started" class="bid-v-box-bid-amount">
+          <div>{{bid.top_bid_data?bid.top_bid_data.amount:0 | currency: '₹': 2}}</div>
+          <div class="bid-v-box-curr-bidder">
+            {{bid.is_won?(bid.winner?bid.winner:"No bids placed!!"):(bid.top_bid_data?bid.top_bid_data.user.username:"No bids yet!")}}
+          </div>
+        </div>
+        <div class="bid-v-box-data-two" >
+          <div class="bid-v-box-timer">
+            <span class="congrats">{{bid.winner?"congratulations!":"bidbuzz won it!"}}</span>
+            <date-offset-timer ng-if="!bid.is_won" starts-seconds="bid.starts_seconds" duration=bid.duration seconds=bid.seconds_remaining started="bid.started"></date-offset-timer>
+          </div>
+        </div>
+        <a class="bid-v-box-bid-btn" ng-click="bid.started && !bid.is_won && !bid.placing_bid?placeBid():''">{{bid.is_won?"SOLD!!!":(bid.started?"Bid Now":"Coming Soon")}}</a>
+      </div>
+    </div>
+  </div>
+  <span ng-if="no_new_bidders()" class="no-new">
+    No New Bidders
+  </span>
+  <!--div class="bid-v-box-bookmark">
+    <a href="/favourites/" class="flaticon-bookmark-black-shape"></a>
+  </div-->
+</div>

@@ -1,0 +1,37 @@
+.star-rating-dir {
+  display: -webkit-inline-flex;
+  display: -ms-inline-flex;
+  display: inline-flex;
+}
+.star-rating-dir .num{
+  padding: 0 5px;
+  line-height: 1.5;
+  font-weight: 700;
+  color: #fff;
+  border-radius: 3px;
+  margin-right: 10px;
+}
+.star-ratings {
+  unicode-bidi: bidi-override;
+  color: #c5c5c5;
+  font-size: 20px;
+  line-height: 25px;
+  max-height: 25px;
+  max-width: 80px;
+  position: relative;
+  padding: 0;
+}
+.star-ratings-top {
+  padding: 0;
+  position: absolute;
+  z-index: 1;
+  display: block;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+.star-ratings-bottom {
+  padding: 0;
+  display: block;
+  z-index: 0;
+}

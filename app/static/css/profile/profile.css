@@ -1,0 +1,29 @@
+.profile-base{
+}
+.profile-base-columns{
+  display: flex;
+  flex-direction: column;
+}
+.profile-base-container{
+  width: 80%;
+  margin: 0 auto;
+}
+.profile-base-rows{
+  display: flex;
+  flex-direction: row;
+}
+.profile-base-rows > div{
+  min-height: 50vh;
+}
+.profile-left-pane{
+  width: 40%;
+  padding-right: 16px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'l';
+  margin-top: 24px;
+}
+.profile-right-pane {
+    width: 100%;
+    flex-grow: 1;
+}

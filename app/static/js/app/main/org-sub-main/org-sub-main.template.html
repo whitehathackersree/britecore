@@ -1,0 +1,19 @@
+<div class="org-sub-main">
+  <div class="org-sub-main-show-head">
+
+  </div>
+  <div class="org-sub-main-container">
+    <posts ng-if="submenu.submenu_title=='posts'"></posts>
+    <breadcrumb options=breadcrumbOptions></breadcrumb>
+    <profile-profile-and-security ng-if="submenu.submenu_title=='profile-and-security'"></profile-profile-and-security>
+    <profile-transactions ng-if="submenu.submenu_title=='transactions'"></profile-transactions>
+    <profile-cart ng-if="submenu.submenu_title=='cart'"></profile-cart>
+    <profile-claimed ng-if="submenu.submenu_title=='claimed'"></profile-claimed>
+    <profile-coins-usage ng-if="submenu.submenu_title=='coins-usage'"></profile-coins-usage>
+    <profile-referrals ng-if="submenu.submenu_title=='referrals'"></profile-referrals>
+    <profile-buzzers ng-if="submenu.submenu_title=='buzzers'"></profile-buzzers>
+    <div class="org-sub-main-holder">
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+@media screen {
+  @font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+}
+.informative-badge{
+  position: relative;
+  margin: 5px 5px 5px 0;
+  cursor: pointer;
+  display: inline-block;
+  word-spacing: .3px;
+}
+.informative-badge .badge-name{
+  position: relative;
+  background: #f7f7f7;
+  color: #000;
+  padding: 5px 10px;
+  font-size: 13px;
+  border-radius: 5px;
+  font-weight: 400;
+  z-index: 10;
+}
+.informative-badge:hover .badge-name  {
+    background: #0069ff !important;;
+    color: #fff !important;;
+}
+.informative-badge:hover .info{
+    visibility: visible;
+}
+.informative-badge .info {
+  visibility: hidden;
+  position: absolute;
+  z-index: 11;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  padding: 1em 0;
+}
+.informative-badge .info-rl{
+  position: relative;
+  width: 300px;
+  background-color: #fff;
+  height: auto;
+  color: #222;
+  font-size: .9em;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  box-shadow: 0 10px 20px rgba(3,27,78,.1);
+  padding: 1em;
+  display: inline-block;
+}

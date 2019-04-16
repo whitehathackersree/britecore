@@ -1,0 +1,21 @@
+<div class="modal {{type()}}" ng-class="isActive()?'is-active':''">
+  <div class="modal-container">
+    <div ng-if="type()=='default'" ng-include="'/static/js/app/common/modal/modal-default.template.html?v='+version"></div>
+    <div ng-if="type()=='coins_ordered'" ng-include="'/static/js/app/common/modal/modal-coins-ordered.template.html?v='+version"></div>
+    <div ng-if="type()=='product_claimed'" ng-include="'/static/js/app/common/modal/modal-product-claimed.template.html?v='+version"></div>
+    <div ng-if="type()=='product_won'" ng-include="'/static/js/app/common/modal/modal-product-won.template.html?v='+version"></div>
+    <div ng-if="type()=='transaction-failed'" ng-include="'/static/js/app/common/modal/modal-transaction-failed.template.html?v='+version"></div>
+    <create-buzzer ng-if="type()=='create-buzzer'" data=data() ></create-buzzer>
+    <make-a-review ng-if="type()=='make-a-review'" data=data() ></make-a-review>
+    <create-bid ng-if="type()=='control-create-bid'" data=data() ></create-bid>
+    <create-item ng-if="type()=='control-create-item'" data=data() ></create-item>
+    <create-control-ticket ng-if="type()=='create-control-ticket'" data=data() ></create-control-ticket>
+    <create-bonus-transaction ng-if="type()=='control-create-bonus-transaction'" data=data() ></create-bonus-transaction>
+    <edit-item ng-if="type()=='control-edit-item'" data=data() ></edit-item>
+    <edit-bid ng-if="type()=='control-edit-bid'" data=data() ></edit-bid>
+    <edit-winner-delivery ng-if="type()=='control-edit-winner-delivery'" data=data() ></edit-winner-delivery>
+    <edit-control-ticket ng-if="type()=='edit-control-ticket'" data=data() ></edit-control-ticket>
+    <password-reset-box ng-if="type()=='password-reset-box'" data=data()></password-reset-box>
+    <span class="close-btn flaticon-cancel-3" ng-click="close()"></span>
+  </div>
+</div>

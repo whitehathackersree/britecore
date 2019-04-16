@@ -1,0 +1,73 @@
+<div class="item-detail-control">
+  <div class="item-detail-control-show-head">
+
+  </div>
+  <div class="item-detail-control-container">
+    <div class="item-dc-head">
+      <div class="bending-badge">#{{item.id}}</div>
+      <div class="item-dc-title">{{item.title}}</div>
+    </div>
+    <div class="item-dc-pics">
+        <img ng-repeat="img in item.images" ng-src="{{img.image}}" alt="">
+    </div>
+
+    <div class="item-detail-control-holder">
+      <div class="item-dc-details">
+        <div class="item-dc-rates">
+          <table>
+            <tr>
+              <th>MRP</th>
+              <td>{{item.mrp}}</td>
+            </tr>
+            <tr>
+              <th>Discount Rate</th>
+              <td>{{item.discounted_rate}}</td>
+            </tr>
+            <tr>
+              <th>Sale Rate</th>
+              <td>{{item.sale_rate}}</td>
+            </tr>
+          </table>
+        </div>
+        <div ng-bind-html="item.description" class="item-dc-description">
+        </div>
+        <div class="item-dc-actions">
+          <input type="button"  class="edit-btn" value="Edit">
+          <input type="button" value="Create Bid">
+        </div>
+      </div>
+      <div class="item-dc-bids">
+        <table>
+          <thead>
+            <tr>
+              <th>Bid Id</th>
+              <th>Disallow Amount</th>
+              <th>Duration</th>
+              <th>Start</th>
+              <th>End</th>
+              <th>Bid Count</th>
+              <th>Amount</th>
+              <th>Top Bidder</th>
+              <th>Status</th>
+              <th>Edit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="bid in item.bids">
+              <td class='td-link'>{{bid.id}}<a ng-href="{{bid.url}}"></a></td>
+              <td>{{bid.disallow_amount}}</td>
+              <td>{{bid.duration}} sec</td>
+              <td>{{bid.start_date_time | date: "dd/MM/yy    hh:mm:ss"}}</td>
+              <td>{{bid.top_bid_data.date_created | date: "dd/MM/yy    hh:mm:ss"}}</td>
+              <td>{{bid.actual_bid_data_count}}</td>
+              <td>{{bid.top_bid_data.amount}}</td>
+              <td>{{bid.top_bid_data.user.username}}</td>
+              <td>{{bid.status}}</td>
+              <td class='td-link edit'><a class="flaticon-pencil-edit-button"></a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,108 @@
+.bid-bay{
+  background: #f3f7f8;
+  padding-bottom: 92px;
+  overflow: auto;
+  min-height:calc(100vh - 3.3em);
+}
+.bid-bay input{
+  background: #fff;
+}
+.bid-bay-show-head{
+  display: none;
+  height: 60vh;
+  background-image: url(https://ssl.gstatic.com/support/content/images/static/homepage_header_background.svg);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+.bid-bay-container{
+  width: 100%;
+  margin:20px auto;
+}
+.bid-bay-items{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: center;
+  flex-wrap:wrap;
+}
+.bid-bay-items .bid-v-box{
+  border-radius: 0;
+  margin-bottom: 10px;
+  border: none;
+  border-right: 1px solid #eee;
+}
+.bid-bay-items .bid-v-box + .bid-v-box{
+  border-left: none;
+}
+.bid-bay-items .bid-v-box:first-child{
+  border-radius: 4px 0 0 4px;
+}
+.bid-bay-items .bid-v-box:last-of-type{
+  border-radius: 0 4px 4px 0;
+}
+.bid-bay-holder{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  margin-top: 1em;
+}
+.bid-bay-one{
+  width: 15%;
+}
+.bid-bay-two{
+  width: 50%;
+  background: #fff;border: 1px solid #efefef;
+  margin: 0 2em;
+}
+.bid-bay-three{
+  width: 25%;
+}
+.bid-bay .empty-cr{
+  margin-top: 10vh;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .bid-bay-container{
+    width: 100%;
+  }
+  .bid-bay .bid-v-box{
+    width: 49.4%;
+  }
+  .bid-bay .bid-v-box-bookmark{
+    font-size: 2em;
+  }
+  .bid-bay-items .bid-v-box{
+    margin: 0;
+    border-bottom: 1px solid #eee;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}
+
+@media screen and (min-width: 1024px) {
+
+}
+
+@media screen and (max-width: 1040px) {
+
+}

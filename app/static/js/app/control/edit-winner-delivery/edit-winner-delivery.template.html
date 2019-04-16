@@ -1,0 +1,41 @@
+<div class="edit-winner-delivery">
+  <header>Update Winner Data - Delivery - {{wd.id}}</header>
+  <div class="edit-winner-delivery-container">
+    <table>
+      <tr>
+        <td>Winner</td>
+        <td>{{wd.winner.username}}</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>{{wd.winner.phone_number}}</td>
+      </tr>
+      <tr>
+        <td>Bid</td>
+        <td><a href="{{wd.bid_url}}">{{wd.bid_url}}</a></td>
+      </tr>
+      <tr>
+        <td>platform</td>
+        <td><select ng-model="wd.order_platform" ng-options="x for x in order_platforms"></select></td>
+      </tr>
+      <tr>
+        <td>order no.</td>
+        <td><input type="text" ng-model="wd.order_no"></td>
+      </tr>
+      <tr>
+        <td>Address</td>
+        <td><textarea name="name" rows="2" cols="" style="width: 40ch" ng-model="wd.address" placeholder="Complete Address"></textarea></td>
+      </tr>
+      <tr>
+        <td>delivery status</td>
+        <td><select ng-model="wd.delivery_status" ng-options="x for x in delivery_statuses"></select></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><span class="button-one" ng-click="btn_active && wdUpdate()">
+          Update WD
+        </span></td>
+      </tr>
+    </table>
+  </div>
+</div>

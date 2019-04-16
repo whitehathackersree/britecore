@@ -1,0 +1,46 @@
+.company-press{
+  text-align: center;
+  font-family: 'p';
+  font-weight: 500;
+}
+.company-press > section{
+  padding-top: 80px;
+}
+.company-press > section h1{
+  font-size: 36px;
+  letter-spacing: -.9px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #031b4e;
+}
+.company-press > section p{
+  font-size: 20px;
+  max-width: 700px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 64px!important;
+  margin-top: 16px;
+  color: rgba(3,27,78,.7);
+}
+.blue-btn{
+  color: #fff;
+  background: #1633ff;
+  display: inline-block;
+  border:none;
+  font-size: 16px;
+  font-weight: 600;
+  height: 48px;
+  line-height: 48px;
+  padding: 0 32px;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  vertical-align: middle;
+  border-radius: 5px;
+  transition: background-color .25s ease,border .25s ease,color .25s ease;
+}
+.blue-btn:hover{
+  text-decoration: none;
+  background-color: #1020ff;
+}

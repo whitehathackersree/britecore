@@ -1,0 +1,34 @@
+<div class="cart-h-box">
+  <div class="cart-h-box-container">
+    <div class="cart-h-box-holder">
+      <div class="pic">
+        <img ng-src="{{cart.item_primary_images['100x100']}}" alt="">
+      </div>
+      <div class="data">
+        <div class="title"><a ng-href="{{cart.bid_link}}">{{cart.item_title}}</a></div>
+        <div class="data-holder">
+          <div class="sub-data">
+            <div class="sub">
+              <div class="tt">MRP</div>
+              <div class="amt"><strike>{{cart.mrp | currency:'₹ ':2}}</strike></div>
+            </div>
+            <div class="sub">
+              <div class="tt">Claim Price</div>
+              <div class="claim_amt amt">{{cart.sale_amount | currency:'₹ ':2}}</div>
+            </div>
+            <div class="sub">
+              <div class="tt">SAVINGS</div>
+              <div>{{cart.mrp-cart.sale_amount | currency:'₹ ':2}}</div>
+            </div>
+          </div>
+          <div class="claim-btn-hld">
+            <span ng-if="!claimed" class="claim-btn" ng-click="claimBtnClick()">Claim Now</span>
+            <span ng-if="claimed" class="claimed">claimed</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div ng-if="note" class="note {{note.type}}" ng-bind-html=note.message>
+    </div>
+  </div>
+</div>

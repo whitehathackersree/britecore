@@ -1,0 +1,16 @@
+{% extends '_base_.html' %}
+{% load static compress %}
+{% block css %}
+  {% compress css %}
+    <link rel="stylesheet" href="{% static 'css/common_spread.css'%}">
+    <link rel="stylesheet" href="{% static 'css/aurora-notifications.css'%}">
+    <link rel="stylesheet" href="{% static 'css/aurora-tabs.css'%}">
+  {% endcompress %}
+{% endblock %}
+{% block js %}
+    <script src="/static/js/aurora-flyout.js"></script>
+{% endblock %}
+{% block content %}
+  {# include "../includes/heavy-alert.html" with last_updated="22 minutes ago" title="HYD4211 Block Storage Issues" description="Our engineering team has identified the cause of the issue with Block Storage in our HYD4211 region and is actively working on a fix. We will post an update as soon as additional information is available. <a>Show More</a>" #}
+  {# include './includes/dashboard-nav.html'#}
+{% endblock %}

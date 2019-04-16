@@ -1,0 +1,47 @@
+<div class="ticket-control">
+  <div class="ticket-control-show-head">
+
+  </div>
+  <div class="ticket-control-container">
+    <div class="ticket-control-holder">
+      <div class="transactions-ctrl-tbl-ctrl">
+        Search: <input class="search" ng-model="search" enter-key-press="query()"/>
+        Filter:
+        <input class="search" placeholder="Ticket Id" ng-model="id" enter-key-press="query()"/>
+        <input class="search" placeholder="Mobile Number" ng-model="user__phone_number" enter-key-press="query()"/>
+        <input class="search" placeholder="Type" ng-model="type" enter-key-press="query()"/>
+        <input class="search" type="checkbox" ng-model="resolved" ng-change="query()"/> Resolved
+        <span class="button-one" ng-click="createTicket()">create ticket</span>
+      </div>
+      <table class="table-two">
+        <thead>
+          <tr>
+            <td width="15px" ng-click="sort_order('id')">id</td>
+            <td>Date</td>
+            <td ng-click="sort_order('user__phone_number')">Phone Number</td>
+            <td  ng-click="sort_order('user__username')">Username</td>
+            <td>Type</td>
+            <td>Description</td>
+            <td>Solution</td>
+            <td>Resolved</td>
+            <td>Edit</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="t in tickets  | orderBy:$ctrl.orderProp:$ctrl.reverse">
+            <td>{{t.id}}</td>
+            <td>{{t.date_created}}</td>
+            <td>{{t.phone_number}}</td>
+            <td>{{t.username}}</td>
+            <td>{{t.type}}</td>
+            <td>{{t.description}}</td>
+            <td>{{t.solution}}</td>
+            <td>{{t.resolved}}</td>
+            <td ng-click="editTicket(t)"><span class="button-one">Edit</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <pagination url=pagination_url() total-pages=page_data.total_pages current-page=current_page></pagination>
+</div>

@@ -1,0 +1,67 @@
+<div class="first-nav-holder">
+  <div class='first-nav is-'>
+    <a class='logo-hld' href="/"><img  src="/static/favicons/apple-icon-60x60.png"></a>
+    <a ng-repeat="opt in nav_options" class='n-item /*is-active*/' href="{{opt['link']}}">{{opt["title"]}}</a>
+    <span class='search-bar'>
+      <!--input spellcheck="false" placeholder="Search by Item, Category, Bidder, etc">
+      <i class='flaticon-magnifying-glass'></i-->
+    </span>
+    <div class="n-items-container">
+
+
+
+      <!--span class='n-span requests'>
+        <i class='flaticon-interface-1'></i>
+        <span class='request-count badge'>12</span>
+      </span>
+      <span class='n-span requests'>
+        <i class='flaticon-write'></i>
+        <span class='request-count badge'>12</span>
+      </span>
+      <span class='n-span notif'>
+        <i class='flaticon-ring'></i>
+      </span-->
+
+
+
+      <div ng-if="!isAuthenticated" class="n-log-reg-holder">
+        <span  class='n-log-reg'>
+          <a href="/login/?next={{currentRoute()}}">Login</a>
+        </span>
+        <span  class='n-log-reg'>
+          <a href="/signup/">Sign Up</a>
+        </span>
+      </div>
+      <div ng-if="isAuthenticated" class="n-auth-holder">
+        <span class='n-span notif'>
+          <img src="/static/svg/coins_layer.svg" width="30px" height="30px"  alt="">
+          <span class='request-count badge blue-bg rect'>{{user['coins']}}</span>
+          <a ng-href={{'/ac/'+user["username"]+'/coins-usage/'}} class="absolute-link"></a>
+        </span>
+        <!--span class='n-span notif'>
+          <img src="/static/svg/notif_bell.svg" width="30px" height="30px"  alt="">
+          <span class='request-count badge'>12</span>
+        </span-->
+        <aurora-flyout
+          class=" n-span profbar  for-dashboard-nav has-last-child-danger has-first-child-special"
+          options=profile_options
+          trigger-type="image"
+          trigger-image=user['profile_photos']['30x30']></aurora-flyout>
+
+        <!--span class='n-span profbar'>
+          <aurora-flyout class=" for-dashboard-nav has-last-child-danger has-first-child-special" badge="7" options=profile_options></aurora-flyout>
+        </span-->
+      </div>
+
+
+    </div>
+    <span class="n-small-menu">
+      <aurora-flyout style="display: inline-block;"
+        class=" n-span  for-dashboard-nav "
+        options=small_nav_options
+        trigger-type={{small_nav_trigger_type}}
+        trigger-image=small_nav_trigger_image
+        trigger-icon="flaticon-menu"></aurora-flyout>
+    </span>
+  </div>
+</div>

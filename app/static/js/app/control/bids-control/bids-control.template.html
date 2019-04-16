@@ -1,0 +1,60 @@
+<div class="bids-control">
+  <div class="bids-control-show-head">
+
+  </div>
+  <div class="bids-control-container">
+    <div class="bids-control-holder">
+      <div class="transactions-ctrl-tbl-ctrl">
+        Search: <input class="search" ng-model="search" enter-key-press="query()"/>
+        Filter:
+        <input class="search" placeholder="Auction Id" ng-model="id" enter-key-press="query()"/>
+        <input class="search" type="checkbox" ng-model="is_active" ng-change="query()"/> is_active
+        <input class="search" type="checkbox" ng-model="allow_buzzers" ng-change="query()"/> allow buzzers
+        <input class="search" type="checkbox" ng-model="is_won" ng-change="query()"/> won
+        <span>Count: {{page_data.count}}</span>
+        <span>Pages: {{page_data.total_pages}}</span>
+      </div>
+      <table class="table-two">
+        <thead>
+          <tr>
+            <td width="15px" ng-click="sort_order('id')">id</td>
+            <td>Image</td>
+            <td width="10ch" ng-click="sort_order('item__title')">Product Name</td>
+            <td width="10ch" ng-click="sort_order('item__sale_rate')">Rate</td>
+            <td ng-click="sort_order('disallow_amount')">Disallow</td>
+            <td ng-click="sort_order('allow_buzzers')">Allow <br> Buzzers</td>
+            <td ng-click="sort_order('minimum_buzzer_coins')">Min Buzz Coins</td>
+            <td>Total Buzzers</td>
+            <td>Total Buzzer Coins</td>
+            <td>Bids</td>
+            <td>ABids</td>
+            <td ng-click="sort_order('start_date_time')">Start DateTime</td>
+            <td>Top buzzers</td>
+            <td ng-click="sort_order('is_won')">Status</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="b in bids  | orderBy:$ctrl.orderProp:$ctrl.reverse">
+            <td>{{b.id}}</td>
+            <td ng-click="editBid(b)"><img src="{{b.item.primary_images['50x50']}}" alt=""></td>
+            <td><a href="{{b.url}}">{{b.item.title}}</a></td>
+            <td class="amount">{{b.item.sale_rate}}</td>
+            <td class="amount">{{b.disallow_amount}}</td>
+            <td>{{b.allow_buzzers}}</td>
+            <td>{{b.minimum_buzzer_coins}}</td>
+            <td>{{b.buzzer_count}}</td>
+            <td>{{b.buzzer_coins}}</td>
+            <td class="amount">{{b.top_bid_data.amount?b.top_bid_data.amount*100:0}}</td>
+            <td class="amount">{{b.actual_bid_data_count}}</td>
+            <td>{{b.start_date_time}}</td>
+            <td title="all-buzzers">
+              <div class="buzzer-data" ng-repeat="bz in b.top_buzzers_data">{{bz.coins +" : "+bz.used_coins}}</div>
+            </td>
+            <td>{{b.status}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <pagination url=pagination_url() total-pages=page_data.total_pages current-page=current_page></pagination>
+</div>

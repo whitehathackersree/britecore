@@ -1,0 +1,58 @@
+.profile-sub-main{
+  background: #fafafa;
+  min-height: 100vh;
+}
+.profile-sub-main-show-head{
+  display: none;
+  height: 60vh;
+  background-image: url(https://ssl.gstatic.com/support/content/images/static/homepage_header_background.svg);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+.profile-sub-main-container{
+  width: 88%;
+  margin:0 auto;
+}
+.profile-sub-main-holder{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .profile-sub-main-container{
+    width: 90%;
+  }
+  .profile-sub-main-holder{
+
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}
+
+@media screen and (min-width: 1024px) {
+
+}
+
+@media screen and (max-width: 1040px) {
+
+}

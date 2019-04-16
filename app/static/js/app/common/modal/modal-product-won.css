@@ -1,0 +1,58 @@
+.modal-products-won{
+  color: #676767;
+  text-align: center;
+}
+.modal-products-won .top{
+  position: relative;
+  background: linear-gradient( #0069ff, #1633ff);
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.2em;
+}
+
+.modal-products-won .detail{
+  padding: 1em;
+}
+.modal-products-won .detail img{
+  width: 100px;
+  height: auto;
+}
+.modal-products-won .detail p{
+  margin-bottom: 1em;
+}
+.modal-products-won .item-title{
+  color: #0069ff;
+}
+.modal-products-won .amount{
+  margin-bottom: 1em;
+  font-size: 1.5em;
+  font-weight: 500;
+}
+.modal-products-won .btn{
+  padding: 10px 15px;
+  background: #e5e5e5;
+  color: #666;
+  font-weight: 500;
+  border-radius: 3px;
+  display: inline-block;
+  cursor: pointer;
+  margin: 0 1em;
+  opacity: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: opacity .5s;
+}
+.modal-products-won .claim-now-btn{
+    background: #5a6060;
+  color: #fff;
+}
+.modal-products-won .btn:hover{
+  opacity: .7;
+}
+.modal-products-won .btn:active{
+  opacity: 1;
+}

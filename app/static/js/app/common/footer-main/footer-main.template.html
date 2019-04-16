@@ -1,0 +1,32 @@
+<div class="footer-main">
+  <div class="footer-main-container">
+    <div class="footer-main-holder">
+      <div class="footer-main-one">
+        <div class="fm-a-company">
+          <img src="/static/images/logo/bidbay_logo_blue_trans.png" alt="">
+          <p><sup>©</sup> 2018 BidBuzz India Pvt Ltd. All rights reserved.
+            <br>
+            <a href="">Proudly made in INDIA</a>
+          </p>
+          <ul>
+            <li><a href="https://twitter.com/bidbuzzIndia" class="flaticon-twitter"></a></li>
+            <li><a href="https://www.facebook.com/bidbuzz/" class="flaticon-facebook-1"></a></li>
+            <li><a href="" class="flaticon-instagram-1"></a></li>
+            <li><a href="https://www.youtube.com/channel/UCtjkx7I9g4CToIqUAPLDulA/" class="flaticon-youtube-symbol"></a></li>
+            <li><a href="https://www.linkedin.com/company/bidbuzz/" class="flaticon-linkedin"></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-main-two" ng-repeat="fd in footerData">
+        <div class="fm-con">
+          <div class="fm-con-title">
+            {{fd.title}}
+          </div>
+          <div ng-repeat="sb in fd.subs" class="fm-con-sub">
+            <a ng-href="{{sb.link}}">{{sb.name}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

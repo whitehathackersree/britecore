@@ -1,0 +1,8 @@
+<div class='light-alert {{class}}'>
+  <div class='alert-content'>
+    <div ng-bind-html="description | parseBold | safeHtml">
+    </div>
+    <a ng-show="actionTitle" class='alert-btn' ng-click="action()" ng-bind-html="actionTitle | parseBold | safeHtml"></a>
+  </div>
+  <div ng-show="showClose" class='light-close'></div>
+</div>

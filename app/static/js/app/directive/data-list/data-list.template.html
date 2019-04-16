@@ -1,0 +1,42 @@
+<style>
+  .selectable-data-list{
+    display: inline-block;
+    position: relative;
+    background: #fff;
+  }
+  .selectable-data-list input,
+  .selectable-data-list>div{
+    width: 400px;
+  }
+  .selectable-data-list>div{
+    display: none;
+    background: #fff;
+    flex-direction: column;
+    max-height: 200px;
+    overflow: auto;
+    position: absolute;
+    z-index: 100;
+  }
+  .selectable-data-list input:focus+div,
+  .selectable-data-list >div:hover{
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+  }
+  .selectable-data-list>div>span{
+    cursor: pointer;
+  }
+  .selectable-data-list>div>span:hover{
+    background: #e3f2fd ;
+  }
+  .selectable-data-list >div>span.current-item{
+    background: #0069FF;
+    color: #fff;
+  }
+</style>
+<div class="selectable-data-list">
+  <input ng-model="toAddItemQuery" up-arrow-key-press="upArrowKeyPressed()" down-arrow-key-press="downArrowKeyPressed()" enter-key-press="pickItem({selectedItem:currentItem})" ng-change="setSelectToInitial()"/>
+  <div id="items-holder">
+    <span ng-repeat="item in (filteredItems = (items | filter:toAddItemQuery))" ng-class="currentItem==item?'current-item':''" ng-click="pickItem({selectedItem:item})">{{item[toShowProperty]}}</span>
+  </div>
+</div>

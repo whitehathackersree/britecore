@@ -1,0 +1,15 @@
+<div ng-show="show" class="profile-claimed">
+  <div class="profile-claimed-container">
+    <div ng-if="!empty" class="profile-claimed-holder">
+      <claimed-h-box ng-repeat="c in claimed" claim=c>
+      </claimed-h-box>
+    </div>
+    <div ng-if="empty" class="profile-claimed-empty-cr">
+      <empty-cr
+      image=emptyCr.image
+      heading=emptyCr.heading
+      description=emptyCr.description>
+      </empty-cr>
+    </div>
+  </div>
+</div>

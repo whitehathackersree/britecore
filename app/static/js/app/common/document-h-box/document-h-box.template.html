@@ -1,0 +1,10 @@
+<div class="document-h-box">
+  <a href="{{document.url}}" class="link"></a>
+  <h2 class="title">{{document.title}}</h2>
+  <p class="details">
+    apps issued (50)
+  </p>
+  <div class="tags">
+    <a ng-href="{{tag.url}}" ng-repeat="tag in document.tags">{{tag.name}}</a>
+  </div>
+</div>

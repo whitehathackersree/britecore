@@ -1,0 +1,127 @@
+/home/webapps/bidbay/lib/python3.7/site-packages/celery/platforms.py:796: RuntimeWarning: You're running the worker with superuser privileges: this is
+absolutely not recommended!
+
+Please specify a different user using the --uid option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+[2019-02-14 14:14:07,332: INFO/MainProcess] Connected to redis://127.0.0.1:6379/0
+[2019-02-14 14:14:07,360: INFO/MainProcess] mingle: searching for neighbors
+/home/webapps/bidbay/lib/python3.7/site-packages/celery/platforms.py:796: RuntimeWarning: You're running the worker with superuser privileges: this is
+absolutely not recommended!
+
+Please specify a different user using the --uid option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+[2019-02-14 14:14:07,609: INFO/MainProcess] Connected to redis://127.0.0.1:6379/0
+/home/webapps/bidbay/lib/python3.7/site-packages/celery/platforms.py:796: RuntimeWarning: You're running the worker with superuser privileges: this is
+absolutely not recommended!
+
+Please specify a different user using the --uid option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+[2019-02-14 14:14:07,629: INFO/MainProcess] Connected to redis://127.0.0.1:6379/0
+[2019-02-14 14:14:07,634: INFO/MainProcess] mingle: searching for neighbors
+/home/webapps/bidbay/lib/python3.7/site-packages/celery/platforms.py:796: RuntimeWarning: You're running the worker with superuser privileges: this is
+absolutely not recommended!
+
+Please specify a different user using the --uid option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+[2019-02-14 14:14:07,636: INFO/MainProcess] Connected to redis://127.0.0.1:6379/0
+[2019-02-14 14:14:07,638: INFO/MainProcess] mingle: searching for neighbors
+/home/webapps/bidbay/lib/python3.7/site-packages/celery/platforms.py:796: RuntimeWarning: You're running the worker with superuser privileges: this is
+absolutely not recommended!
+
+Please specify a different user using the --uid option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+[2019-02-14 14:14:07,641: INFO/MainProcess] Connected to redis://127.0.0.1:6379/0
+[2019-02-14 14:14:07,642: INFO/MainProcess] mingle: searching for neighbors
+[2019-02-14 14:14:07,646: INFO/MainProcess] mingle: searching for neighbors
+/home/webapps/bidbay/lib/python3.7/site-packages/celery/platforms.py:796: RuntimeWarning: You're running the worker with superuser privileges: this is
+absolutely not recommended!
+
+Please specify a different user using the --uid option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+[2019-02-14 14:14:07,706: INFO/MainProcess] Connected to redis://127.0.0.1:6379/0
+[2019-02-14 14:14:07,716: INFO/MainProcess] mingle: searching for neighbors
+/home/webapps/bidbay/lib/python3.7/site-packages/celery/platforms.py:796: RuntimeWarning: You're running the worker with superuser privileges: this is
+absolutely not recommended!
+
+Please specify a different user using the --uid option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+[2019-02-14 14:14:07,781: INFO/MainProcess] Connected to redis://127.0.0.1:6379/0
+[2019-02-14 14:14:07,797: INFO/MainProcess] mingle: searching for neighbors
+/home/webapps/bidbay/lib/python3.7/site-packages/celery/platforms.py:796: RuntimeWarning: You're running the worker with superuser privileges: this is
+absolutely not recommended!
+
+Please specify a different user using the --uid option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+[2019-02-14 14:14:07,805: INFO/MainProcess] Connected to redis://127.0.0.1:6379/0
+[2019-02-14 14:14:07,810: INFO/MainProcess] mingle: searching for neighbors
+[2019-02-14 14:14:08,396: INFO/MainProcess] mingle: all alone
+[2019-02-14 14:14:08,404: INFO/MainProcess] pidbox: Connected to redis://127.0.0.1:6379/0.
+[2019-02-14 14:14:08,406: WARNING/MainProcess] /home/webapps/bidbay/lib/python3.7/site-packages/celery/fixups/django.py:200: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2019-02-14 14:14:08,406: INFO/MainProcess] worker4@bidbuzz ready.
+[2019-02-14 14:14:08,685: INFO/MainProcess] mingle: sync with 1 nodes
+[2019-02-14 14:14:08,685: INFO/MainProcess] mingle: sync complete
+[2019-02-14 14:14:08,689: INFO/MainProcess] mingle: sync with 1 nodes
+[2019-02-14 14:14:08,689: INFO/MainProcess] mingle: sync complete
+[2019-02-14 14:14:08,692: INFO/MainProcess] pidbox: Connected to redis://127.0.0.1:6379/0.
+[2019-02-14 14:14:08,692: WARNING/MainProcess] /home/webapps/bidbay/lib/python3.7/site-packages/celery/fixups/django.py:200: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2019-02-14 14:14:08,693: INFO/MainProcess] worker8@bidbuzz ready.
+[2019-02-14 14:14:08,694: WARNING/MainProcess] /home/webapps/bidbay/lib/python3.7/site-packages/celery/fixups/django.py:200: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2019-02-14 14:14:08,694: INFO/MainProcess] worker1@bidbuzz ready.
+[2019-02-14 14:14:08,694: INFO/MainProcess] mingle: sync with 1 nodes
+[2019-02-14 14:14:08,695: INFO/MainProcess] mingle: sync complete
+[2019-02-14 14:14:08,697: INFO/MainProcess] pidbox: Connected to redis://127.0.0.1:6379/0.
+[2019-02-14 14:14:08,703: WARNING/MainProcess] /home/webapps/bidbay/lib/python3.7/site-packages/celery/fixups/django.py:200: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2019-02-14 14:14:08,703: INFO/MainProcess] worker6@bidbuzz ready.
+[2019-02-14 14:14:08,703: INFO/MainProcess] pidbox: Connected to redis://127.0.0.1:6379/0.
+[2019-02-14 14:14:08,710: INFO/MainProcess] mingle: sync with 1 nodes
+[2019-02-14 14:14:08,710: INFO/MainProcess] mingle: sync complete
+[2019-02-14 14:14:08,715: WARNING/MainProcess] /home/webapps/bidbay/lib/python3.7/site-packages/celery/fixups/django.py:200: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2019-02-14 14:14:08,715: INFO/MainProcess] worker2@bidbuzz ready.
+[2019-02-14 14:14:08,719: INFO/MainProcess] pidbox: Connected to redis://127.0.0.1:6379/0.
+[2019-02-14 14:14:08,762: INFO/MainProcess] mingle: sync with 1 nodes
+[2019-02-14 14:14:08,762: INFO/MainProcess] mingle: sync complete
+[2019-02-14 14:14:08,771: WARNING/MainProcess] /home/webapps/bidbay/lib/python3.7/site-packages/celery/fixups/django.py:200: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2019-02-14 14:14:08,771: INFO/MainProcess] worker3@bidbuzz ready.
+[2019-02-14 14:14:08,771: INFO/MainProcess] pidbox: Connected to redis://127.0.0.1:6379/0.
+[2019-02-14 14:14:08,818: INFO/MainProcess] mingle: sync with 1 nodes
+[2019-02-14 14:14:08,819: INFO/MainProcess] mingle: sync complete
+[2019-02-14 14:14:08,822: INFO/MainProcess] mingle: sync with 1 nodes
+[2019-02-14 14:14:08,822: INFO/MainProcess] mingle: sync complete
+[2019-02-14 14:14:08,826: INFO/MainProcess] pidbox: Connected to redis://127.0.0.1:6379/0.
+[2019-02-14 14:14:08,828: WARNING/MainProcess] /home/webapps/bidbay/lib/python3.7/site-packages/celery/fixups/django.py:200: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2019-02-14 14:14:08,829: INFO/MainProcess] worker5@bidbuzz ready.
+[2019-02-14 14:14:08,835: INFO/MainProcess] pidbox: Connected to redis://127.0.0.1:6379/0.
+[2019-02-14 14:14:08,836: WARNING/MainProcess] /home/webapps/bidbay/lib/python3.7/site-packages/celery/fixups/django.py:200: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2019-02-14 14:14:08,836: INFO/MainProcess] worker7@bidbuzz ready.

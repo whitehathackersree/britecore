@@ -1,0 +1,51 @@
+<div class="create-bonus-transaction">
+  <header>Issue Bonus Coins</header>
+  <div class="create-bonus-transaction-container">
+    <table>
+      <tr>
+        <td>Mobile Number</td>
+        <td><input ng-model="phone_number" enter-key-press="setUser()" style="width:15ch " placeholder="Mobile Number" type="text"></td>
+      </tr>
+      <tr>
+        <td>User Id</td>
+        <td>{{user.id}}</td>
+      </tr>
+      <tr>
+        <td>username</td>
+        <td>{{user.username}}</td>
+      </tr>
+      <tr>
+        <td>phone number</td>
+        <td>{{user.phone_number}}</td>
+      </tr>
+      <tr>
+        <td>email</td>
+        <td>{{user.email}}</td>
+      </tr>
+      <tr>
+        <td>Coins</td>
+        <td><input ng-model="coins" type="text"></td>
+      </tr>
+      <tr>
+        <td>Amount</td>
+        <td><input ng-model="amount" type="text"></td>
+      </tr>
+      <tr>
+        <td>Transaction Id</td>
+        <td><input ng-model="transaction" type="text"></td>
+      </tr>
+      <tr>
+        <td>description</td>
+        <td>
+            <textarea name="name" rows="5" style="width: 40ch" ng-model="description" placeholder="describe why are bonus coins issued. With ids from other tables."></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><span class="button-one" ng-click="btn_active && bonusCreate()">
+          Issue Coins
+        </span></td>
+      </tr>
+    </table>
+  </div>
+</div>

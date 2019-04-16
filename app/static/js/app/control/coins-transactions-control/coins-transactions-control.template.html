@@ -1,0 +1,43 @@
+<div class="coins-transactions-control">
+  <div class="coins-transactions-control-show-head">
+
+  </div>
+  <div class="coins-transactions-control-container">
+    <div class="coins-transactions-control-holder">
+      <div class="transactions-ctrl-tbl-ctrl">
+        Search: <input class="search" ng-model="search" enter-key-press="query()"/>
+        Filter: <input class="search" placeholder="Mobile Number" ng-model="user__phone_number" enter-key-press="query()"/>
+        <input class="search" placeholder="Transaction Id" ng-model="transaction" enter-key-press="query()"/>
+        <span>Count: {{page_data.count}}</span>
+        <span>Pages: {{page_data.total_pages}}</span>
+      </div>
+      <table class="table-two">
+        <thead>
+          <tr>
+            <td width="15px" ng-click="sort_order('id')">id</td>
+            <td ng-click="sort_order('date_created')">Date</td>
+            <td width="10ch" ng-click="sort_order('user__username')">username</td>
+            <td width="10ch" ng-click="sort_order('user__phone_number')">phone number</td>
+            <td ng-click="sort_order('coins_pack')">Coins Pack</td>
+            <td width="10ch" ng-click="sort_order('qty')">Qty</td>
+            <td width="10ch" ng-click="sort_order('amount')">Amount</td>
+            <td ng-click="sort_order('transaction__id')">Transaction</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="tr in coinsTransactions  | orderBy:$ctrl.orderProp:$ctrl.reverse">
+            <td>{{tr.id}}</td>
+            <td>{{tr.date_created}}</td>
+            <td>{{tr.username}}</td>
+            <td>{{tr.phone_number}}</td>
+            <td>{{tr.coins_pack}}</td>
+            <td class="amount">{{tr.qty}}</td>
+            <td class="amount">{{tr.amount}}</td>
+            <td>{{tr.transaction}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <pagination url=pagination_url() total-pages=page_data.total_pages current-page=current_page></pagination>
+</div>

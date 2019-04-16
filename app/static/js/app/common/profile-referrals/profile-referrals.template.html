@@ -1,0 +1,41 @@
+<div ng-show="show" class="profile-referrals">
+  <div class="profile-referrals-container">
+    <box
+      head="Give 10 Coins, Get 10 Coins"
+      para="Everyone you refer and yourself will get 10 coins to be used over 10 days. There is no limit to the number of coins you can earn through referrals.">
+    </box>
+    <div class="box">
+      <h2>Share your link</h2>
+      <p>Copy your personal referral link and share it with your friends and followers.</p>
+      <div class="pf-referral">
+        <div class="con">
+          <h4 class="title">REFERRAL LINK</h4>
+          <div class="link-holder" ng-click="copyReferral()">
+            <span>{{referral}}</span>
+            <span class="click-to-copy">copy</span>
+          </div>
+        </div>
+        <div class="con" style="display: none;">
+          <h4 class="title">Share Via</h4>
+          <div class="link-holder">
+            <span>https://m.do.co/c/3b142eba6f80</span>
+            <span class="click-to-copy" >copy</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="profile-referral-stats">
+      <h2>Referral Stats</h2>
+      <table class="referral-stats-table">
+        <tbody>
+          <tr ng-repeat="st in referralStats">
+            <td>{{st.title}}</td>
+            <td>{{st.desc}}</td>
+            <td>{{st.stat}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <input id="referral_link" type="text" value="{{referral}}">
+</div>

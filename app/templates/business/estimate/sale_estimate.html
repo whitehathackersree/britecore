@@ -1,0 +1,134 @@
+{% extends 'dashboard/dashboard-base_.html' %}
+{% load static compress %}
+{% block title %}
+  {{block.super}}
+  | {{business.title}}
+{% endblock %}
+{% block css %}
+  {{block.super}}
+  {% compress css %}
+
+  {% endcompress %}
+{% endblock %}
+{% block content %}
+  {{block.super}}
+
+<style>
+  table, .item td, th{
+    border: 1px solid #000;
+    border-collapse: collapse;
+    padding: .5em;
+  }
+  tr td:nth-child(9),
+  tr td:nth-child(8),
+  tr td:nth-child(6),
+  tr td:nth-child(5){
+    text-align: right;
+  }
+  .amt{
+    text-align: right;
+  }
+</style>
+  <p><a href="{% url 'sale_estimate_invoice_delete' pk=business.id sid=invoice.id %}">Delete sale estimate</a></p>
+<table>
+  <tr class='item'>
+    <td>
+      <table>
+        <tr>
+          <td>{{invoice.customer.name}}</td>
+        </tr>
+        <tr>
+          <td>{{invoice.customer.address}}</td>
+        </tr>
+        <tr>
+          <td> GSTIN/UIN: {{invoice.customer.gstin}}</td>
+        </tr>
+        <tr>
+          <td>State: {{invoice.customer.state}}, Code: {{invoice.customer.state.gst_code}}</td>
+        </tr>
+        <tr>
+          <td>Contact: {% for ph in invoice.customer.phone_numbers.all %}{{ph}}{% if not forloop.last %}, {% endif %}{% endfor %}</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table>
+        <tr>
+          <td>ESTIN. </td><td>{{invoice.id}}</td>
+        </tr>
+        <tr>
+          <td>Date: </td><td>{{invoice.date_created}}</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr class='item'>
+    <th>Sl No.</th>
+    <th>Description of Goods</th>
+    <th>HSN/SAC</th>
+    <th>GST Rate</th>
+    <th>Quantity</th>
+    <th>Rate</th>
+    <th>per</th>
+    <th>Disc %</th>
+    <th>Amount</th>
+  </tr>
+  {% for item in invoice.sale_estimate_items.all %}
+    <tr class='item'>
+      <td>{{forloop.counter}}</td>
+      <td>{{item.item.variant}}</td>
+      <td>{{item.hsn}}</td>
+      <td>{{item.hsn.gst}}%</td>
+      <td>{{item.quantity}}</td>
+      <td>{{item.item.mrp|floatformat:2}}</td>
+      <td>{{item.item.units}}</td>
+      <td>{{item.discount|floatformat:2}}</td>
+      <td>{{item.taxable_amount|floatformat:2}}</td>
+    </tr>
+  {% endfor %}
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Taxable Amount</td>
+    <td>{{invoice.taxable_amount|floatformat:2}}</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Total Tax</td>
+    <td>{{invoice.total_tax|floatformat:2}}</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Round off</td>
+    <td>{{invoice.roundoff|floatformat:2}}</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Total Amount</td>
+    <td>{{invoice.total_amount|floatformat:2}}</td>
+  </tr>
+</table>
+{% endblock %}

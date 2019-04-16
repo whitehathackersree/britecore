@@ -1,0 +1,5 @@
+.bidBuzzApp > .spinner{
+  position: fixed;
+  top: 5em;
+  left: 2em;
+}

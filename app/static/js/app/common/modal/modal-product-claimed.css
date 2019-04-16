@@ -1,0 +1,20 @@
+.modal-product-claimed{
+  text-align: center;
+  padding: 1em;
+  padding-bottom: 2em;
+}
+.modal-product-claimed a{
+  color: #0069ff;
+}
+.modal-product-claimed .show-img img{
+  width: 100px;
+  height: auto;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.modal-product-claimed h4{
+  color:#15cd72;
+  font-size: 1.5em;
+  margin-bottom: 1em;
+  font-weight: 500;
+}

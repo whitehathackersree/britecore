@@ -1,0 +1,41 @@
+<div class="edit-control-ticket">
+  <header>Update Ticket - {{ticket.id}}</header>
+  <div class="edit-control-ticket-container">
+    <table>
+      <tr>
+        <td>User</td>
+        <td>{{ticket.phone_number}}</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>{{ticket.username}}</td>
+      </tr>
+      <tr>
+        <td>Type</td>
+        <td><input ng-model="ticket.type" type="text"></td>
+      </tr>
+      <tr>
+        <td>description</td>
+        <td>
+            <textarea  rows="5" style="width: 40ch" ng-model="ticket.description" placeholder="describe what is the issue?"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td>solution</td>
+        <td>
+            <textarea  rows="5" style="width: 40ch" ng-model="ticket.solution" placeholder="If solved? How did you solve it?"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td>Resolved</td>
+        <td><input ng-model="ticket.resolved" type="checkbox"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><span class="button-one" ng-click="btn_active && ticketUpdate()">
+          Update Ticket {{ticket.id}}
+        </span></td>
+      </tr>
+    </table>
+  </div>
+</div>

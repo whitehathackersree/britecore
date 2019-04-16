@@ -1,0 +1,45 @@
+<div class="bonus-control">
+  <div class="bonus-control-show-head">
+
+  </div>
+  <div class="bonus-control-container">
+    <div class="bonus-control-holder">
+      <div class="transactions-ctrl-tbl-ctrl">
+        Search: <input class="search" ng-model="search" enter-key-press="query()"/>
+        Filter:
+        <input class="search" placeholder="Bonus Id" ng-model="id" enter-key-press="query()"/>
+        <input class="search" placeholder="Transaction Id" ng-model="transaction" enter-key-press="query()"/>
+        <input class="search" placeholder="Mobile Number" ng-model="user__phone_number" enter-key-press="query()"/>
+        <span>Count: {{page_data.count}}</span>
+        <span>Pages: {{page_data.total_pages}}</span>
+        <span class="button-one" ng-click="issueBonus()">issue bonus coins</span>
+      </div>
+      <table class="table-two">
+        <thead>
+          <tr>
+            <td width="15px" ng-click="sort_order('id')">id</td>
+            <td>Date</td>
+            <td ng-click="sort_order('user__phone_number')">Phone Number</td>
+            <td width="10ch" ng-click="sort_order('coins')">Coins</td>
+            <td>Description</td>
+            <td width="10ch" ng-click="sort_order('transaction')">Transaction</td>
+            <td width="10ch" ng-click="sort_order('amount')">Amount</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="b in bonuss  | orderBy:$ctrl.orderProp:$ctrl.reverse">
+            <td>{{b.id}}</td>
+            <td>{{b.date_created}}</td>
+            <td>{{b.phone_number}}</td>
+            <td class="amount">{{b.coins}}</td>
+            <td>{{b.description}}</td>
+            <td>{{b.transaction}}</td>
+            <td class="amount">{{b.amount>0?b.amount:""}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <item-control-h-box ng-repeat="item in itemf" item=item></item-control-h-box>
+    </div>
+  </div>
+  <pagination url=pagination_url() total-pages=page_data.total_pages current-page=current_page></pagination>
+</div>

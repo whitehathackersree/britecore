@@ -1,0 +1,42 @@
+.edit-winner-delivery{
+  background: #fff;
+  width:100%;
+}
+.edit-winner-delivery header{
+  padding: 1em;
+  font-size: 1em;
+  font-weight: 500;
+  background: #eee;
+}
+.edit-winner-delivery-container{
+  padding: 1em;
+  padding-bottom: 3em;
+  font-size: 0.9em;
+}
+.edit-winner-delivery-container input[type='text']{
+  width: 10ch;
+  border: 1px solid #dfdfdf;
+  border-radius: 3px;
+  padding: .4rem .6rem;
+  display: inline-block;
+  position: relative;
+  margin: 10px;
+}
+.edit-winner-delivery textarea{
+  width: 95%;
+  border: 1px solid #dfdfdf;
+  border-radius: 3px;
+  padding: .4rem .6rem;
+  display: inline-block;
+  position: relative;
+  font-family: 'l';
+  font-size: .9em;
+  margin: 10px;
+}
+.edit-winner-delivery select{
+  height: 20px;
+  margin: 10px;
+}
+.edit-winner-delivery-container p{
+  margin: 10px 0;
+}

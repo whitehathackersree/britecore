@@ -1,0 +1,215 @@
+.bid-v-box{
+  position: relative;
+  border: 1px solid #efefef;
+  border-bottom: 1px solid #e2e2e2;
+  background: #fff;
+  border-radius: 4px;
+  width: 180px;
+  height: auto;
+}
+.bid-v-box:hover{
+
+}
+.bid-v-box .no-new{
+  position: absolute;
+  top: 13.2%;
+  left: -28%;
+  background: #ffeb3b;
+  transform: rotate(-90deg);
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+.bid-v-box-container{
+  padding: 16px;
+  height: auto;
+}
+.bid-v-box-holder{
+  position: relative;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-align-items: center;
+  align-items: center;
+  height: auto;
+}
+.bid-v-box-pic-holder{
+  width: 100%;
+  height: 150px;
+  position: relative;
+}
+.bid-v-box-pic-holder img{
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+}
+.bid-v-box-name{
+  font-weight: 400;
+  font-size: 13px;
+  padding-top: 10px;
+  height: 33px;
+  overflow: hidden;
+  text-align: center;
+}
+.bid-v-box-data-holder{
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+}
+.bid-v-box-data-holder > div{
+  text-align: center;
+}
+.bid-v-box-data-two{
+  width: 100%;
+  position: relative;
+}
+.bid-v-box-price{
+  color: #444;
+  font-weight: 400;
+  padding: .5em 0;
+  text-decoration: line-through;
+}
+.bid-v-box.not-started .bid-v-box-price{
+  text-decoration: none;
+}
+.bid-v-box-bid-amount{
+  background-color: transparent;
+  font-size: 1.2em;
+  font-weight: 500;
+  color: #0069ff;
+  border-radius: 3px;
+  margin: 5px 0;
+  transition: background-color .3s;
+  position: relative;
+}
+.bid-v-box-data-holder{
+  height: 120px;
+}
+.bid-v-box-bid-notif{
+  position: absolute;
+  top: 0;
+  bottom: 35px;
+  left: 0;
+  right: 0;
+  border-radius: 5px 5px 0 0;
+  background-color: transparent;
+  transition: background-color 0s;
+}
+.bid-v-box-bid-notif.active{
+  background-color: yellow;
+}
+.bid-v-box .congrats{
+  font-size: 15px;
+  color: #ed4f32;
+  display: none;
+}
+.bid-v-box.is-won .congrats{
+  display: block;
+}
+.bid-v-box-timer{
+  color: #b92b27;
+  font-weight: 500;
+  font-size: 18px;
+  margin: 5px 0;
+  min-height: 18px;
+}
+.bid-v-box.current-user .bid-v-box-timer{
+  color: #15cd72;
+}
+.bid-v-box.not-started .bid-v-box-timer{
+  color: #444;
+}
+.bid-v-box-curr-bidder{
+  position: relative;
+  font-size: initial;
+  font-weight: 400;
+}
+.bid-v-box-bid-btn{
+  display: block;
+  background: #eee;
+  color: rgba(51,51,51,.75);
+  font-weight: 500;
+  border-radius: 3px;
+  padding: 10px 16px;
+  text-decoration: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-align: center;
+}
+.bid-v-box.current-user:not(.is-won) .bid-v-box-bid-btn{
+  background: #15cd72;
+  color: #fff;
+}
+.bid-v-box-bid-btn:hover{
+  text-decoration: none;
+}
+.bid-v-box-bid-btn:active,
+.bid-v-box.is-won .bid-v-box-bid-btn,
+.bid-v-box.not-started .bid-v-box-bid-btn,
+.bid-v-box.placing-bid .bid-v-box-bid-btn{
+  opacity: .6;
+}
+.bid-v-box.is-won .bid-v-box-bid-btn,
+.bid-v-box.not-started .bid-v-box-bid-btn,
+.bid-v-box.placing-bid .bid-v-box-bid-btn{
+  cursor: not-allowed;
+}
+.bid-v-box-starting{
+  text-align: center;
+  font-weight: 500;
+  margin: 5px 0;
+  position: relative;
+}
+
+
+
+.bid-v-box-bookmark{
+  position: absolute;
+  top: -2px;
+  right: -3px;
+  font-size: 1.5em;
+  color: #eee;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}
+
+@media screen and (min-width: 1024px) {
+
+}
+
+@media screen and (max-width: 1040px) {
+
+}

@@ -1,0 +1,235 @@
+.profile-main{
+  background: #fff;
+}
+.profile-main-show-head{
+  display: none;
+  height: 60vh;
+  background-image: url(https://ssl.gstatic.com/support/content/images/static/homepage_header_background.svg);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+.profile-main-container{
+  width: 90%;
+  margin:0 auto;
+}
+.profile-main-holder{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  padding: 1em;
+}
+.profile-main-holder > div{
+
+}
+.profile-main-holder > .right-pane{
+  flex: 1;
+}
+.pfm-profile-data-holder{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  min-width: 300px;
+}
+.pfm-profile-pic{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #fff;
+  box-shadow: inset 0 1.5px 3px 0 rgba(0,0,0,.15), 0 1.5px 3px 0 rgba(0,0,0,.15);
+}
+.pfm-profile-pic img{
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  background: #eee;
+}
+.pfm-profile-user{
+  margin-left: 1em;
+}
+.pfm-profile-user .username{
+  font-weight: 500;
+  color: #555;
+}
+.pfm-profile-user .shows{
+  margin-top: .5em;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+}
+.pfm-profile-user .shows img{
+  width: 25px;
+  height: 25px;
+}
+.pfm-profile-user .shows span{
+  display: inline-block;
+  margin-left: 10px;
+}
+.pfm-profile-user .coins span{
+  font-size: 1.5em;
+  color: #0069ff;
+  font-weight: 500;
+}
+.pfm-profile-show-holder{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.pfm-profile-show{
+  position: relative;
+  padding: 1em;
+  background: #fafafa;
+  margin: 10px 1em;
+  border-radius: 4px;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  cursor: pointer;
+  width: 250px;
+}
+.pfm-profile-show:hover{
+  background: #f5f7f8;
+}
+.pfm-profile-show img{
+  width: 50px;
+  height: 50px;
+}
+.pfm-profile-show > div{
+  margin-left: 1em;
+  flex-grow: 1;
+}
+.pfm-profile-show .sub-title{
+  color: #555;
+  font-size: .8em;
+}
+.pfm-profile-show .abs{
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: 500;
+  margin-left: 10px;
+  color: #555;
+}
+.pfm-products-won-container{
+  margin: 10px 1em;
+}
+.pfm-products-won-container .wrapper{
+  border: 1px solid #e5e8ed;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(3,27,78,.06);
+  overflow: auto;
+  display: inline-block;
+}
+.pfm-products-won-container table{
+  border: none;
+  border-collapse: collapse;
+  border-radius: 5px;
+  border-spacing: 0;
+  font-family: 'p'!important;
+  font-weight: 600;
+  color: rgba(3,27,78,.7);
+}
+.pfm-products-won-container table thead tr{
+  border-radius: 5px;
+}
+.pfm-products-won-container table tbody tr:not(last-of-type){
+  border-bottom: 1px solid #e5e8ed;
+}
+.pfm-products-won-container table th{
+  color: #031b4e;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px;
+  text-align: left;
+  text-transform: uppercase;
+  vertical-align: bottom;
+}
+.pfm-products-won-container tbody td:first-child,
+.pfm-products-won-container tbody th:first-child,
+.pfm-products-won-container thead td:first-child,
+.pfm-products-won-container thead th:first-child {
+    padding-left: 40px;
+}
+.pfm-products-won-container table thead tr{
+  background-color: #f3f6f9;
+  border-bottom: 1px solid #e5e8ed;
+}
+.pfm-products-won-container tbody tr {
+  position: relative;
+}
+.pfm-products-won-container tbody td,
+.pfm-products-won-container tbody th {
+  border: none;
+  font-size: 13px;
+  padding: 11px 10px 10px;
+  vertical-align: middle;
+}
+.pfm-products-won-container .amount {
+  white-space: nowrap;
+}
+.pfm-products-won-container tbody strike {
+  margin-right: 1.5em;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .profile-main-container{
+    width: 100%;
+  }
+  .profile-main-holder{
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-align-items: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .profile-main-holder > .right-pane{
+    flex:auto;
+  }
+  .pfm-profile-show{
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .pfm-products-won-container{
+    margin: 0;
+    margin-top: 1em;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}
+
+@media screen and (min-width: 1024px) {
+
+}
+
+@media screen and (max-width: 1040px) {
+
+}

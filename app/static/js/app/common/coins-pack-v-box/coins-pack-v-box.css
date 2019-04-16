@@ -1,0 +1,111 @@
+.coins-pack-v-box{
+  position: relative;
+  border: 1px solid #e5e8ed;
+  background: #fff;
+  border-radius: 5px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 250px;
+}
+.coins-pack-v-box:hover{
+
+}
+.cp-v-box-container{
+  height: auto;
+}
+.cp-v-box-holder{
+  position: relative;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-align-items: center;
+  align-items: center;
+  padding: 16px;
+}
+.cp-v-box-title{
+  background: #f3f6f9;
+  border-bottom: 1px solid #e5e8ed;
+  padding: 16px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.2em;
+}
+.cp-v-box-price {
+  font-size: 1.5em;
+  font-weight: 500;
+  color: #0069ff;
+}
+.cp-v-box-coins{
+  margin: 10px 0;
+}
+.cp-v-box-descript{
+  margin: 10px 0;
+  text-align: center;color: rgba(3,27,78,.7);
+}
+.cp-v-box-save{
+  position: absolute;
+  top: -20px;
+  background: rgba(254,220,69,1);
+  padding: 5px 10px;
+  margin: 5px 0;
+  border-radius: 25px;
+  font-size: .9em;
+}
+.cp-v-box-buy-btn{
+  background: #0069ff;
+  color: #fff;
+  padding: 5px 16px;
+  border-radius: 4px;
+  margin: .5em 0;
+  display: inline-block;
+  width: 80px;
+  text-align: center;
+}
+.cp-v-box-buy-btn:hover{
+  text-decoration: none;
+  background: #1633ff;
+}
+.cp-v-box-buy-btn:active{
+  opacity: .6;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .coins-pack-v-box{
+    width: 100%;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}
+
+@media screen and (min-width: 1024px) {
+
+}
+
+@media screen and (max-width: 1040px) {
+
+}

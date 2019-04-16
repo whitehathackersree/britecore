@@ -1,0 +1,48 @@
+.company-l-a-s{
+
+}
+.company-l-a-s>.container{
+  width: 80%;
+  margin-bottom: 200px;
+  color: #323232;
+}
+.company-l-a-s>.container h1{
+  font-weight: 400;
+  font-size: 1.7rem;
+  color: #444;
+  margin: 1em 0;
+}
+.company-l-a-s>.container h2{
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #444;
+  margin: 1em 0;
+}
+.company-l-a-s>.container h5{
+  font-weight: 500;
+  font-size: 1rem;
+  color: #444;
+  margin: 1em 0;
+}
+.company-l-a-s>.container p{
+  font-size: 16px;
+  line-height: 25px;
+  margin-bottom: 1em;
+}
+.company-l-a-s>.container a{
+  color:#0069ff;
+}
+.company-l-a-s>.container ul{
+  list-style-type:  disc;
+  margin-left: 2em;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .company-l-a-s>.container{
+    width: 100%;
+  }
+  .company-sub-holder{
+
+  }
+}

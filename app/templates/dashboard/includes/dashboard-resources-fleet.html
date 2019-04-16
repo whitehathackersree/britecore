@@ -1,0 +1,38 @@
+{% load app_tags %}
+<div class='dashboard-resources-fleet'>
+  <h4>Owned Businesses ({{user.businesses.count}})</h4>
+  <ul class='resource-list'>
+    {% for business in user.businesses.all  %}
+    <li class='resource-list-item'>
+      <div class='resource-list-item-title'>
+        <a class='title' href="{{business.get_absolute_url}}" >{{business.title}}</a>
+      </div>
+      <div class='resource-list-item-gstin'>
+        <a class='gstin'>{{business.gstin}}</a>
+      </div>
+      <div class='resource-list-item-access'>
+        <a class='access'>owner</a>
+      </div>
+      <div class='resource-list-item-action'>
+        {% include "../../includes/aurora-flyout.html" with class="has-last-child-danger" options=business|get_business_options %}
+      </div>
+    </li>
+    {% endfor %}
+    {% for emp in user.employed_list.all  %}
+    <li class='resource-list-item'>
+      <div class='resource-list-item-title'>
+        <a class='title' href="{{emp.business.get_absolute_url}}" >{{emp.business.title}}</a>
+      </div>
+      <div class='resource-list-item-gstin'>
+        <a class='gstin'>{{emp.business.gstin}}</a>
+      </div>
+      <div class='resource-list-item-access'>
+        <a class='access {{emp.get_access_display}}'>{{emp.get_access_display}}</a>
+      </div>
+      <div class='resource-list-item-action'>
+        {% include "../../includes/aurora-flyout.html" with class="has-last-child-danger" options=emp.business|get_business_options %}
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</div>

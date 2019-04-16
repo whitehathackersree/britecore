@@ -1,0 +1,37 @@
+.create-bonus-transaction{
+  background: #fff;
+  width:100%;
+}
+.create-bonus-transaction header{
+  padding: 1em;
+  font-size: 1em;
+  font-weight: 500;
+  background: #eee;
+}
+.create-bonus-transaction-container{
+  padding: 1em;
+  padding-bottom: 3em;
+  font-size: 0.9em;
+}
+.create-bonus-transaction-container input[type='text']{
+  width: 10ch;
+  border: 1px solid #dfdfdf;
+  border-radius: 3px;
+  padding: .4rem .6rem;
+  display: inline-block;
+  position: relative;
+  margin: 10px;
+}
+.create-bonus-transaction-container textarea{
+  width: 95%;
+  border: 1px solid #dfdfdf;
+  border-radius: 3px;
+  padding: .4rem .6rem;
+  display: inline-block;
+  position: relative;
+  font-family: 'l';
+  font-size: .9em;
+}
+.create-bonus-transaction-container p{
+  margin: 10px 0;
+}

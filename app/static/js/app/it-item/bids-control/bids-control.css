@@ -1,0 +1,125 @@
+.bids-control{
+  padding-bottom: 92px;
+  background: #fafafa;
+  min-height: 100vh;
+  padding: 50px;
+}
+.bids-control input{
+  background: #fff;
+}
+.bids-control input[type="button"]{
+  background: #eee;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+.bids-control input[type="button"].is-loading{
+  opacity: .6;
+}
+.bids-control .amount{
+  text-align: right;
+  padding-right: 1em;
+}
+.bids-control-show-head{
+  display: none;
+  height: 60vh;
+  background-image: url(https://ssl.gstatic.com/support/content/images/static/homepage_header_background.svg);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+.bids-control-container{
+  width: 100%;
+}
+.bids-control-holder{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+
+.bids-control .search{
+  margin: 1em 0;
+  padding: 3px 5px;
+}
+table.bids-ctrl-tbl{
+  font-size: 13px;
+  border: 1px solid #eee;
+  border-collapse: collapse;
+  border-radius: 5px;
+  color: #666;
+  width: 100%;
+  text-align: left;
+}
+.bids-ctrl-tbl thead tr{
+  text-transform: capitalize;
+  color: rgb(0,0,238);
+  background: linear-gradient(to bottom,#f8f8f8,#eee);
+  box-shadow: 0 1px 0 rgba(255,255,255,.5) inset;
+  border-color: #e7e7e7;
+  border-bottom: 1px solid #ddd;
+  font-weight: 500;
+}
+.bids-ctrl-tbl thead tr td{
+  padding: 5px;
+}
+.bids-ctrl-tbl tr{
+  border: 1px solid #eee;
+}
+.bids-ctrl-tbl tr td{
+  vertical-align:top;
+  padding: 3px;
+}
+.bids-ctrl-tbl img{
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  display: inline-block;
+}
+.bids-ctrl-tbl a{
+  color: #120078;
+  margin: 0 1em;
+}
+.bids-ctrl-tbl  .buzzer-data{
+  white-space: nowrap;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .bids-control-holder{
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}
+
+@media screen and (min-width: 1024px) {
+
+}
+
+@media screen and (max-width: 1040px) {
+
+}

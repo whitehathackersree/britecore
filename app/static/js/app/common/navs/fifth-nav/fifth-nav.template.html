@@ -1,0 +1,5 @@
+<div class='fifth-nav'>
+    <div class="fifth-nav-container">
+      <a ng-repeat="tab in tabs" ng-click="changeTab({selectedTab:tab})" ng-class="(activeTab.title==tab.title)?'is-active':''"  ng-href="{{tab.url}}" >{{tab.title}} <span>{{tab.number}}</span></a>
+    </div>
+</div>

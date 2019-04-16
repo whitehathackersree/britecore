@@ -1,0 +1,46 @@
+{% extends 'dashboard/dashboard-base_.html' %}
+{% load static compress %}
+{% block title %}
+  {{block.super}}
+  | {{business.title}}
+{% endblock %}
+{% block css %}
+  {{block.super}}
+  {% compress css %}
+
+  {% endcompress %}
+{% endblock %}
+{% block content %}
+  {{block.super}}
+<style>
+table, th, td{
+  border: 1px solid #000;
+  border-collapse: collapse;
+  padding: .5em;
+}
+.amt{
+  text-align: right;
+}
+</style>
+
+<p><a href="{% url 'customer_create' pk=business.id %}">Add Customer</a></p>
+<table>
+  <tr><th>Customers</th></tr>
+  <tr>
+    <th>No.</th>
+    <th>Business Name</th>
+    <th>GSTIN</th>
+    <th>Address</th>
+    <th>State</th>
+  </tr>
+  {% for client in client_list %}
+  <tr>
+    <td><a href="{{client.get_absolute_url}}">{{forloop.counter}}</a></td>
+    <td>{{client.name}}</td>
+    <td>{{client.gstin}}</td>
+    <td>{{client.address}}</td>
+    <td>{{client.state}}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

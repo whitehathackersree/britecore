@@ -1,0 +1,7 @@
+{% load app_tags %}
+<ul class='aurora-tabs'>
+  <li class='is-active'>Overview</li>
+  {% for i in tabs|split:"," %}
+    <li>{{i}}</li>
+  {% endfor %}
+</ul>

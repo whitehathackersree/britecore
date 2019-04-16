@@ -1,0 +1,36 @@
+.at-nav{
+  font-family: 'l';
+  display:flex;
+  border-bottom: 1px solid #e1e4e8;
+}
+.at-nav > a{
+  position:relative;
+  text-align: center;
+  color: #777;
+  text-decoration: none;
+  font-size:14px;
+  font-weight:500;
+  padding: 7px 15px 8px;
+  text-transform: capitalize;
+  border: solid transparent;
+  border-width: 2px 1px 1px;
+  white-space: nowrap;
+}
+.at-nav >  a:first-child{
+  border-left: none;
+}
+.at-nav a i{
+  padding: 0 0.5em 0 0;
+  display: inline-block;
+  font-weight: 600;
+  color:#999;
+}
+.at-nav a:hover{
+  color: #444;
+}
+.at-nav a.is-active{
+  border-color: #0069ff #e1e4e8 transparent;
+  background:#fff;
+  color: #444;
+  margin-bottom:-1px;
+}

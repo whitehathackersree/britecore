@@ -1,0 +1,45 @@
+<form action="" method="post">{% csrf_token %}
+        {{ form.as_table }}
+
+        <table class="table" id="forms" >
+            {{ formset.management_form }}
+
+            {% for form in formset.forms %}
+                {% if forloop.first %}
+                    <thead>
+                    <tr>
+                        {% for field in form.visible_fields %}
+                            <th>{{ field.label|capfirst }}</th>
+                        {% endfor %}
+                    </tr>
+                    </thead>
+                {% endif %}
+                <tr class=" formset_row">
+                      {% for field in form.visible_fields %}
+                          <td>
+                              {# Include the hidden fields in the form #}
+                              {% if forloop.first %}
+                                  {% for hidden in form.hidden_fields %}
+                                      {{ hidden }}
+                                  {% endfor %}
+                              {% endif %}
+                              {{ field.errors.as_ul }}
+                              {{ field }}
+                          </td>
+                      {% endfor %}
+                  </tr>
+            {% endfor %}
+        </table>
+        <a href="javascript:void(0)" id="add_form">Add Form</a>
+        <input type="submit" value="Save"/>
+    </form>
+    <script>
+    var form_count = {{solditems.total_form_count}};
+    document.getElementById('add_form').onclick = function(){
+      var form = '{{solditems.empty_form|escapejs}}'.replace(/__prefix__/g, form_count++);
+      var forms = document.getElementById('forms');
+      forms.innerHTML+=form;
+      var total_forms_el = document.getElementById('id_sold_items-TOTAL_FORMS');
+      total_forms_el.value = form_count;
+    }
+    </script>

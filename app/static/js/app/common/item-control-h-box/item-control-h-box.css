@@ -1,0 +1,102 @@
+.item-control-h-box{
+  position: relative;
+  border-bottom: 1px solid #e2e2e2;
+  background: #fff;
+  border-radius: 4px;
+  height: auto;
+}
+.item-control-h-box:hover{
+
+}
+.item-control-h-box-container{
+  padding: 5px 16px 16px 16px;
+  height: auto;
+  position: relative;
+  min-height: 100px;
+}
+.item-control-h-box-holder{
+  position: relative;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+}
+.item-control-h-box-holder >div{
+  padding-right: 1em;
+}
+.ichb-head{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+}
+.ichb-title{
+  margin: 5px;
+  margin-left: 20px;
+}
+.ichb-pic-con{
+  width: 100px;
+  height: 100px;
+}
+.ichb-pic-con img{
+  width: 100px;
+  height: 100px;
+  object-fit: contain
+}
+
+.ichb-data table{
+  border-collapse: collapse;
+  border-radius: 5px;
+  color: #666;
+  table-layout: fixed;
+  width: 100%;
+  text-align: center;
+}
+.ichb-data table th{
+  color: #444;
+  background: #eee;
+}
+.ichb-data table,
+.ichb-data table td,
+.ichb-data table th{
+  border: 2px solid #eee;
+  padding: 5px 10px;
+}
+.ichb-data table a{
+  color: #0069ff;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .item-control-h-box{
+    width: 100%;
+  }
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}
+
+@media screen and (min-width: 1024px) {
+
+}
+
+@media screen and (max-width: 1040px) {
+
+}

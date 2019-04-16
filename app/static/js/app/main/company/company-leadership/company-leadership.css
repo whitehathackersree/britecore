@@ -1,0 +1,23 @@
+.company-about{
+
+}
+.company-about>.container{
+  width: 80%;
+}
+.company-about>.container h1{
+  font-weight: 400;
+  font-size: 1.7rem;
+  color: #444;
+  margin: 1em 0;
+}
+.company-about>.container p{
+  font-size: 16px;
+  line-height: 25px;
+  font-family: 'p';
+  font-weight: 500;
+  color: #323232;
+  margin-bottom: 1em;
+}
+.company-about>.container a{
+  color:#0069ff;
+}

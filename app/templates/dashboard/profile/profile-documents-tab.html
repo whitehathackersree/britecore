@@ -1,0 +1,11 @@
+{% extends 'dashboard/profile/profile-base_.html' %}
+{% load static compress %}
+{% block css %}
+  {{block.super}}
+{% endblock %}
+{% block right-pane %}
+  {{block.super}}
+  {% for document in u.documents.all %}
+    <a href="{% url 'document' pk=document.id slug=document.slug %}">{{document}}</a>
+  {% endfor %}
+{% endblock %}

@@ -1,0 +1,294 @@
+{% extends 'dashboard/dashboard-base_.html' %}
+{% load static compress %}
+{% block css %}
+  {{block.super}}
+  <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  {% compress css %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dashboard/dashboard-main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/table-one.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dashboard/dashboard-side-pane.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dashboard/dashboard-resources-fleet.css'%}">
+    <link rel="stylesheet" href="{% static 'css/dashboard/dashboard-resource-alert.css'%}">
+    <link rel="stylesheet" href="{% static 'css/profile/profile.css'%}">
+    <link rel="stylesheet" href="{% static 'css/profile/profile-left-pane.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/core/spinner/spinner.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/first-nav/first-nav.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/third-nav/third-nav.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/fourth-nav/fourth-nav.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/empty-cr/empty-cr.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/box/box.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/pagination/pagination.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/modal/modal.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/modal/modal-coins-ordered.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/modal/modal-product-claimed.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/modal/modal-product-won.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/modal/modal-transaction-failed.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/filter-box/filter-box.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/bid-h-box/bid-h-box.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/bid-v-box/bid-v-box.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/cart-h-box/cart-h-box.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/claimed-h-box/claimed-h-box.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/create-buzzer/create-buzzer.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/make-a-review/make-a-review.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/buzzer-h-box/buzzer-h-box.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/pre-win-h-box/pre-win-h-box.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/coins-pack-v-box/coins-pack-v-box.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/footer-main/footer-main.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/item-control-h-box/item-control-h-box.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/login-v-box/login-v-box.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/register-v-box/register-v-box.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/breadcrumb/breadcrumb.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/aurora-flyout/aurora-flyout.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/aurora-flyout/aurora-flyout.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/profile-profile-and-security/profile-profile-and-security.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/profile-buzzers/profile-buzzers.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/profile-transactions/profile-transactions.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/profile-cart/profile-cart.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/profile-claimed/profile-claimed.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/profile-coins-usage/profile-coins-usage.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/profile-referrals/profile-referrals.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/directive/star-rating/star-rating.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/directive/informative-badge/informative-badge.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/bid-create/bid-create.css'%}">
+
+    <link rel="stylesheet" href="{% static 'js/app/main/help-main/help-main.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/main/bid-bay/bid-bay.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/main/auction-main/auction-main.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/main/coins-main/coins-main.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/main/profile-main/profile-main.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/main/log-reg-main/log-reg-main.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/main/winners-main/winners-main.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/main/winner-main/winner-main.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/main/bidders-main/bidders-main.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/main/coins-transactions-main/coins-transactions-main.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/main/profile-sub-main/profile-sub-main.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/main/contact-main/contact-main.css'%}">
+
+
+    <link rel="stylesheet" href="{% static 'js/app/control/bids-control/bids-control.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/control/items-control/items-control.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/control/item-detail-control/item-detail-control.css'%}">
+  {% endcompress %}
+{% endblock %}
+{% block js %}
+<script type="text/javascript" src="{% static 'js/angular/angular.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/angular/angular-route.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/angular/angular-resource.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/angular/angular-messages.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/angular/angular-cookies.js' %}"></script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<!--script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular-route.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular-resource.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular-messages.js"></script -->
+{% compress js %}
+<script type="text/javascript" src="{% static 'js/app/app.config.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/core.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/auth-service/auth-service.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/auth-service/auth-service.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/checkmark/checkmark.filter.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/country/country.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/country/country.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/currency/currency.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/currency/currency.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/item/item.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/item/item.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/doc/doc.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/doc/doc.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/profile/profile.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/profile/profile.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/bid/bid.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/bid/bid.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/bid-data/bid-data.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/bid-data/bid-data.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/user/user.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/user/user.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/coins-pack/coins-pack.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/coins-pack/coins-pack.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/aurora/aurora.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/aurora/aurora.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/aurora-modal/aurora-modal.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/aurora-modal/aurora-modal.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/spinner/spinner.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/spinner/spinner.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/socket/socket.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/socket/socket.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/bid-data-socket/bid-data-socket.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/bid-data-socket/bid-data-socket.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/transaction/transaction.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/transaction/transaction.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/buzzer/buzzer.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/buzzer/buzzer.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/winner-data/winner-data.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/winner-data/winner-data.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/cart/cart.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/cart/cart.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/claimed/claimed.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/claimed/claimed.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/referral-data/referral-data.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/referral-data/referral-data.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/coins-usage/coins-usage.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/coins-usage/coins-usage.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/payments/payments.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/payments/payments.service.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'js/app/common/common.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/first-nav/first-nav.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/first-nav/first-nav.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/third-nav/third-nav.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/third-nav/third-nav.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/fourth-nav/fourth-nav.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/fourth-nav/fourth-nav.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/empty-cr/empty-cr.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/empty-cr/empty-cr.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/box/box.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/box/box.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/pagination/pagination.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/pagination/pagination.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/modal/modal.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/modal/modal.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/filter-box/filter-box.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/filter-box/filter-box.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/bid-h-box/bid-h-box.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/bid-h-box/bid-h-box.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/pre-win-h-box/pre-win-h-box.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/pre-win-h-box/pre-win-h-box.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/bid-v-box/bid-v-box.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/bid-v-box/bid-v-box.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/coins-pack-v-box/coins-pack-v-box.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/coins-pack-v-box/coins-pack-v-box.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/footer-main/footer-main.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/footer-main/footer-main.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/item-control-h-box/item-control-h-box.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/item-control-h-box/item-control-h-box.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/login-v-box/login-v-box.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/login-v-box/login-v-box.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/register-v-box/register-v-box.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/register-v-box/register-v-box.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/aurora-flyout/aurora-flyout.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/aurora-flyout/aurora-flyout.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/breadcrumb/breadcrumb.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/breadcrumb/breadcrumb.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/profile-profile-and-security/profile-profile-and-security.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/profile-profile-and-security/profile-profile-and-security.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/profile-transactions/profile-transactions.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/profile-transactions/profile-transactions.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/profile-cart/profile-cart.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/profile-cart/profile-cart.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/create-buzzer/create-buzzer.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/create-buzzer/create-buzzer.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/make-a-review/make-a-review.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/make-a-review/make-a-review.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/buzzer-h-box/buzzer-h-box.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/buzzer-h-box/buzzer-h-box.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/cart-h-box/cart-h-box.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/cart-h-box/cart-h-box.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/claimed-h-box/claimed-h-box.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/claimed-h-box/claimed-h-box.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/profile-claimed/profile-claimed.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/profile-claimed/profile-claimed.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/profile-coins-usage/profile-coins-usage.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/profile-coins-usage/profile-coins-usage.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/profile-referrals/profile-referrals.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/profile-referrals/profile-referrals.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/profile-buzzers/profile-buzzers.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/profile-buzzers/profile-buzzers.component.js' %}"></script>
+
+
+<script type="text/javascript" src="{% static 'js/app/main/main.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/help-main/help-main.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/help-main/help-main.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/bid-bay/bid-bay.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/bid-bay/bid-bay.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/auction-main/auction-main.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/auction-main/auction-main.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/profile-main/profile-main.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/profile-main/profile-main.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/coins-main/coins-main.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/coins-main/coins-main.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/transaction-done/transaction-done.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/transaction-done/transaction-done.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/log-reg-main/log-reg-main.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/log-reg-main/log-reg-main.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/winners-main/winners-main.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/winners-main/winners-main.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/winner-main/winner-main.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/winner-main/winner-main.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/bidders-main/bidders-main.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/bidders-main/bidders-main.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/coins-transactions-main/coins-transactions-main.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/coins-transactions-main/coins-transactions-main.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/profile-sub-main/profile-sub-main.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/profile-sub-main/profile-sub-main.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/contact-main/contact-main.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/contact-main/contact-main.component.js' %}"></script>
+
+
+
+<script type="text/javascript" src="{% static 'js/app/control/control.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/control/items-control/items-control.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/control/items-control/items-control.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/control/item-detail-control/item-detail-control.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/control/item-detail-control/item-detail-control.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/control/bids-control/bids-control.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/control/bids-control/bids-control.component.js' %}"></script>
+
+
+<script type="text/javascript" src="{% static 'js/app/directive/directive.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/directive/compare/compare.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/directive/scroll-to/scroll-to.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/directive/only-integers/only-integers.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/directive/only-decimals/only-decimals.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/directive/enter-key-press/enter-key-press.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/directive/up-arrow-key-press/up-arrow-key-press.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/directive/down-arrow-key-press/down-arrow-key-press.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/directive/data-list/data-list.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/directive/star-rating/star-rating.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/directive/informative-badge/informative-badge.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/directive/server-clock/server-clock.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/directive/date-offset/date-offset.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/directive/date-offset-timer/date-offset-timer.directive.js' %}"></script>
+
+
+<script type="text/javascript" src="{% static 'js/app/profile-detail/profile-detail.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/profile-detail/profile-detail.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/profile-detail2/profile-detail2.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/profile-detail2/profile-detail2.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/profile-detail2/profile-tab-set.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/profile-detail-profile/profile-detail-profile.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/profile-detail-profile/profile-detail-profile.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/bid-create/bid-create.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/bid-create/bid-create.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/bid-data-list/bid-data-list.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/bid-data-list/bid-data-list.component.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'js/app/aurora-alert/aurora-alert.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/aurora-alert/aurora-alert.component.js' %}"></script>
+{% endcompress %}
+{% endblock %}
+{% block content %}
+  {{block.super}}
+  <style>
+  [ng/:cloak],
+  [ng-cloak],
+  [data-ng-cloak],
+  [x-ng-cloak],first
+  .ng-cloak,
+  .x-ng-cloak,
+  .ng-hide-add,
+  .ng-hide-remove{
+    display: none !important;
+  }
+  </style>
+  <div  ng-app="bidBayApp" ng-cloak class="bidBuzzApp">
+    <first-nav></first-nav>
+    <aurora-alert></aurora-alert>
+    <div ng-view style="min-height:calc(100vh - 3.3em);"></div>
+    <spinner></spinner>
+    <big-spinner></big-spinner>
+    <modal></modal>
+    <footer-main></footer-main>
+  </div>
+{% endblock %}

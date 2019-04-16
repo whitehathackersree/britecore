@@ -1,0 +1,57 @@
+.doc-info{
+  color: #676767;
+  line-height: 1.45rem;
+  font-size: 1rem;
+  font-weight: 400;
+}
+.doc-info p{
+  margin: .3em 0;
+}
+.doc-info *[class*='title']{
+  color: #444;
+  margin: 1em 0 .5em 0;
+}
+.doc-info .doc-title{
+  font-size: 32px;
+  font-weight: 600;
+}
+.doc-info .doc-sub-title{
+  font-size: 1.17em;
+}
+.doc-info .doc-issuer{
+  font-weight: 600;
+}
+.doc-info .description{
+  margin: .5em 0;
+}
+.doc-info .required-docs{
+  padding-left: 2em;
+}
+.doc-info .required-docs{
+  padding-left: 2em;
+  color: #444;
+}
+.doc-info .required-docs a{
+  color: #0069ff;
+}
+.doc-info .sub-requirements{
+  padding-left: 2em;
+}
+.doc-info .sub-requirements h4{
+  font-size: 1.1em;
+  margin: 1em 0 0 0;
+}
+.doc-info .description.notice{
+  background-color: #dff0d8;
+  color: #468847;
+}
+.doc-info .description.alert{
+  background: rgba(230,82,90,0.15);
+  color: #e6525a;
+}
+.doc-info .description.alert,
+.doc-info .description.notice{
+  padding:.5em 1em;
+  border-radius: 3px;
+  margin: 10px 0;
+}

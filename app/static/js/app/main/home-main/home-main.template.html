@@ -1,0 +1,21 @@
+<div class="bid-bay">
+  <light-alert description="The *speed of the internet connection* is must to place bid on time. &nbsp
+  A bid is counted only when bidbuzz's system acknowledges and registers it and not when you click 'Bid Now'. Please utilize a <a href='/help/bid-buzzer'>bid buzzer</a> to strategically place bids."
+    show-close=false>
+    </light-alert>
+  <div class="bid-bay-show-head">
+
+  </div>
+  <div class="bid-bay-container">
+    <div class="bid-bay-items">
+      <bid-v-box ng-repeat="bid in bids track by $index" bid=bid></bid-v-box>
+    </div>
+    <div ng-show="bids.length  < 1" class="profile-coins-usage-empty-cr">
+      <empty-cr
+      image=emptyCr.image
+      heading=emptyCr.heading
+      description=emptyCr.description>
+      </empty-cr>
+    </div>
+  </div>
+</div>

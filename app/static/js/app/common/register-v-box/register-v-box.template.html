@@ -1,0 +1,22 @@
+<div class="login-v-box">
+	<form class='log-reg-form' >
+		<a href="/">
+			<img src="/static/favicons/apple-icon-60x60.png">
+		</a>
+		<legend>
+			Register on bidbay
+		</legend>
+		<div class="group">
+			<input type="text" ng-model="phone_number" placeholder="Phone Number*" enter-key-press="sendOTP();return;" required>
+			<input id="send_otp_btn" type="button" value="Send OTP" ng-disabled="disable_otp_btn" ng-click="sendOTP()">
+		</div>
+		<input type="text" ng-model="otp" placeholder="OTP*" required>
+		<input  style="display:none" type="email" ng-model="email" placeholder="Email Address (optional)">
+		<input type="password" ng-model="password" placeholder="Password*" required>
+		<input type="submit" ng-class="{'is_loading':is_loading}" value="Sign Up" ng-disabled="is_loading" ng-click="register()" />
+		<input type="hidden" name="next" value="{{ next }}" />
+
+		<p class='log-reg-blue'>By signing up, you agree to the  <a href="/company/legal-and-security/#terms">Terms of Service</a> and <a href="/company/legal-and-security/#policy">Privacy Policy</a></p>
+	</form>
+	<p class='log-reg-foot'>Already have an account? <a href="/login/">Log In</a></p>
+</div>

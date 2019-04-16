@@ -1,0 +1,13 @@
+<div class='aurora-flyout {{isActive}}' ng-class="isActive?'active':''">
+  <span class='aurora-flyout-trigger' ng-click="toggle($event)">
+    <img ng-if="triggerType=='image'" class="aurora-flyout-image" ng-src="{{triggerImage}}" alt="">
+    <span ng-if="triggerType=='icon'" class='aurora-flyout-icon {{triggerIcon}}'></span>
+    <span ng-show="!triggerType" class='flaticon-three-1'></span>
+  </span>
+  <div class='aurora-flyout-container '>
+    <ul class='aurora-flyout-ul'>
+      <li ng-repeat="i in options track by $index" ng-click="i.click?i.click():''">{{i.title}}<a href="{{i.link}}"></a></li>
+    </ul>
+  </div>
+  <span ng-if="badge" class=' aurora-flyout-badge'>{{badge}}</span>
+</div>

@@ -1,0 +1,18 @@
+<div class='log-reg'>
+	<div class='log-reg-container'>
+		<div class='log-reg-show'>
+			<div class='just-logo'>
+				<img src="/static/favicons/flagged/flagged_102x102.png" width="100">
+			</div>
+			<div class='just-base'>Trusted by the world’s most innovative businesses – big and small.</div>
+
+		</div>
+		<div class='log-reg-pane'>
+			<div class="log-reg-notifications">
+				<span ng-if="notif.message" class="log-reg-notif {{notif['type']}}">{{notif["message"]}}</span>
+			</div>
+      <login-v-box ng-if="type=='login'"></login-v-box>
+			<register-v-box ng-if="type=='signup'"></register-v-box>
+		</div>
+	</div>
+</div>

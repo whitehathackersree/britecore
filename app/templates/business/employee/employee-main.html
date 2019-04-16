@@ -1,0 +1,44 @@
+{% extends 'dashboard/dashboard-base_.html' %}
+{% load static compress %}
+{% block title %}
+  {{block.super}}
+  | {{business.title}}
+{% endblock %}
+{% block css %}
+  {{block.super}}
+  {% compress css %}
+
+  {% endcompress %}
+{% endblock %}
+{% block content %}
+  {{block.super}}
+
+<style>
+table, th, td{
+  border: 1px solid #000;
+  border-collapse: collapse;
+  padding: .5em;
+}
+.amt{
+  text-align: right;
+}
+</style>
+
+<p><a href="{% url 'employee_create' pk=business.id %}">Add Employee</a></p>
+<table>
+  <tr>
+    <th>S No.</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Access</th>
+  </tr>
+  {% for employee in employee_list %}
+  <tr>
+    <td><a href="{% url 'employee_delete' pk=employee.business.id sid=employee.id %}">{{forloop.counter}}</a></td>
+    <td>{{employee.user.full_name_}}</td>
+    <td>{{employee.user.email}}</td>
+    <td>{{employee.get_access_display}}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,39 @@
+.empty-cr{
+  color: #676767;
+}
+.empty-cr-container{
+
+}
+.empty-cr-holder{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-align-items: center;
+  align-items: center;
+}
+.empty-cr  img{
+  display: inline-block;
+  vertical-align: middle;
+  height: 120px;
+  width: auto;
+  margin-bottom: 1rem;
+}
+.empty-cr h3{
+  color: #444;
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin: 0 0 .5rem 0;
+  text-align: center;
+}
+.empty-cr p{
+  margin: 0 auto 2rem;
+  line-height: 1.45rem;
+  text-align: center;
+}
+.empty-cr a{
+  color: #0069ff;
+  font-weight: 500;
+}

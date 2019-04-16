@@ -1,0 +1,35 @@
+
+
+<div class='wl-cr-app'>
+  <div class='wl-cr-container'>
+    <img src="{{svg}}" alt="Create a new Droplet">
+    <!--img src="https://cloud-cdn-digitalocean-com.global.ssl.fastly.net/aurora/assets/images/fleets/droplet-empty-1e03afde7cece53bac7a985a2c66a3bc.png" alt="Create a new Droplet" -->
+    <h3>{{title}}</h3>
+    <p>{{subtitle}}</p>
+    {% if single_button %}
+      <a>{{single_button}}</a>
+    {% endif %}
+    {% if dual_button %}
+      <div class='wl-cr-two-el'>
+        <input placeholder='Mobile Number'>
+        <input type='submit' value='Send OTP'>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% comment %}
+<div class='wl-cr-app'>
+  <div class='wl-cr-container'>
+    <img src="https://image.flaticon.com/icons/svg/959/959640.svg" alt="Create a new Droplet">
+    <!--img src="https://cloud-cdn-digitalocean-com.global.ssl.fastly.net/aurora/assets/images/fleets/droplet-empty-1e03afde7cece53bac7a985a2c66a3bc.png" alt="Create a new Droplet" -->
+    <h3>Looks like  you don't have any apps.</h3>
+    <p>Fortunately, it's very easy to create one.</p>
+    <a>Create app</a>
+    <div class='wl-cr-two-el'>
+      <input placeholder='OTP'>
+      <input type='submit' value='Verify'>
+    </div>
+  </div>
+</div>
+{% endcomment%}

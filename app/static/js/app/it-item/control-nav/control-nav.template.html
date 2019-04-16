@@ -1,0 +1,19 @@
+<div class="control-nav-holder">
+  <div class='control-nav is-'>
+    <a ng-repeat="opt in nav_options" class='n-item /*is-active*/' href="{{opt['link']}}">{{opt["title"]}}</a>
+    <span class='search-bar'>
+      <!--input spellcheck="false" placeholder="Search by Item, Category, Bidder, etc">
+      <i class='flaticon-magnifying-glass'></i-->
+    </span>
+
+    </div>
+    <span class="n-small-menu">
+      <aurora-flyout style="display: inline-block;"
+        class=" n-span  for-dashboard-nav "
+        options=nav_options
+        trigger-type={{small_nav_trigger_type}}
+        trigger-image=small_nav_trigger_image
+        trigger-icon="flaticon-menu"></aurora-flyout>
+    </span>
+  </div>
+</div>

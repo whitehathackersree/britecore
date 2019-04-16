@@ -1,0 +1,47 @@
+{% extends 'dashboard/dashboard-base_.html' %}
+{% load static compress %}
+{% block title %}
+  {{block.super}}
+  | {{business.title}}
+{% endblock %}
+{% block css %}
+  {{block.super}}
+  {% compress css %}
+
+  {% endcompress %}
+{% endblock %}
+{% block content %}
+  {{block.super}}
+
+<style>
+table, th, td{
+  border: 1px solid #000;
+  border-collapse: collapse;
+  padding: .5em;
+}
+.amt{
+  text-align: right;
+}
+</style>
+<p><a href="{% url 'sale_invoice_create' pk=business.id %}">Sale Invoice Create</a></p>
+<table>
+  <tr><th>Sale Invoices</th></tr>
+  <tr>
+    <th>No.</th>
+    <th>Seller</th>
+    <th>Taxable Amount</th>
+    <th>Tax</th>
+    <th>Total Amount</th>
+  </tr>
+  {% for si in saleinvoice_list %}
+  <tr>
+    <td><a href="{% url 'sale_invoice' pk=si.business.id sid=si.id %}">{{forloop.counter}}</a></td>
+    <td>{{si.customer}}</td>
+    <td class='amt'>{{si.taxable_amount|floatformat:2}}</td>
+    <td class='amt'>{{si.total_tax|floatformat:2}}</td>
+    <td class='amt'>{{si.total_amount|floatformat:2}}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock %}

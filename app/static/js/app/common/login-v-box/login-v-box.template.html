@@ -1,0 +1,17 @@
+<div class="login-v-box">
+	<form class='log-reg-form' >
+		<a href="/">
+			<img src="/static/favicons/apple-icon-60x60.png">
+		</a>
+		<legend>
+			Login to bidbay
+		</legend>
+		<input type="text" ng-model="username" required placeholder="Mobile or UserID">
+		<input type="password" ng-model="password" required placeholder="Password">
+		<input type="submit" value="Log In" ng-click="login()" />
+		<input type="hidden" name="next" value="{{ next }}" />
+
+		<p class='log-reg-blue'><a  ng-click="forgotPassword()">Forgot password?</a></p>
+	</form>
+	<p class='log-reg-foot'>Don't have an account? <a href="/signup/">Sign Up</a></p>
+</div>

@@ -1,0 +1,41 @@
+<div class="item-control-h-box" >
+
+  <div class="ichb-head">
+    <div class="bending-badge">#{{item.id}}</div>
+    <div class="ichb-title">{{item.title}}</div>
+  </div>
+  <div class="item-control-h-box-container">
+
+    <div class="item-control-h-box-holder">
+      <div class="ichb-pic-con">
+        <img src="{{item.images[0].image}}" alt="">
+      </div>
+      <div class="ichb-data">
+        <table>
+          <thead>
+            <tr>
+              <th>Source</th>
+              <th>MRP</th>
+              <th>Sale Rate</th>
+              <th>Total Bids</th>
+              <th>Completed Bids</th>
+              <th>Delivered</th>
+              <th>Live</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="{{item.amazon_link}}">Amazon</a></td>
+              <td>{{item.mrp}}</td>
+              <td>{{item.sale_rate}}</td>
+              <td>{{item.total_bids_count}}</td>
+              <td>{{item.completed_bids_count}}</td>
+              <td>{{item.delivered_count}}</td>
+              <td>{{item.live_count}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

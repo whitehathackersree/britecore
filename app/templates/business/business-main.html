@@ -1,0 +1,53 @@
+{% extends 'dashboard/dashboard-base_.html' %}
+{% load static compress %}
+{% block title %}
+  {{block.super}}
+  | {{business.title}}
+{% endblock %}
+{% block css %}
+  {{block.super}}
+  {% compress css %}
+
+  {% endcompress %}
+{% endblock %}
+{% block content %}
+  {{block.super}}
+  <table>
+    <tr>
+      <td>{{business.title}}</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><a href="{% url 'purchase_invoices' pk=business.id %}">Purchase Invoices</a></td>
+      <td>{{business.purchase_invoices.count}}</td>
+    </tr>
+    <tr>
+      <td>Purchase Return Invoices</td>
+      <td>{{business.purchase_return_invoices.count}}</td>
+    </tr>
+    <tr>
+      <td><a href="{% url 'sale_invoices' pk=business.id %}">Sale Invoices</a></td>
+      <td>{{business.sale_invoices.count}}</td>
+    </tr>
+    <tr>
+      <td>Sale Return Invoices</td>
+      <td>{{business.sale_return_invoices.count}}</td>
+    </tr>
+    <tr>
+      <td><a href="{% url 'sale_estimate_invoices' pk=business.id %}">Sale Estimates</a></td>
+      <td>{{business.sale_estimate_invoices.count}}</td>
+    </tr>
+    <tr>
+      <td><a href="{% url 'sellers' pk=business.id %}">Suppliers/Sellers</a></td>
+      <td>{{business.sellers.count}}</td>
+    </tr>
+    <tr>
+      <td><a href="{% url 'customers' pk=business.id %}">Customers</a></td>
+      <td>{{business.customers.count}}</td>
+    </tr>
+    <tr>
+      <td><a href="{% url 'employees' pk=business.id %}">Employees</a></td>
+      <td>{{business.employees.count}}</td>
+    </tr>
+  </table>
+{% endblock %}

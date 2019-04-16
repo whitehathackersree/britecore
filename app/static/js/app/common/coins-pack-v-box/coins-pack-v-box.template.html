@@ -1,0 +1,14 @@
+<div class="coins-pack-v-box">
+  <div class="cp-v-box-container">
+    <h4 class="cp-v-box-title">{{pack.title}}</h4>
+    <div class="cp-v-box-holder">
+      <div class="cp-v-box-descript">
+        {{pack.description}}
+      </div>
+      <div class="cp-v-box-price">{{pack.rate | currency: '₹':0}}</div>
+      <div class="cp-v-box-coins">{{pack.qty}} coins</div>
+      <div ng-if="pack.save_percentage>0" class="cp-v-box-save">Save {{pack.save_percentage}}%</div>
+      <a id="{{'coinsPack_'+pack.id}}" class="cp-v-box-buy-btn" ng-click="buyBtnClick(pack.id)" >Buy Now</a>
+    </div>
+  </div>
+</div>

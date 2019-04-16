@@ -1,0 +1,205 @@
+{% extends 'dashboard/dashboard-base_.html' %}
+{% load static compress %}
+{% block title %}
+  {{block.super}}
+  | {{business.title}}
+{% endblock %}
+{% block css %}
+  {{block.super}}
+  {% compress css %}
+
+  {% endcompress %}
+{% endblock %}
+{% block content %}
+  {{block.super}}
+
+<style>
+  table, .item td, th{
+    border: 1px solid #000;
+    border-collapse: collapse;
+    padding: .5em;
+  }
+  tr td:nth-child(9),
+  tr td:nth-child(8),
+  tr td:nth-child(6),
+  tr td:nth-child(5){
+    text-align: right;
+  }
+  .amt{
+    text-align: right;
+  }
+</style>
+
+<p><a href="{% url 'sale_invoice_delete' pk=invoice.business.id sid=invoice.id %}">Sale Invoice Delete</a></p>
+<p><a href="{% url 'sale_return_invoice_create' pk=invoice.business.id sid=invoice.id %}">Create Return Invoice</a></p>
+<table>
+  <tr class='item'>
+    <td>
+      <table>
+        <tr>
+          <td>{{invoice.customer.name}}</td>
+        </tr>
+        <tr>
+          <td>{{invoice.customer.address}}</td>
+        </tr>
+        <tr>
+          <td> GSTIN/UIN: {{invoice.customer.gstin}}</td>
+        </tr>
+        <tr>
+          <td>State: {{invoice.customer.state}}, Code: {{invoice.customer.state.gst_code}}</td>
+        </tr>
+        <tr>
+          <td>Contact: {% for ph in invoice.customer.phone_numbers.all %}{{ph}}{% if not forloop.last %}, {% endif %}{% endfor %}</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table>
+        <tr>
+          <td>Invoice No. </td><td>{{invoice.id}}</td>
+        </tr>
+        <tr>
+          <td>Date: </td><td>{{invoice.date_created}}</td>
+        </tr>
+        <tr>
+          <td>Issued by: </td><td>{{invoice.employee.user.full_name_}}</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr class='item'>
+    <th>Sl No.</th>
+    <th>Description of Goods</th>
+    <th>HSN/SAC</th>
+    <th>GST Rate</th>
+    <th>Quantity</th>
+    <th>Rate</th>
+    <th>per</th>
+    <th>Disc %</th>
+    <th>Amount</th>
+  </tr>
+  {% if not invoice.rate_inclusive_of_tax %}
+  {% for item in invoice.sold_items.all %}
+    <tr class='item'>
+      <td>{{forloop.counter}}</td>
+      <td>{{item.item.variant}}</td>
+      <td>{{item.hsn}}</td>
+      <td>{{item.hsn.gst}}%</td>
+      <td>{{item.quantity}}</td>
+      <td>{{item.rate|floatformat:2}}</td>
+      <td>{{item.item.units}}</td>
+      <td>{{item.discount|floatformat:2}}</td>
+      <td>{{item.taxable_amount|floatformat:2}}</td>
+    </tr>
+  {% endfor %}
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Taxable Amount</td>
+    <td>{{invoice.taxable_amount|floatformat:2}}</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Total Tax</td>
+    <td>{{invoice.total_tax|floatformat:2}}</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Round off</td>
+    <td>{{invoice.roundoff|floatformat:2}}</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Total Amount</td>
+    <td>{{invoice.total_amount|floatformat:2}}</td>
+  </tr>
+  {% else %}
+  {% for item in invoice.sold_items.all %}
+    <tr class='item'>
+      <td>{{forloop.counter}}</td>
+      <td>{{item.item.variant}}</td>
+      <td>{{item.hsn}}</td>
+      <td>{{item.hsn.gst}}%</td>
+      <td>{{item.quantity}}</td>
+      <td>{{item.rate|floatformat:2}}</td>
+      <td>{{item.item.units}}</td>
+      <td>{{item.discount|floatformat:2}}</td>
+      <td>{{item.total_amount|floatformat:2}}</td>
+    </tr>
+  {% endfor %}
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Round off</td>
+    <td>{{invoice.roundoff|floatformat:2}}</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Total Amount</td>
+    <td>{{invoice.total_amount|floatformat:2}}</td>
+  </tr>
+  {% endif %}
+</table>
+{% for rinvoice in invoice.return_invoices.all %}
+  <table>
+    <tr>
+      <td><a href="{% url 'sale_return_invoice_delete' pk=rinvoice.parent_invoice.business.id sid=rinvoice.parent_invoice.id tid=rinvoice.id %}">Delete Return Invoice</a></td>
+    </tr>
+    <tr class='item' >
+      <th>Sl No.</th>
+      <th>Description of Goods</th>
+      <th>Quantity</th>
+      <th>Amount</th>
+    </tr>
+    {% for returned_item in rinvoice.returned_items.all %}
+    <tr class='item'>
+      <td>{{forloop.counter}}</td>
+      <td>{{returned_item.return_item.item.variant}}</td>
+      <td class='amt'>{{returned_item.quantity}}</td>
+      <td class='amt'>{{returned_item.total_amount|floatformat:2}}</td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td></td>
+      <td></td>
+      <td>Total Amount</td>
+      <td class='amt'>{{rinvoice.total_amount|floatformat:2}}</td>
+    </tr>
+  </table>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,56 @@
+<div class="create-bid">
+  <header>Create Bid</header>
+  <div class="create-bid-container">
+    <p><b>{{item.title}}</b></p>
+    <table>
+      <tr>
+        <td>MRP</td>
+        <td>{{item.mrp}}</td>
+      </tr>
+      <tr>
+        <td>Sale Rate</td>
+        <td>{{item.sale_rate}}</td>
+      </tr>
+      <tr>
+        <td>Start Amount:</td>
+        <td><input ng-model="start_amount" type="text"></td>
+      </tr>
+      <tr>
+        <td>Disallow Amount:</td>
+        <td><input ng-model="disallow_amount" type="text"></td>
+        <td>{{item.sale_rate*5/100}}</td>
+      </tr>
+      <tr>
+        <td>Start DateTime:</td>
+        <td><input ng-model="start_date_time" type="datetime-local"></td>
+      </tr>
+      <tr>
+        <td>Duration:</td>
+        <td><input ng-model="duration" type="text"></td>
+      </tr>
+      <tr>
+        <td>Is Active:</td>
+        <td><input ng-model="is_active" type="checkbox" checked></td>
+      </tr>
+      <tr>
+        <td>Allow Buzzers:</td>
+        <td><input ng-model="allow_buzzers" type="checkbox" checked></td>
+      </tr>
+      <tr ng-show="allow_buzzers">
+        <td>Minimum buzzer coins:</td>
+        <td><input ng-model="minimum_buzzer_coins" type="text"></td>
+        <td>{{item.sale_rate/50}}</td>
+      </tr>
+      <tr ng-show="allow_buzzers">
+        <td>d_coins:</td>
+        <td><input ng-model="d_coins" type="text"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><span class="button-one" ng-click="btn_active && bidCreate()">
+          Create Bid
+        </span></td>
+      </tr>
+    </table>
+  </div>
+</div>

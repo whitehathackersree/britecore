@@ -1,0 +1,31 @@
+<div class="org-main">
+  <div class="org-main-header">
+    <div class="org-main-container">
+      <div class="org-main-profile-details">
+        <div class="one">
+          <div class="org-main-logo">
+            <img src="{{org.logos['200x200']}}" alt="">
+          </div>
+        </div>
+        <div class="two">
+          <h1 class="name">{{org.full_name}}</h1>
+          <h4 class="username">{{'_'+org.username}}</h4>
+          <div class="short-description">
+            The Secondary School Certificate, also called SSC or Matriculation examination, is a public examination in Bangladesh, India and Pakistan conducted by educational boards as completion exam of secondary education in these countries. Students of 10th grade/class ten can appear in these examinations. It is equivalent to GCSE in England and first two years of high schools in United States.
+          </div>
+          <div class="website"><a href="{{org.website}}">{{org.website}}</a></div>
+          <a class="follow-btn">
+            <span>Follow</span>
+            <span>2.5k</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <fourth-nav tabs=tabs active-tab=activeTab></fourth-nav>
+  </div>
+  <div class="org-main-container main">
+    <profile-posts ng-if="activeTab.title=='posts'"></profile-posts>
+    <profile-documents ng-if="activeTab.title=='documents'"></profile-documents>
+    <profile-apps ng-if="activeTab.title=='apps'"></profile-apps>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="claimed-h-box">
+  <div class="claimed-h-box-container">
+    <div class="claimed-h-box-top">
+      <div class="clm-h-box-order-dtl">
+        CLAIM ID <br> #{{claim.claim_id}}
+      </div>
+      <div class="clm-h-box-order-dtl">
+        ORDER PLACED <br> {{claim.date_created | date: 'dd MMM yyyy'}}
+      </div>
+      <div class="clm-h-box-order-dtl">
+        Claim Price <br> <strike>{{claim.mrp| currency: '₹ ': 2}}</strike> = {{claim.sale_amount | currency: '₹ ': 2}}
+      </div>
+    </div>
+    <div class="claimed-h-box-holder">
+      <div class="pic">
+        <img ng-src="{{claim.item_primary_images['100x100']}}" alt="">
+      </div>
+      <div class="data">
+        <div class="title"><a ng-href="{{claim.bid_link}}">{{claim.item_title}}</a></div>
+        <div class="data-holder">
+          <div class="sub-data">
+            <div class="sub">
+              <div class="tt">Shipping Address</div>
+              <div class='shp-addr'>
+                {{claim.address}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="delivery-h-box">
+        <div class="delivery-h-box-holder">
+          <div ng-repeat="ds in delivery_statuses" class="status-hold" ng-class="ds==claim.delivery_status?'current':''">
+            <div class="txt">
+              {{ds}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="claimed-h-box-review">
+      <a ng-href="{{claim.won_data_link}}"  class="make">Make a Review of your experience winning this product <span class="arr flaticon-right-arrow"></span></a>
+    </div>
+    <div ng-if="note" class="note {{note.type}}" ng-bind-html=note.message>
+    </div>
+  </div>
+</div>

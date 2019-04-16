@@ -1,0 +1,89 @@
+.progressbar{
+  position: relative;
+  height: 5px;
+  width: 100%;
+  background: #e2e2e2;
+  border-radius: 2px;
+}
+.progressbar > div{
+  position: absolute;
+  top: 0;
+  width:1%;
+  bottom: 0;
+  background: #0091ea     ;
+}
+.badge{
+  position: relative;
+  z-index: 100;
+  background: #f4f5fa;
+  color: #222;
+  padding: 5px 10px;
+  font-size: 13px;
+  border-radius: 5px;
+  font-weight: 400;
+  margin: 5px 5px 5px 0;
+  cursor: pointer;
+  letter-spacing: .3px;
+  display: inline-block;
+}
+.badge.rect{
+  border-radius: 3px !important;
+}
+.badge.blue-bg{
+  background: #0069ff !important;
+  color: white;
+}
+.badge.hoverable:hover {
+    background: #0069ff;
+    color: #fff;
+}
+.ruler {
+    height: 1px;
+    border-bottom: 2px dashed #ddd;
+    margin: 2em;
+}
+.absolute-link{
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+}
+.small-note{
+  color: #676767;
+  font-size: .95rem;
+  margin: 2rem 0;
+}
+
+
+.tags{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.tags a{
+  position: relative;
+  z-index: 1;
+  background: #f1f8ff;
+    color: #0366d6;
+  padding: 5px 10px;
+  font-size: 12px;
+  letter-spacing: .3px;
+  border-radius: 5px;
+  font-weight: 400;
+  margin: 0 5px 5px 0;
+  text-decoration: none;
+}
+.tags a:nth-child(odd){
+  background: #def;
+}
+.tags a:hover{
+  background: #def;
+}
+.tags a:nth-child(odd):hover{
+  background: #f1f8ff;
+}

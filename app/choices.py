@@ -1,0 +1,105 @@
+from django.utils.translation import gettext as _
+
+
+
+TRANSACTION_PLATFORM_RAZORPAY=0
+TRANSACTION_PLATFORM_PAYTM=1
+
+TRANSACTION_PLATFORM = (
+    (TRANSACTION_PLATFORM_RAZORPAY, _("razorpay")),
+    (TRANSACTION_PLATFORM_PAYTM, _("paytm"))
+)
+
+
+TRANSACTION_STATUS_CREATED="CREATED"
+TRANSACTION_STATUS_AUTHORIZED="AUTHORIZED"
+TRANSACTION_STATUS_CAPTURED="CAPTURED"
+TRANSACTION_STATUS_REFUNDED="REFUNDED"
+TRANSACTION_STATUS_FAILED="FAILED"
+
+TRANSACTION_STATUS = (
+    (TRANSACTION_STATUS_CREATED, _("created")),
+    (TRANSACTION_STATUS_AUTHORIZED, _("authorized")),
+    (TRANSACTION_STATUS_CAPTURED, _("captured")),
+    (TRANSACTION_STATUS_REFUNDED, _("refunded")),
+    (TRANSACTION_STATUS_FAILED, _("failed"))
+)
+
+
+TRANSACTION_METHOD_CARD="CARD"
+TRANSACTION_METHOD_NETBANKING="NETBANKING"
+TRANSACTION_METHOD_WALLET="WALLET"
+TRANSACTION_METHOD_UPI="UPI"
+
+TRANSACTION_METHOD = (
+    (TRANSACTION_METHOD_CARD, _("card")),
+    (TRANSACTION_METHOD_NETBANKING, _("netbanking")),
+    (TRANSACTION_METHOD_WALLET, _("wallet")),
+    (TRANSACTION_METHOD_UPI, _("upi"))
+)
+
+
+TRANSACTION_REFUND_STATUS_NULL="NULL"
+TRANSACTION_REFUND_STATUS_PARTIAL="PARTIAL"
+TRANSACTION_REFUND_STATUS_FULL="FULL"
+
+TRANSACTION_REFUND_STATUS = (
+    (TRANSACTION_REFUND_STATUS_NULL, _("null")),
+    (TRANSACTION_REFUND_STATUS_PARTIAL, _("partial")),
+    (TRANSACTION_REFUND_STATUS_FULL, _("full"))
+)
+
+ORDER_PLATFORM_AMAZON="amazon"
+ORDER_PLATFORM_FLIPKART="flipkart"
+ORDER_PLATFORM_SNAPDEAL="snapdeal"
+ORDER_PLATFORMS = (
+    (ORDER_PLATFORM_AMAZON, _("amazon")),
+    (ORDER_PLATFORM_FLIPKART, _("flipkart")),
+    (ORDER_PLATFORM_SNAPDEAL, _("snapdeal"))
+)
+
+DELIVERY_STATUS_PLACED ="order processing"
+DELIVERY_STATUS_SHIPPED = "shipped"
+DELIVERY_STATUS_OUT_FOR_DELIVERY = "out for delivery"
+DELIVERY_STATUS_DELIVERED = "delivered"
+
+
+DELIVERY_STATUS = (
+    (DELIVERY_STATUS_PLACED, _("order processing")),
+    (DELIVERY_STATUS_SHIPPED, _("shipped")),
+    (DELIVERY_STATUS_OUT_FOR_DELIVERY, _("out for delivery")),
+    (DELIVERY_STATUS_DELIVERED, _("delivered"))
+)
+
+
+GENDER_MALE ="male"
+GENDER_FEMALE = "female"
+GENDER_OTHER = "other"
+
+
+GENDER = (
+    (GENDER_MALE, _("male")),
+    (GENDER_FEMALE, _("female")),
+    (GENDER_OTHER, _("other"))
+)
+
+
+SUPER_ADMIN =1
+ACCESS_CHOICES = (
+    (1, _("super_admin")),
+    (2, _("admin")),
+    (3, _("accountant")),
+    (4, _("consultant"))
+)
+REQUEST_CHOICES = (
+    (1, _("not viewed")),
+    (2, _("viewed")),
+    (2, _("approved")),
+    (2, _("rejected"))
+)
+DESCRIPTION_TYPES = (
+    (0, _("")),
+    (1, _("notice")),
+    (2, _("alert")),
+    (3, _("rejected"))
+)

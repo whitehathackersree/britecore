@@ -1,0 +1,132 @@
+.profile-referrals{
+  padding: 1em 0;
+}
+.profile-referrals-container{
+  width: 60%;
+}
+.profile-referrals-holder{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: flex-start;
+}
+.pf-referral .con{
+  display: inline-block;
+}
+.pf-referral .title{
+  color: #444;
+  text-transform: uppercase;
+  letter-spacing: .06rem;
+  font-size: .8rem;
+  font-weight: 600;
+  margin-bottom: .5rem;
+}
+.pf-referral .link-holder{
+  padding: .85rem;
+  display: inline-block;
+  font-size: 1rem;
+  color: #333;
+  border-radius: 3px;
+  line-height: normal;
+  border: 1px solid #dfdfdf;
+  position: relative;
+  padding-right: 3em;
+  cursor: pointer;
+}
+.pf-referral .click-to-copy{
+  position: absolute;
+  right: 10px;
+  top: 30%;
+  color: #0069ff;
+  opacity: 0;
+  font-size: .8em;
+  transition: opacity .2s ease-in-out;
+}
+.pf-referral .link-holder:hover .click-to-copy{
+  opacity: .999;
+}
+.pf-referral .link-holder:active .click-to-copy{
+  opacity: .4 !important;
+}
+
+#referral_link{
+  display:none;
+}
+.profile-referral-stats h4{
+  font-weight: 400;
+  font-size: 1.7rem;
+  margin-bottom: .5rem;
+}
+.referral-stats-table{
+  table-layout: auto;
+  line-height: normal;
+  border-radius: 3px;
+  border-style: hidden;
+  box-shadow: 0 0 0 2px #f1f1f1;
+  margin-left: 2px;
+  width: calc(100% - 2px * 2);
+  border-spacing: 0;
+  border-collapse: collapse;
+  font-weight: 400;
+  color: #676767;
+  margin-bottom: 100px;
+}
+.referral-stats-table tr{
+  padding: 1rem;
+  border-top: 2px solid #f1f1f1;
+}
+
+.referral-stats-table tbody td{
+  padding: 15px 0;
+  padding-left: 15px;
+}
+.referral-stats-table tbody td:first-of-type{
+  padding-left: 15px;
+  color: #444;
+  letter-spacing: .06rem;
+  font-size: .8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.referral-stats-table tbody td:last-of-type{
+  padding-right: 15px;
+  font-weight: 500;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .profile-referrals-container{
+    width: 100%;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}
+
+@media screen and (min-width: 1024px) {
+
+}
+
+@media screen and (max-width: 1040px) {
+
+}

@@ -1,0 +1,25 @@
+<div class='at-nav'>
+  {% if tabs %}
+  {% for i in tabs %}
+    <a {% if i == tab %}class='is-active' {% else %} href="{{tab_url}}/{{i|lower}}" {% endif %}>{{i}}</a>
+  {% endfor %}
+  {% endif %}
+</div>
+{% comment %}
+<div class='at-nav'>
+  <a class='is-active'><i class='flaticon-copy'></i><span>Info</span></a>
+  <a><i class='flaticon-multimedia'></i><span>Timeline</span></a>
+  <a><i class='flaticon-load'></i><span>Activity</span></a>
+  <a ><i class='flaticon-note'></i><span>Messages</span></a>
+  <a><i class='flaticon-cogwheel'></i><span>Settings</span></a>
+</div>
+{% endcomment %}
+<script>
+  /*var tabs = atument.querySelectorAll('.at-nav a');
+  tabs.forEach(
+    c=>c.onclick = e => tabs.forEach(
+      c=>
+      c.classList[e.target==c?"toggle":"remove"]("is-active")
+    )
+  );*/
+</script>

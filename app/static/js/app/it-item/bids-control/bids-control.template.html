@@ -1,0 +1,48 @@
+<div class="bids-control">
+  <div class="bids-control-show-head">
+
+  </div>
+  <div class="bids-control-container">
+    <div class="bids-control-holder">
+      <div class="bids-ctrl-tbl-ctrl">
+        Search: <input class="search" ng-model="$ctrl.query" />
+        <input ng-class="{'is-loading': refreshing}" ng-disabled="refreshing" type="button" value="refresh" ng-click="load()">
+      </div>
+      <table class="bids-ctrl-tbl">
+        <thead>
+          <tr>
+            <td width="15px">id</td>
+            <td width="35px">image</td>
+            <td >Product Name</td>
+            <td width="12ch">Sale <br>Amount</td>
+            <td width="12ch">Disallow <br>Amount</td>
+            <td width="12ch">Bid <br>Amount</td>
+            <td width="12ch">BidA</td>
+            <td width="5ch">Total Buzzers</td>
+            <td width="12ch">Buzzer Coins</td>
+            <td width="10ch">Top Buzzers</td>
+            <td width="5ch">status</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="bid in bids | filter:$ctrl.query | orderBy:$ctrl.orderProp:$ctrl.reverse">
+            <td>{{bid.id}}</td>
+            <td><img src="{{bid.item.primary_images['50x50']}}" alt=""></td>
+            <td>{{bid.item.title}}</td>
+            <td class="amount" title="sale rate">{{bid.item.sale_rate}}</td>
+            <td class="amount" title="disallow amount">{{bid.disallow_amount}}</td>
+            <td class="amount" title="top bid">{{bid.top_bid_data.amount}}</td>
+            <td class="amount" title="top bid">{{bid.actual_bid_data_count}}</td>
+            <td title="total buzzers">{{bid.buzzer_count}}</td>
+            <td title="total buzzer coins">{{bid.buzzer_coins}}</td>
+            <td title="all-buzzers">
+              <div class="buzzer-data" ng-repeat="b in bid.top_buzzers_data">{{b.coins +" : "+b.used_coins}}</div>
+            </td>
+            <td title="status">{{bid.status}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <bid-control-h-box ng-repeat="bid in bidf" bid=bid></bid-control-h-box>
+    </div>
+  </div>
+</div>

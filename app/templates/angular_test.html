@@ -1,0 +1,394 @@
+{% extends 'dashboard/dashboard-base_.html' %}
+{% load static compress %}
+{% block css %}
+  {{block.super}}
+  <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  {% compress css %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dashboard/dashboard-main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/table-one.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dashboard/dashboard-side-pane.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dashboard/dashboard-resources-fleet.css'%}">
+    <link rel="stylesheet" href="{% static 'css/dashboard/dashboard-resource-alert.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/core/spinner/spinner.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/light-alert/light-alert.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/heavy-alert/heavy-alert.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/first-nav/first-nav.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/third-nav/third-nav.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/fourth-nav/fourth-nav.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/empty-cr/empty-cr.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/box/box.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/pagination/pagination.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/modal/modal.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/modal/modal-coins-ordered.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/modal/modal-product-claimed.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/modal/modal-product-won.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/modal/modal-transaction-failed.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/filter-box/filter-box.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/document-h-box/document-h-box.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/cart-h-box/cart-h-box.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/claimed-h-box/claimed-h-box.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/create-buzzer/create-buzzer.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/make-a-review/make-a-review.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/app-h-box/app-h-box.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/pre-win-h-box/pre-win-h-box.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/coins-pack-v-box/coins-pack-v-box.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/footer-main/footer-main.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/item-control-h-box/item-control-h-box.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/login-v-box/login-v-box.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/register-v-box/register-v-box.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/password-reset-box/password-reset-box.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/breadcrumb/breadcrumb.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/aurora-flyout/aurora-flyout.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/aurora-flyout/aurora-flyout.css'%}">
+
+    <link rel="stylesheet" href="{% static 'js/app/common/navs/fifth-nav/fifth-nav.css'%}">
+
+
+    <link rel="stylesheet" href="{% static 'js/app/common/profile-posts/profile-posts.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/profile-documents/profile-documents.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/common/profile-apps/profile-apps.css'%}">
+
+    <link rel="stylesheet" href="{% static 'js/app/directive/star-rating/star-rating.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/directive/informative-badge/informative-badge.css'%}">
+
+    <link rel="stylesheet" href="{% static 'js/app/main/home-main/home-main.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/main/org-main/org-main.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/main/document-main/document-main.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/main/app-main/app-main.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/main/org-sub-main/org-sub-main.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/main/help-main/help-main.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/main/profile-main/profile-main.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/main/log-reg-main/log-reg-main.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/main/profile-sub-main/profile-sub-main.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/main/contact-main/contact-main.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/main/error-page/error-page.css'%}">
+
+
+    <link rel="stylesheet" href="{% static 'js/app/main/company/company-sub/company-sub.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/main/company/company-about/company-about.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/main/company/company-careers/company-careers.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/main/company/company-events/company-events.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/main/company/company-leadership/company-leadership.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/main/company/company-legal-and-security/company-legal-and-security.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/main/company/company-press/company-press.css'%}">
+    <link rel="stylesheet" href="{% static 'js/app/main/company/company-referral-program/company-referral-program.css'%}">
+
+    {% if request.user.is_superuser %}
+      <link rel="stylesheet" href="{% static 'js/app/control/control-nav/control-nav.css'%}">
+      <link rel="stylesheet" href="{% static 'js/app/control/create-item/create-item.css'%}">
+      <link rel="stylesheet" href="{% static 'js/app/control/edit-item/edit-item.css'%}">
+      <link rel="stylesheet" href="{% static 'js/app/control/edit-bid/edit-bid.css'%}">
+      <link rel="stylesheet" href="{% static 'js/app/control/edit-winner-delivery/edit-winner-delivery.css'%}">
+      <link rel="stylesheet" href="{% static 'js/app/control/edit-control-ticket/edit-control-ticket.css'%}">
+      <link rel="stylesheet" href="{% static 'js/app/control/create-bid/create-bid.css'%}">
+      <link rel="stylesheet" href="{% static 'js/app/control/create-bonus-transaction/create-bonus-transaction.css'%}">
+      <link rel="stylesheet" href="{% static 'js/app/control/create-control-ticket/create-control-ticket.css'%}">
+      <link rel="stylesheet" href="{% static 'js/app/control/bid-bay-control/bid-bay-control.css'%}">
+      <link rel="stylesheet" href="{% static 'js/app/control/bids-control/bids-control.css'%}">
+      <link rel="stylesheet" href="{% static 'js/app/control/buzzers-control/buzzers-control.css'%}">
+      <link rel="stylesheet" href="{% static 'js/app/control/users-control/users-control.css'%}">
+      <link rel="stylesheet" href="{% static 'js/app/control/items-control/items-control.css'%}">
+      <link rel="stylesheet" href="{% static 'js/app/control/transactions-control/transactions-control.css'%}">
+      <link rel="stylesheet" href="{% static 'js/app/control/coins-transactions-control/coins-transactions-control.css'%}">
+      <link rel="stylesheet" href="{% static 'js/app/control/bonus-control/bonus-control.css'%}">
+      <link rel="stylesheet" href="{% static 'js/app/control/winners-control/winners-control.css'%}">
+      <link rel="stylesheet" href="{% static 'js/app/control/ticket-control/ticket-control.css'%}">
+      <link rel="stylesheet" href="{% static 'js/app/control/item-detail-control/item-detail-control.css'%}">
+    {% endif %}
+  {% endcompress %}
+{% endblock %}
+{% block js %}
+<script type="text/javascript" src="{% static 'js/angular/angular.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/angular/angular-route.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/angular/angular-resource.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/angular/angular-messages.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/angular/angular-cookies.js' %}"></script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<!--script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular-route.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular-resource.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular-messages.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular-cookies.min.js"></script-->
+{% compress js %}
+<script type="text/javascript" src="{% static 'js/app/app.config.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/app.settings.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/core.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/auth-service/auth-service.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/auth-service/auth-service.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/socket/socket.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/socket/socket.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/checkmark/checkmark.filter.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/user/user.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/user/user.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/organization/organization.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/organization/organization.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/continent/continent.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/continent/continent.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/country/country.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/country/country.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/province/province.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/province/province.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/currency/currency.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/currency/currency.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/tag/tag.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/tag/tag.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/document/document.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/document/document.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/app/app.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/app/app.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/organization-application/organization-application.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/organization-application/organization-application.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/doc/doc.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/doc/doc.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/profile/profile.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/profile/profile.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/transaction/transaction.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/transaction/transaction.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/ticket/ticket.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/ticket/ticket.service.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'js/app/core/aurora/aurora.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/aurora/aurora.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/aurora-modal/aurora-modal.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/aurora-modal/aurora-modal.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/spinner/spinner.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/core/spinner/spinner.service.js' %}"></script>
+
+
+
+<script type="text/javascript" src="{% static 'js/app/common/common.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/light-alert/light-alert.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/light-alert/light-alert.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/heavy-alert/heavy-alert.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/heavy-alert/heavy-alert.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/first-nav/first-nav.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/first-nav/first-nav.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/third-nav/third-nav.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/third-nav/third-nav.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/fourth-nav/fourth-nav.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/fourth-nav/fourth-nav.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/empty-cr/empty-cr.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/empty-cr/empty-cr.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/box/box.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/box/box.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/pagination/pagination.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/pagination/pagination.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/modal/modal.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/modal/modal.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/filter-box/filter-box.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/filter-box/filter-box.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/document-h-box/document-h-box.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/document-h-box/document-h-box.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/app-h-box/app-h-box.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/app-h-box/app-h-box.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/pre-win-h-box/pre-win-h-box.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/pre-win-h-box/pre-win-h-box.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/bid-v-box/bid-v-box.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/bid-v-box/bid-v-box.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/coins-pack-v-box/coins-pack-v-box.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/coins-pack-v-box/coins-pack-v-box.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/footer-main/footer-main.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/footer-main/footer-main.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/item-control-h-box/item-control-h-box.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/item-control-h-box/item-control-h-box.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/login-v-box/login-v-box.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/login-v-box/login-v-box.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/register-v-box/register-v-box.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/register-v-box/register-v-box.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/password-reset-box/password-reset-box.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/password-reset-box/password-reset-box.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/aurora-flyout/aurora-flyout.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/aurora-flyout/aurora-flyout.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/breadcrumb/breadcrumb.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/breadcrumb/breadcrumb.component.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'js/app/common/profile-posts/profile-posts.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/profile-posts/profile-posts.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/profile-documents/profile-documents.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/profile-documents/profile-documents.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/profile-apps/profile-apps.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/profile-apps/profile-apps.component.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'js/app/common/navs/navs.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/navs/fifth-nav/fifth-nav.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/common/navs/fifth-nav/fifth-nav.component.js' %}"></script>
+
+
+<script type="text/javascript" src="{% static 'js/app/main/main.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/home-main/home-main.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/home-main/home-main.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/org-main/org-main.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/org-main/org-main.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/document-main/document-main.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/document-main/document-main.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/app-main/app-main.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/app-main/app-main.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/org-sub-main/org-sub-main.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/org-sub-main/org-sub-main.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/help-main/help-main.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/help-main/help-main.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/profile-main/profile-main.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/profile-main/profile-main.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/log-reg-main/log-reg-main.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/log-reg-main/log-reg-main.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/profile-sub-main/profile-sub-main.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/profile-sub-main/profile-sub-main.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/contact-main/contact-main.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/contact-main/contact-main.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/error-page/error-page.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/error-page/error-page.component.js' %}"></script>
+
+
+<script type="text/javascript" src="{% static 'js/app/main/company/company.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/company/company-sub/company-sub.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/company/company-sub/company-sub.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/company/company-about/company-about.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/company/company-about/company-about.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/company/company-careers/company-careers.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/company/company-careers/company-careers.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/company/company-events/company-events.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/company/company-events/company-events.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/company/company-leadership/company-leadership.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/company/company-leadership/company-leadership.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/company/company-legal-and-security/company-legal-and-security.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/company/company-legal-and-security/company-legal-and-security.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/company/company-press/company-press.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/company/company-press/company-press.component.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/company/company-referral-program/company-referral-program.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/main/company/company-referral-program/company-referral-program.component.js' %}"></script>
+
+
+<script type="text/javascript" src="{% static 'js/app/filter/filter.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/filter/parse-new-line/parse-new-line.filter.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/filter/parse-h/parse-h.filter.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/filter/parse-bold/parse-bold.filter.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/filter/parse-img/parse-img.filter.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/filter/safe-html/safe-html.filter.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/filter/range/range.filter.js' %}"></script>
+
+
+<script type="text/javascript" src="{% static 'js/app/directive/directive.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/directive/compare/compare.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/directive/scroll-to/scroll-to.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/directive/only-integers/only-integers.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/directive/only-decimals/only-decimals.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/directive/enter-key-press/enter-key-press.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/directive/up-arrow-key-press/up-arrow-key-press.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/directive/down-arrow-key-press/down-arrow-key-press.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/directive/data-list/data-list.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/directive/star-rating/star-rating.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/directive/informative-badge/informative-badge.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/directive/server-clock/server-clock.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/directive/date-offset/date-offset.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/directive/date-offset-timer/date-offset-timer.directive.js' %}"></script>
+
+
+<script type="text/javascript" src="{% static 'js/app/aurora-alert/aurora-alert.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app/aurora-alert/aurora-alert.component.js' %}"></script>
+
+  {% if request.user.is_superuser %}
+  <script type="text/javascript" src="{% static 'js/app/control/control.module.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app/control/control-nav/control-nav.module.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app/control/control-nav/control-nav.component.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app/control/create-item/create-item.module.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app/control/create-item/create-item.component.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app/control/edit-item/edit-item.module.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app/control/edit-item/edit-item.component.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app/control/edit-bid/edit-bid.module.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app/control/edit-bid/edit-bid.component.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app/control/edit-winner-delivery/edit-winner-delivery.module.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app/control/edit-winner-delivery/edit-winner-delivery.component.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app/control/edit-control-ticket/edit-control-ticket.module.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app/control/edit-control-ticket/edit-control-ticket.component.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app/control/create-bid/create-bid.module.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app/control/create-bid/create-bid.component.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app/control/create-bonus-transaction/create-bonus-transaction.module.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app/control/create-bonus-transaction/create-bonus-transaction.component.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app/control/create-control-ticket/create-control-ticket.module.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app/control/create-control-ticket/create-control-ticket.component.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app/control/bid-bay-control/bid-bay-control.module.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app/control/bid-bay-control/bid-bay-control.component.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app/control/items-control/items-control.module.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app/control/items-control/items-control.component.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app/control/item-detail-control/item-detail-control.module.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app/control/item-detail-control/item-detail-control.component.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app/control/bids-control/bids-control.module.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app/control/bids-control/bids-control.component.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app/control/users-control/users-control.module.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app/control/users-control/users-control.component.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app/control/transactions-control/transactions-control.module.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app/control/transactions-control/transactions-control.component.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app/control/coins-transactions-control/coins-transactions-control.module.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app/control/coins-transactions-control/coins-transactions-control.component.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app/control/bonus-control/bonus-control.module.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app/control/bonus-control/bonus-control.component.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app/control/winners-control/winners-control.module.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app/control/winners-control/winners-control.component.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app/control/ticket-control/ticket-control.module.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app/control/ticket-control/ticket-control.component.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app/control/buzzers-control/buzzers-control.module.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app/control/buzzers-control/buzzers-control.component.js' %}"></script>
+  {% endif %}
+
+{% endcompress %}
+
+{% endblock %}
+{% block content %}
+  {{block.super}}
+  <!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml            : true,
+      version          : 'v3.2'
+    });
+  };
+
+  (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Your customer chat code -->
+<div class="fb-customerchat"
+  attribution=setup_tool
+  page_id="481071339088621"
+  theme_color="#0069ff"
+  logged_in_greeting="Welcome to bidbuzz Chat Support. How can we help you?"
+  logged_out_greeting="Welcome to bidbuzz Chat Support. How can we help you?">
+</div>
+  <style>
+  [ng/:cloak],
+  [ng-cloak],
+  [data-ng-cloak],
+  [x-ng-cloak],first
+  .ng-cloak,
+  .x-ng-cloak,
+  .ng-hide-add,
+  .ng-hide-remove{
+    display: none !important;
+  }
+  </style>
+  <div>
+    <first-nav></first-nav>
+    {% if request.user.is_superuser %}
+      <control-nav></control-nav>
+    {% endif %}
+    <aurora-alert></aurora-alert>
+    <!--heavy-alert></heavy-alert>
+    <light-alert description="*Enhance the aaasecurity of your account* &nbsp by enabling two-factor authentication."
+      action-title="*Enable Two-factor Authentication*"
+    ></light-alert-->
+    <div ng-view style="min-height:calc(100vh - 3.3em);"></div>
+    <spinner></spinner>
+    <big-spinner></big-spinner>
+    <modal></modal>
+    <footer-main></footer-main>
+  </div>
+{% endblock %}

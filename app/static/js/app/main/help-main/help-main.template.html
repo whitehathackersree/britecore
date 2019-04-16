@@ -1,0 +1,33 @@
+<div  class="help-main">
+  <div class="help-main-container">
+    <div class="help-main-holder">
+      <div class="help-main-one">
+        <div class="head">
+          Help
+          <span ng-click="toggle_nav()" class="flaticon-interface"></span>
+        </div>
+        <div class="items" ng-class="{'active':show_nav}">
+          <a class="item" ng-repeat="n in nav_options"
+              ng-class="{'active': n.param==current_tab}"
+              ng-href="{{'/help/'+n.param+'/'}}">
+            {{n.title}}
+          </a>
+          <a class="item" href="/company/support/">
+            Contact Us
+          </a>
+        </div>
+      </div>
+      <div ng-show="show" class="help-main-two">
+        <breadcrumb options=breadcrumbOptions></breadcrumb>
+        <h1>{{doc.head}}</h1>
+        <div class="article-meta">
+          <span>Validated on {{doc.date_modified | date: 'dd MMMM, yyyy'}} • Posted on {{doc.date_created | date: 'dd MMMM, yyyy'}}</span>
+        </div>
+        <div class="description" ng-bind-html="doc.description | parseH| parseNewLine | parseImg |safeHtml"></div>
+        <div class="other-note">
+          Couldn't find what you are looking for? Please call us at +91 8500058131. We will be happy to help you.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+.aurora-tabs{
+  width: 100%;
+  border-bottom: 2px solid #f1f1f1;
+  margin-bottom: 1rem;
+}
+ul.aurora-tabs > li{
+  font-family: 'l';
+  display: inline-block;
+  margin: 0 22px -2px 0;
+  height: 48px;
+  line-height: 48px;
+  cursor: pointer;
+  color: #999;
+  font-weight: 500;
+}
+ul.aurora-tabs > li:hover{
+  border-bottom: 2px solid #999;
+  color: #676767;
+}
+ul.aurora-tabs > li.is-active{
+  border-bottom: 2px solid #0069ff;
+  color: #031b4e;
+}
+ul.aurora-tabs > li:last-of-type{
+  margin: 0 0 -2px 0;
+}

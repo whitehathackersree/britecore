@@ -1,0 +1,13 @@
+<div class="modal-coins-ordered">
+  <div class="modal-coins-ordered-container">
+    <div><img src="/static/svg/transaction_receipt.svg" alt=""></div>
+    <div class="data">
+      <p>Thank you for your order.</p>
+      <p>
+        We have <span ng-if="data().user.email">emailed your receipt to <b>{{data().user.email}},</b> as well as</span>
+         sent an sms to <b>{{data().user.phone_number}}</b>  regarding the same.
+      </p>
+      <p>Order total: <b>{{data().amount | currency: '₹':2}}</b></p>
+    </div>
+  </div>
+</div>

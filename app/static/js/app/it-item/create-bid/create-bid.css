@@ -1,0 +1,52 @@
+.create-bid{
+  background: #fff;
+  width:100%;
+}
+.create-bid header{
+  padding: 1em;
+  font-size: 1em;
+  font-weight: 500;
+  background: #eee;
+}
+.create-bid-container{
+  padding: 1em;
+  padding-bottom: 3em;
+  font-size: 0.9em;
+}
+.create-bid-container input[type='text']{
+  width: 10ch;
+  border: 1px solid #dfdfdf;
+  border-radius: 3px;
+  padding: .4rem .6rem;
+  display: inline-block;
+  position: relative;
+  margin: 10px;
+}
+.create-bid-container input[type='checkbox']{
+  background-color: initial;
+  cursor: default;
+  margin: 3px 0.5ex;
+  padding: initial;
+  border: initial;
+}
+.create-bid-container p{
+  margin: 10px 0;
+}
+.create-bid .create-btn{
+  margin: 0 10px;
+  background: #2b6dad;
+  color: #fff;
+  padding: 8px 10px;
+  border-radius: 3px;
+  display: inline-block;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity .2s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.create-bid .create-btn:active{
+  opacity: .6;
+}

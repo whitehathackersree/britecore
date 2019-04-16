@@ -1,0 +1,44 @@
+<div class="transactions-control">
+  <div class="transactions-control-show-head">
+
+  </div>
+  <div class="transactions-control-container">
+    <div class="transactions-control-holder">
+      <div class="transactions-ctrl-tbl-ctrl">
+        Search: <input class="search" ng-model="search" enter-key-press="query()"/>
+        Filter: <input class="search" placeholder="Mobile Number" ng-model="winner__phone_number" enter-key-press="query()"/>
+        <input class="search" placeholder="Method" ng-model="method" enter-key-press="query()"/>
+        <input class="search" placeholder="Amount" ng-model="amount" enter-key-press="query()"/>
+      </div>
+      <table class="table-two">
+        <thead>
+          <tr>
+            <td width="15px" ng-click="sort_order('id')">id</td>
+            <td ng-click="sort_order('username')">Username</td>
+            <td width="10ch" ng-click="sort_order('phone_number')">Phone Number</td>
+            <td width="10ch">Coins</td>
+            <td>Won</td>
+            <td>Claimed</td>
+            <td>Delivered</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="u in users  | orderBy:$ctrl.orderProp:$ctrl.reverse">
+            <td>{{u.id}}</td>
+            <td><a href="{{u.profile_url}}">{{u.username}}</a></td>
+            <td>{{u.phone_number}}</td>
+            <td class="amount">{{u.coins}}</td>
+            <td>{{u.products_won.length}}</td>
+            <td>{{wd.order_platform?wd.order_platform:(wd.sold?'place order':'')}}</td>
+            <td>{{wd.order_no}}</td>
+            <td>{{wd.delivery_status}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <item-control-h-box ng-repeat="item in itemf" item=item></item-control-h-box>
+    </div>
+  </div>
+  <div class="winner-control-pagination">
+    <pagination url=pagination_url() total-pages=page_data.total_pages current-page=current_page></pagination>
+  </div>
+</div>

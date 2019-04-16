@@ -1,0 +1,9 @@
+<ul class='aurora-notifications' style='display: ;'>
+  <!--li ng-repeat="alert in $ctrl.alertQueue" class='item {{alert.type}} show'>
+    <span>{{alert.message}}</span>
+    <div class='close' ng-click="$ctrl.removeAlert(alert)"></div>
+  </li-->
+  <li ng-bind-html="alert.message |safeHtml" ng-repeat="alert in $ctrl.alertQueue" class='notif {{alert.type}} show'>
+
+  </li>
+</ul>

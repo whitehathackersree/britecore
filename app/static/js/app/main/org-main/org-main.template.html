@@ -1,0 +1,34 @@
+<div ng-show="show" class="org-main">
+  <div class="org-main-header">
+    <div class="org-main-container">
+      <div class="org-main-profile-details">
+        <div class="one">
+          <div class="org-main-logo">
+            <img src="{{org.logos['200x200']}}" alt="">
+          </div>
+        </div>
+        <div class="two">
+          <h1 class="name">{{org.full_name}}</h1>
+          <h4 class="username">{{'_'+org.username}}</h4>
+          <div class="short-description">
+            {{org.short_description}}
+          </div>
+          <div class="credentials">
+            <div class="credential"><img class="icon" src="/static/images/icons/web-link.png" alt=""><a href="{{org.website}}">{{org.website}}</a></div>
+            <div class="credential"><img class="icon" src="/static/images/icons/placeholder-filled-tool-shape-for-maps.png" alt="">{{org.headquarters}}</div>
+          </div>
+          <a class="follow-btn">
+            <span>Follow</span>
+            <span>2.5k</span>
+          </a>
+        </div>
+      </div>
+    </div>
+      <fifth-nav tabs=tabs active-tab=activeTab></fifth-nav>
+  </div>
+  <div class="org-main-container main">
+    <profile-posts ng-if="activeTab.title=='posts'"></profile-posts>
+    <profile-documents ng-if="activeTab.title=='documents'"></profile-documents>
+    <profile-apps ng-if="activeTab.title=='apps'"></profile-apps>
+  </div>
+</div>

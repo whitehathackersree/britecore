@@ -1,0 +1,16 @@
+<div class="modal-products-won">
+  <div class="top">
+    Congratulations {{data().user.username}}!
+  </div>
+  <div class="detail">
+    <img src="{{data().item_image}}" alt="">
+    <p>You won the <span class="item-title">{{data().item_title}}</span> for</p>
+    <div class="amount">
+      {{data().amount | currency: '₹':2}}
+    </div>
+    <div class="claim-btns">
+      <a class="claim-now-btn btn" ng-href="/ac/{{data().user.username}}/cart/">Claim Now</a>
+      <div class="claim-later-btn btn" ng-click="close()">Claim Later</div>
+    </div>
+  </div>
+</div>

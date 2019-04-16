@@ -1,0 +1,91 @@
+<div class="create-item">
+  <div class="top">
+    Create Item
+  </div>
+  <div class="main">
+    <div>
+      title
+      <br>
+      <textarea name="name" rows="2" cols="" ng-model="title" placeholder="Product Name"></textarea>
+    </div>
+    <div>
+      <table>
+        <tr>
+          <td>mrp</td>
+          <td><input ng-model="mrp" type="text"></td>
+        </tr>
+        <tr>
+          <td>discounted rate</td>
+          <td><input ng-model="discounted_rate" type="text"></td>
+        </tr>
+        <tr>
+          <td>sale rate</td>
+          <td><input ng-model="sale_rate" type="text"></td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      Amazon link
+      <br>
+      <textarea name="name" rows="2" cols="" ng-model="amazon_link"></textarea>
+    </div>
+    <div>
+      Flipkart link
+      <br>
+      <textarea name="name" rows="2" cols="" ng-model="flipkart_link"></textarea>
+    </div>
+    <div>
+      description
+      <br>
+      <textarea name="name" rows="5" cols="" ng-model="description" placeholder="describe the item as list."></textarea>
+    </div>
+    <div>
+      Photos <br>
+      <div class="photos-holder">
+        <div class="photo">
+          <span ng-show="!images[0].image" class="flaticon-circle"></span>
+          <img  ng-hide="!images[0].image" ng-src="{{images[0].image}}" alt="">
+          <input type="file" onchange="angular.element(this).scope().picUpdateNeeded(event,0)">
+        </div>
+        <div class="photo">
+          <span ng-show="!images[1].image" class="flaticon-circle"></span>
+          <img  ng-hide="!images[1].image" ng-src="{{images[1].image}}" alt="">
+          <input type="file" onchange="angular.element(this).scope().picUpdateNeeded(event,1)">
+        </div>
+        <div class="photo">
+          <span ng-show="!images[2].image" class="flaticon-circle"></span>
+          <img  ng-hide="!images[2].image" ng-src="{{images[2].image}}" alt="">
+          <input type="file" onchange="angular.element(this).scope().picUpdateNeeded(event,2)">
+        </div>
+        <div class="photo">
+          <span ng-show="!images[3].image" class="flaticon-circle"></span>
+          <img  ng-hide="!images[3].image" ng-src="{{images[3].image}}" alt="">
+          <input type="file" onchange="angular.element(this).scope().picUpdateNeeded(event,3)">
+        </div>
+        <div class="photo">
+          <span ng-show="!images[4].image" class="flaticon-circle"></span>
+          <img  ng-hide="!images[4].image" ng-src="{{images[4].image}}" alt="">
+          <input type="file" onchange="angular.element(this).scope().picUpdateNeeded(event,4)">
+        </div>
+        <div class="photo">
+          <span ng-show="!images[5].image" class="flaticon-circle"></span>
+          <img  ng-hide="!images[5].image" ng-src="{{images[5].image}}" alt="">
+          <input type="file" onchange="angular.element(this).scope().picUpdateNeeded(event,5)">
+        </div>
+        <div class="photo">
+          <span ng-show="!images[6].image" class="flaticon-circle"></span>
+          <img  ng-hide="!images[6].image" ng-src="{{images[6].image}}" alt="">
+          <input type="file" onchange="angular.element(this).scope().picUpdateNeeded(event,6)">
+        </div>
+      </div>
+    </div>
+    <div>
+      <span class="create-btn" ng-click="btn_active && itemCreate()">
+        Submit
+      </span>
+    </div>
+  </div>
+  <div class="bottom">
+    <p>make sure you describe well.</p>
+  </div>
+</div>

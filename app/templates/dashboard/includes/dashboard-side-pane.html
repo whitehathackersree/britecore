@@ -1,0 +1,11 @@
+
+<div class="dashboard-side-pane {{class}}">
+  <h4>user00512{{user.id}}</h4>
+  <div class="avatar-hld">
+    <img src="/media/{{user.photo}}" />
+  </div>
+  <p>{{user.email}}</p>
+  <div class='progressbar'><div></div></div>
+  <p>1% profile complete</p>
+  <a href="{% url 'profile' pk=user.id username=user.username_ %}">Go to Profile</a>
+</div>

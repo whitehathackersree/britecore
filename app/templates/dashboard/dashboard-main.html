@@ -1,0 +1,29 @@
+{% extends 'dashboard/dashboard-base_.html' %}
+{% load static compress %}
+{% block css %}
+  {{block.super}}
+  {% compress css %}
+    <link rel="stylesheet" href="{% static 'css/dashboard/dashboard-main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dashboard/dashboard-side-pane.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dashboard/dashboard-resources-fleet.css'%}">
+    <link rel="stylesheet" href="{% static 'css/dashboard/dashboard-resource-alert.css'%}">
+  {% endcompress %}
+{% endblock %}
+{% block content %}
+  {{block.super}}
+  <div class="d-main">
+    <div class="main-container">
+      <h1 class="user-wlcme-title">Hi, {{user.full_name_}}</h1>
+      <div class="flex-row">
+        <div class="left-pane">
+          {% include "../includes/aurora-tabs.html" with tabs="Resources, Trending, Activity"  %}
+          {% include "./includes/dashboard-resources-fleet.html"  %}
+          {% include "./includes/dashboard-resource-alert.html" with svg="https://image.flaticon.com/icons/svg/959/959640.svg" title="Looks like you don't have any apps." subtitle="Fortunately, it's very easy to get one." single_button="Get a app"  %}
+        </div>
+        <div class="right-pane">
+          {% include "./includes/dashboard-side-pane.html"  %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

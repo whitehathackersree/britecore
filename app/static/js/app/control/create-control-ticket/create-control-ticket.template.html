@@ -1,0 +1,53 @@
+<div class="create-control-ticket">
+  <header>Create Ticket</header>
+  <div class="create-control-ticket-container">
+    <table>
+      <tr>
+        <td>Mobile Number</td>
+        <td><input ng-model="phone_number" enter-key-press="setUser()" style="width:15ch " placeholder="Mobile Number" type="text"></td>
+      </tr>
+      <tr>
+        <td>User Id</td>
+        <td>{{user.id}}</td>
+      </tr>
+      <tr>
+        <td>username</td>
+        <td>{{user.username}}</td>
+      </tr>
+      <tr>
+        <td>phone number</td>
+        <td>{{user.phone_number}}</td>
+      </tr>
+      <tr>
+        <td>email</td>
+        <td>{{user.email}}</td>
+      </tr>
+      <tr>
+        <td>Type</td>
+        <td><input ng-model="type" type="text"></td>
+      </tr>
+      <tr>
+        <td>description</td>
+        <td>
+            <textarea name="name" rows="5" style="width: 40ch" ng-model="description" placeholder="describe what is the issue?"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td>solution</td>
+        <td>
+            <textarea name="name" rows="5" style="width: 40ch" ng-model="solution" placeholder="If solved? How did you solve it?"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td>Resolved</td>
+        <td><input ng-model="resolved" type="checkbox"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><span class="button-one" ng-click="btn_active && ticketCreate()">
+          Create Ticket
+        </span></td>
+      </tr>
+    </table>
+  </div>
+</div>

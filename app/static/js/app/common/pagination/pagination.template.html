@@ -1,0 +1,11 @@
+<div class="pagination">
+  <div class="pagination-container">
+    <div ng-if="totalPages > 1" ng-init="iniPages = initialPages(); midPages = middlePages(); enPages = endPages()" class="pagination-holder">
+      <a ng-repeat="p in iniPages track by $index"  class="page" ng-class="{'active':currentPage==p}" ng-href="{{url+'page='+p}}">{{p}}</a>
+      <span class="flaticon-right-arrow left seperator"></span>
+      <a ng-repeat="p in midPages track by $index"  class="page" ng-class="{'active':currentPage==p}" ng-href="{{url+'page='+p}}">{{p}}</a>
+      <span class="flaticon-right-arrow seperator"></span>
+      <a ng-repeat="p in enPages track by $index"  class="page" ng-class="{'active':currentPage==p}" ng-href="{{url+'page='+p}}">{{p}}</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="company-careers">
+  <div class="container">
+    <header>
+      <h1>Current Openings</h1>
+    </header>
+    <div class="openings-holder">
+      <div class="openings-box" ng-repeat="oh in openingHeads">
+        <div  class="title">
+          {{oh.title}}
+        </div>
+        <div ng-repeat="opening in oh.openings" class="opening">
+          <a class="subtitle">
+            {{opening.title}}
+          </a>
+          <div class="location">
+            {{opening.location}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="add-notes">
+      BidBuzz is committed to being a welcoming and inclusive place for everyone, and we are intentional about making sure people feel respected, supported, and connected at work—regardless of who you are or where you live. Diversity fosters innovation and helps us provide the best experience possible to our community.
+      <br><br>
+      Please send your resume to careers@bidbuzz.in, we will get back to you in 4 working days.
+    </div>
+  </div>
+</div>

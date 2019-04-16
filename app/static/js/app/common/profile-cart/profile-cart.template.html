@@ -1,0 +1,17 @@
+<div ng-show="show" class="profile-cart">
+  <div class="profile-cart-container">
+    <div ng-if="!empty" class="profile-cart-holder">
+      <div class="profile-cart-cart-holder">
+        <cart-h-box ng-repeat="c in cart" cart=c>
+        </cart-h-box>
+      </div>
+    </div>
+    <div ng-if="empty" class="profile-cart-empty-cr">
+      <empty-cr
+      image=emptyCr.image
+      heading=emptyCr.heading
+      description=emptyCr.description>
+      </empty-cr>
+    </div>
+  </div>
+</div>

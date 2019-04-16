@@ -1,0 +1,37 @@
+{% load thumbnail %}
+
+{% thumbnail u.photo "150x150"  format="PNG" as small %}
+  <img class='profile-image {% if u.is_institute %} is-institute {% endif %}'  src="{{small.url}}" alt="">
+{% endthumbnail %}
+<h3 class="profile-vcard">
+  <span class="profile-name">
+    {{u.full_name_}}
+  </span>
+  <span class="profile-username">
+    _{{u.username_}}
+  </span>
+</h3>
+<div class='credential-container'>
+  <i class="flaticon-briefcase"></i>
+  <span>A Developer at ******</span>
+</div>
+<div class='credential-container'>
+  <a href="" class="flaticon-gmail"></a>
+  <a href="">whitehathackersree@gmail.com</a>
+</div>
+<div class='credential-container'>
+  <a href="" class="flaticon-twitter-logo-on-black-background"></a>
+  <a href="">twitterusername</a>
+</div>
+<div class='credential-container'>
+  <a href="" class="flaticon-linkedin"></a>
+  <a href="">linkedinusername</a>
+</div>
+<div class='credential-container'>
+  <a href="" class="flaticon-facebook-logo"></a>
+  <a href="">facebookusername</a>
+</div>
+<div class='credential-container'>
+  <a href="" class="flaticon-link-2"></a>
+  <a href="">https://website.in</a>
+</div>

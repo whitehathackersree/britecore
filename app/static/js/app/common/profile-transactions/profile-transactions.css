@@ -1,0 +1,11 @@
+.profile-transactions{
+  padding: 1em 0;
+}
+.profile-transactions-holder{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: flex-start;
+}

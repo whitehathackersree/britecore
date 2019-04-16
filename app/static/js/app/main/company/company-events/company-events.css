@@ -1,0 +1,31 @@
+.company-events{
+
+}
+.company-events>.container{
+  width: 50%;
+}
+.company-events>.container h1{
+  font-weight: 400;
+  font-size: 1.7rem;
+  color: #444;
+  margin: 1em 0;
+}
+.company-events>.container p{
+  font-size: 16px;
+  line-height: 25px;
+  font-family: 'p';
+  font-weight: 500;
+  color: #323232;
+  margin-bottom: 1em;
+}
+.company-events>.container a{
+  color:#0069ff;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .company-events>.container{
+    width: 100%
+  }
+}

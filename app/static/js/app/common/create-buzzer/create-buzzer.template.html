@@ -1,0 +1,31 @@
+<div class="create-buzzer">
+  <div class="top">
+    Create Buzzer
+  </div>
+  <div class="main">
+    <div class="holder">
+      <div class="pic">
+        <img ng-src="{{data.bidImage}}" alt="">
+      </div>
+      <div class="data">
+        <div class="title">{{data.bidTitle}}</div>
+        <div class="create">
+          <span class="abs-group">
+            <input class="abs" type="text" ng-model=buzzerCoins>
+            <span><img src="/static/svg/coins_layer_bw.svg" alt=""></span>
+          </span>
+          <span class="create-btn" ng-click="btn_active && buzzerCreate()">
+            Create Buzzer
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom">
+    <p>A minimum of {{data.bidMinimumBuzzerCoins}} coins is required.</p>
+    <p>Buzzer once created cannot be stopped.</p>
+    <p>Coins used to start a buzzer are <b>non refundable</b>.</p>
+    <p>Please keep this in mind and choose your coins strategically.</p>
+    <p>Our statistics show that the person who starts a buzzer with more coins usually wins.</p>
+  </div>
+</div>

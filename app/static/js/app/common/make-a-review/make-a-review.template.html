@@ -1,0 +1,56 @@
+<div class="make-a-review">
+  <div class="top">
+    Your Valuable Review
+  </div>
+  <div class="main">
+    <div>
+      bidbuzz in one sentence
+      <br>
+      <textarea name="name" rows="2" cols="" ng-model="wd.title" placeholder="bidbuzz appears to be my hub for dream products."></textarea>
+    </div>
+    <div>
+      How do you feel after winning this item?
+      <br>
+      <textarea name="name" rows="5" cols="" ng-model="wd.description" placeholder="I couldn't believe that I won...."></textarea>
+    </div>
+    <div>
+      Photos <br>
+      <div class="photos-holder">
+        <div class="photo">
+          <span ng-show="!wd.winner_images[0].image" class="flaticon-circle"></span>
+          <img  ng-hide="!wd.winner_images[0].image" ng-src="{{wd.winner_images[0].image}}" alt="">
+          <input type="file" onchange="angular.element(this).scope().picUpdateNeeded(event,0)">
+        </div>
+        <div class="photo">
+          <span ng-show="!wd.winner_images[1].image" class="flaticon-circle"></span>
+          <img  ng-hide="!wd.winner_images[1].image" ng-src="{{wd.winner_images[1].image}}" alt="">
+          <input type="file" onchange="angular.element(this).scope().picUpdateNeeded(event,1)">
+        </div>
+        <div class="photo">
+          <span ng-show="!wd.winner_images[2].image" class="flaticon-circle"></span>
+          <img  ng-hide="!wd.winner_images[2].image" ng-src="{{wd.winner_images[2].image}}" alt="">
+          <input type="file" onchange="angular.element(this).scope().picUpdateNeeded(event,2)">
+        </div>
+        <div class="photo">
+          <span ng-show="!wd.winner_images[3].image" class="flaticon-circle"></span>
+          <img  ng-hide="!wd.winner_images[3].image" ng-src="{{wd.winner_images[3].image}}" alt="">
+          <input type="file" onchange="angular.element(this).scope().picUpdateNeeded(event,3)">
+        </div>
+        <div class="photo">
+          <span ng-show="!wd.winner_images[4].image" class="flaticon-circle"></span>
+          <img  ng-hide="!wd.winner_images[4].image" ng-src="{{wd.winner_images[4].image}}" alt="">
+          <input type="file" onchange="angular.element(this).scope().picUpdateNeeded(event,4)">
+        </div>
+      </div>
+    </div>
+    <div>
+      <span class="create-btn" ng-click="btn_active && reviewCreate()">
+        Submit
+      </span>
+    </div>
+  </div>
+  <div class="bottom">
+    <p>Your review is most valuable to us. It will encourage us to keep going.</p>
+    <p>Thank you. - bidbuzz Team</p>
+  </div>
+</div>
